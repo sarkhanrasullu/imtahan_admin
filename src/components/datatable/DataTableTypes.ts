@@ -2,6 +2,8 @@ export enum InputFieldType {
      TEXT,
      PASSWORD,
      DATE,
+     DATE_TIME,
+     CHECK_BOX,
      TEXT_AREA,
      SELECT_BOX,
      IMAGE,
@@ -48,7 +50,8 @@ export class SelectBox extends AbstractInputField {
 export enum TableColumnType {
     TEXT,
     IMAGE,
-    DATE
+    DATE,
+    DATE_TIME,
 }
 
 export class TableColumn { 

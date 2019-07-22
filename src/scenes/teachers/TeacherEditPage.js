@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
-import { InputField, InputFieldType } from '../../components/datatable/DataTableTypes';
+import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
 const formDataFields = [
-        new InputField("name"),
-        new InputField("surname"),
-        new InputField("email"),
-        new InputField("phone"),
-        new InputField("facebook"),
-        new InputField("instagram"),
-        new InputField("youtube"),
-        new InputField("thumbnail","Şəkil", InputFieldType.IMAGE),
-        new InputField("cityId.name","Şəhər"),
-        new InputField("address","Adress"),
-        new InputField("website","Website"),
-        new InputField("userId.name","Qeydiyyat edən şəxs"),
-        new InputField("description","Ətraflı"),
-        new InputField("lastchangedate","Son dəyişiklik tarixi", InputFieldType.DATE)
+        new InputField("name"       ,"Ad"                                                   ),
+        new InputField("surname"    ,"Soyad"                                                ),
+        new InputField("email"      ,"Email"                                                ),
+        new InputField("phone"      ,"Nömrə"                                                ),
+        new InputField("facebook"                                                           ),
+        new InputField("instagram"                                                          ),
+        new InputField("youtube"                                                            ),
+        new InputField("thumbnail"   ,"Şəkil"        , InputFieldType.IMAGE                 ),
+        new SelectBox("cityId.name"  ,"Şəhər"        ,"/cities"             ,"id","name"    ),
+        new InputField("address"     ,"Adress"                                              ),
+        new InputField("website"     ,"Website"                                             ),
+        new InputField("userId.name" ,"Qeydiyyat edən şəxs"                                 ),
+        new InputField("enabled" ,"Aktiv"                                 ),
+        new InputField("description" ,"Ətraflı"                                             ),
+        new SelectBox("userId.id"    ,"Istifadəçi"   ,"/users"              ,"id"   ,"name" ),
+
     ];
 
 export default class TeacherEditPage extends Component {

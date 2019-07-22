@@ -1,25 +1,36 @@
 import React, { Component } from 'react'
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
-import { TableColumn, InputField, SelectBox } from '../../components/datatable/DataTableTypes';
+import { TableColumn, InputField, SelectBox, TableColumnType, InputFieldType } from '../../components/datatable/DataTableTypes';
 
 const columns = [
-    new TableColumn("id"),
-    new TableColumn("nameAz", "Elanın adı, Az"),
-    new TableColumn("nameRu", "Elanın adı, Rus"),
-    new TableColumn("classNo", "Sinif"),
-    new TableColumn("price", "Qiymət"),
-    new TableColumn("thumbnail", "Şəkil"),
-    new TableColumn("lessonId.nameAz", "Dərs"),
-    new TableColumn("sectorId.name", "Sektor")
+    new TableColumn("id"                                    ),
+    new TableColumn("title"             , "Elanın başlığı"  ),
+    new TableColumn("classNo"           , "Sinif"           ),
+    new TableColumn("price"             , "Qiymət"          ),
+    new TableColumn("thumbnail"         , "Şəkil"           ),
+    new TableColumn("lessonId.name"     , "Dərs"            ),
+    new TableColumn("sectorId.name"     , "Sektor"          ),
+    new TableColumn("cityId.name"       , "Şəhər adı"       ),
+    new TableColumn("teacherId.name"    , "Müəllimin adı"   ),
+    new TableColumn("courseId.name"     , "Kursun adı"      ),
+    new TableColumn("userId.name"       , "Müştərinin adı"  ),
+    new TableColumn("enabled"            , "Aktiv"           ),
+
+    new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+    new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
+    new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
 const fields = [
-    new InputField("nameAz", "Elanın adı, Az"),
-    new InputField("nameRu", "Elanın adı, Rus"),
-    new InputField("classNo", "Sinif"),
-    new InputField("price", "Qiymət"),
-    new SelectBox("lessonId.id", "Dərs", "/lessons", "id", "nameAz", false),
-    new SelectBox("sectorId.id", "Sektor",  "/sectors", "id", "name", false),
+    new InputField("name"           , "Elanın başlığı"                          ),
+    new InputField("classNo"        , "Sinif"                                   ),
+    new InputField("price"          , "Qiymət"                                  ),
+    new SelectBox ("lessonId.id"    , "Dərs"        , "/lessons", "id", "name"  ),
+    new SelectBox ("sectorId.id"    , "Sektor"      , "/sectors", "id", "name"  ),
+
+    new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+    new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+    new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
 ];
 
 export default class AnnouncementListPage extends Component {
