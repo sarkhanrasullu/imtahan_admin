@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
-import { TableColumn } from '../../components/datatable/DataTableTypes';
+import { TableColumn, InputField } from '../../components/datatable/DataTableTypes';
 
 const columns = [
     new TableColumn("id"),
@@ -10,7 +10,11 @@ const columns = [
     new TableColumn("upSide"),
     new TableColumn("downSide"),
     new TableColumn("leftSide"),
-    // new TableColumn("adPageList"),
+];
+
+const fields = [
+    new InputField("id"),
+    new InputField("name"),
 ];
 
 export default class AdListPage extends Component {
@@ -18,7 +22,7 @@ export default class AdListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="ads"
-                    searchDataFields={columns}
+                    searchDataFields={fields}
                     tableProps= {
                         {
                             columns: columns

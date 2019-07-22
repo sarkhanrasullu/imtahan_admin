@@ -61,7 +61,7 @@ class NavbarWrapper extends Component {
                 {this.linkItem("/pages","Səhifələr")}
                 {this.linkItem("/menus","Menular")}
                 {this.linkItem("/lessons","Dərslər")}
-                {this.linkItem("/courses","Siniflər")}
+                {this.linkItem("/courses","Təhsil mərkəzləri")}
                 {this.linkItem("/announcements","Elanlar")}
                 {this.linkItem("/ads","Reklamlar")}
               </MDBNavbarNav>

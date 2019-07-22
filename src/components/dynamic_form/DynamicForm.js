@@ -15,16 +15,10 @@ class DynamicForm extends Component {
       carUtilities: []
   }
 
-  componentWillReceiveProps(p, n){
-    if(p && p.component && p.component.state)
-    this.setState({target:p.component.state.target});
-  }
-
   validate=()=>{
-    const state = this.state;
+    const state      = this.state;
     const validation = state.validation;
-  
-    let result = true;
+    let   result     = true;
     
     const {sections} = this.props;
     sections.forEach((section)=>{
@@ -47,17 +41,14 @@ class DynamicForm extends Component {
 }
  
   renderItem = (item, index)=>{
+     if(!item) return null;
      const {readOnly} = this.props;
      const validation = readOnly? {}:this.state.validation;
+    
       return (
         <FormInput 
                         component         ={this} 
-                        name              ={"target."+item.name} 
-                        optional          ={item.optional}
-                        customComponent   ={item.customComponent}
-                        type              ={item.type} 
-                        label             ={item.label} 
-                        parent             ={item.parent} 
+                        item              ={item}
                         error             ={validation[item.name]} 
                         readOnly          ={readOnly} 
                         key               ={index} 
@@ -93,7 +84,6 @@ class DynamicForm extends Component {
                             if(this.state.validate()) {
                               this.props.submit.action(this.state.target)
                             }
-                            console.log(this.state.validation);
                           } 
                         }>
                             {this.props.submit.label}

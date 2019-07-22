@@ -10,7 +10,8 @@ export default class PageEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    endpoint="/pages"
+                save_endpoint="/pages"
+                select_endpoint="/pages"
                     projection="pageProjection"
                     callback_url="/pages"
                     formDataFields={formDataFields}

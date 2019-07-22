@@ -16,9 +16,12 @@ class EntityService extends CommonService {
                   console.log(response);
                   const firstElementKey = Object.keys(response._embedded)[0];
                   const data = response._embedded[firstElementKey];
+                  console.log(firstElementKey);
+                  console.log(data);
                   const state = this.component.state;
                   state.list = data;
                   state.page = response.page;
+                  console.log(state);
                   this.component.setState(state);
                   this.setLoading(false);
                 })

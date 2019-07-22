@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
-import { TableColumn } from '../../components/datatable/DataTableTypes';
+import { TableColumn, InputField } from '../../components/datatable/DataTableTypes';
 
 const columns = [
     new TableColumn("id"),
@@ -9,12 +9,17 @@ const columns = [
     new TableColumn("iframe")
 ];
 
+const fields = [
+    new InputField("id"),
+    new InputField("name")
+];
+
 export default class MenuListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
                     endpoint="menus"
-                    searchDataFields={columns}
+                    searchDataFields={fields}
                     tableProps= {
                         {
                             columns: columns

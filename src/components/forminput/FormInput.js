@@ -5,6 +5,8 @@ import GenderPicker from '../genderpicker/GenderPicker';
 import MapPicker from '../mappicker/MapPicker';
 import DefaultFormInput from '../defaultforminput/DefaultFormInput';
 import MyImagesPicker from '../myimagespicker/MyImagesPicker';
+import ItemPicker from '../ItemPicker';
+import { InputFieldType } from '../datatable/DataTableTypes';
 
 const style = {
   errorInput: {borderColor:"red", borderWidth:1, fontSize:16, fontWeight:"bold"},
@@ -16,9 +18,10 @@ export default class FormInput extends Component {
         val: null
     }
 
-    
     render() {
-        const {unwrap, label, error, optional, type, key} = this.props;
+        if(!this.props.item) return null;
+        const {label, optional, type} = this.props.item;           
+        const {unwrap, error, key} = this.props;
         if(type==="empty") return null;
         const inputComponent = this.getInputComponent();
         
@@ -31,24 +34,26 @@ export default class FormInput extends Component {
     }
 
     getInputComponent = ()=>{
-      const { placeholder, type, error, readOnly, name, parent, customComponent, key } = this.props;
+      
+      const {item, error, readOnly, key, customComponent } = this.props;
+      const type = item.type;         
 
       let result =[];
 
       const {component} = this.props;
-      if(type==="text" || type==="textarea"||type==="password"){
-        result.push(<DefaultFormInput key={key} placeholder={placeholder} type={type} readOnly={readOnly} error={error} component={component} name={name} />);
-      }else if(type==="nationalitypicker"){
-        result.push(<NationalityPicker key={key} readOnly={readOnly} error={error} component={component} name={name}/>);
-      }else if(type === "imagepicker" || type === "image_base64"){
-        result.push(<MyImagePicker key={key} readOnly={readOnly} error={error} component={component} name={name} type={type}/>);
-      }else if(type === "imagespicker"){
-        result.push(<MyImagesPicker key={key} parent={parent} readOnly={readOnly} error={error} component={component} name={name} type={type}/>);
-      }else if(type === "genderpicker"){
-        result.push(<GenderPicker key={key} readOnly={readOnly} error={error} component={component} name={name} />);
-      }else if(type === "mappicker"){
-        result.push(<MapPicker key={key} readOnly={readOnly} error={error} component={component} name={name} />);
-      }else if(type === "custom"){
+      if(type===InputFieldType.TEXT || type===InputFieldType.TEXT_AREA||type===InputFieldType.PASSWORD){
+        result.push(<DefaultFormInput item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
+      }else if(type === InputFieldType.IMAGE_PICKER || type === InputFieldType.IMAGE_PICKER_BASE64){
+        result.push(<MyImagePicker item={item} key={key} readOnly={readOnly} error={error} component={component} type={type}/>);
+      }else if(type === InputFieldType.SELECT_BOX) {
+        result.push(
+          <ItemPicker 
+                item={item}
+                error={error}
+                component={component} />
+        )
+      }
+      else if(type === "custom"){
         result.push(customComponent);
       } 
 

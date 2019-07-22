@@ -1,22 +1,42 @@
 import React, { Component } from "react";
 import StateUtil from './../utils/StateUtil';
+import EntityService from "../services/EntityService";
 
 export default class ItemPicker extends Component {
-  state = {
-    val: null
-  }
+    state = {
+      val: null,
+      list: []
+    }
+
+    service = new EntityService(this);
+
+    componentDidMount(){
+      const {item} = this.props;
+      console.log(item);
+      if(item.endPoint!=null){
+        this.service.loadItems(item.endPoint);
+      }
+    }
+
     render() {
-        const {items, error, placeholder, component, onValueChange} = this.props;
-        
-        const pickerItems = items.map((item, index)=>{
-            return <option key={index} value={item.id}>{item.name}</option>
-        })
+        const {error, component, onValueChange, item} = this.props;
+
+        let items = this.props.items;
+        if(!items) items = this.state.list;
+
+        const {label} = this.props.item;
+        let pickerItems = null;
+        if(items!=null){
+          pickerItems = items.map((item_, index)=>{
+              return <option key={index} value={item_[item.valueParam]}>{item_[item.displayParam]}</option>
+          })
+        }
 
         return (
             <div style={styles.sectionInput}>
               <select
                 style={styles.picker} 
-                placeholder={placeholder}
+                placeholder={label}
                 onChange={event => {
                   const val = event.target.value;
 

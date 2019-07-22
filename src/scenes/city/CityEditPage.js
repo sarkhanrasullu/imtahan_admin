@@ -12,7 +12,8 @@ export default class CityEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    endpoint="/cities"
+                save_endpoint="/cities"
+                select_endpoint="/cities"
                     projection="cityProjection"
                     callback_url="/cities"
                     formDataFields={formDataFields}

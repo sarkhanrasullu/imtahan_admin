@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import {MDBBtn, MDBCol, MDBRow} from 'mdbreact'
 import MyImagePicker from '../myimagepicker/MyImagePicker';
 import StateUtil from '../../utils/StateUtil';
+import { InputField } from '../datatable/DataTableTypes';
 
 export default class MyImagesPicker extends Component {
 
     render() {
-        const { error, readOnly, type, component,  name, key } = this.props;
+        const {item, error, readOnly, component, key } = this.props;
+        const {name} = item;
         let list = StateUtil.get(component.state, name);
         let imagePickerList = null;
         console.log(list);
@@ -16,20 +18,23 @@ export default class MyImagesPicker extends Component {
                 return (
                     <MDBCol md={6}>
                         <MyImagePicker  
-                            readOnly={readOnly} error={error} component={component} name={nm} type={type}
-                            onDelete={()=>{this.handleDeleteBtn(index)}}/>
+                                        readOnly        ={readOnly} 
+                                        error           ={error} 
+                                        component       ={component} 
+                                        item            ={new InputField(nm,null, "imagepicker")}
+                                        onDelete        ={()=>{this.handleDeleteBtn(index)}}/>
                     </MDBCol>
                 );
             })
         }
 
-        return <React.Fragment>
-                <MDBRow key={key}>
-                    {imagePickerList}
-                </MDBRow>
+        return  <React.Fragment>
+                    <MDBRow key={key}>
+                        {imagePickerList}
+                    </MDBRow>
 
-                {this.renderAddButton()}
-            </React.Fragment>
+                    {this.renderAddButton()}
+                </React.Fragment>
     }
 
     handleDeleteBtn = (i)=>{

@@ -5,12 +5,20 @@ import { connect } from "react-redux";
 import DynamicForm from "../../components/dynamic_form/DynamicForm";
 import LoginService from "../../services/LoginService";
 import LoadingSpinner from "../../components/spinner/LoadingSpinner";
+import { InputField } from "../../components/datatable/DataTableTypes";
+
+const formDataFields = [
+  new InputField("user.email","email"),
+  new InputField("user.password", "password", "password"),
+];
 
 class Login extends Component {
 
   state = {
     loading: false
   }
+
+  
   
   service = new LoginService(this);
  
@@ -29,10 +37,7 @@ class Login extends Component {
                       sections={
                           [
                             {
-                              items:[
-                                { name:"user.email", label:"Email", type:"text" },
-                                { name:"user.password", label:"Password", type: "password" }
-                              ]
+                              items:formDataFields
                             }          
                           ]
                       }

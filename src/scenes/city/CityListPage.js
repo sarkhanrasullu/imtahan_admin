@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
-import { TableColumn } from '../../components/datatable/DataTableTypes';
+import { TableColumn, InputField } from '../../components/datatable/DataTableTypes';
 
 const columns = [
     new TableColumn("id"),
-    new TableColumn("nameAz"),
-    new TableColumn("nameRu"),
+    new TableColumn("nameAz", "name az"),
+    new TableColumn("nameRu", "name ru"),
+];
+
+const fields = [
+    new InputField("id"),
+    new InputField("nameAz", "name az"),
+    new InputField("nameRu", "name ru"),
 ];
 
 export default class CityListPage extends Component {
@@ -13,7 +19,7 @@ export default class CityListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="cities"
-                    searchDataFields={columns}
+                    searchDataFields={fields}
                     tableProps= {
                         {
                             columns: columns

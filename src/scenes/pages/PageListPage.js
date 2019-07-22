@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
-import { TableColumn } from '../../components/datatable/DataTableTypes';
+import { TableColumn, InputField } from '../../components/datatable/DataTableTypes';
 
 const columns = [
     new TableColumn("id"),
@@ -8,12 +8,16 @@ const columns = [
     new TableColumn("pageBody")
 ];
 
+const fields = [
+    new InputField("name"),
+];
+
 export default class PageListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
                     endpoint="pages"
-                    searchDataFields={columns}
+                    searchDataFields={fields}
                     tableProps= {
                         {
                             columns: columns

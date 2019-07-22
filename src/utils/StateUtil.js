@@ -27,9 +27,10 @@ export default class StateUtil {
             schema[lastOne] = value;
         }
 
-        static handleFieldChange = (owner, val) => {
+        static handleFieldChange = (owner, val, name) => {
             owner.setState({val: val})
-            const {name, component} = owner.props;
+            const {component} = owner.props;
+            name = "target."+name;
             if(name && component){
                 const st = component.state;
                 console.log(name);

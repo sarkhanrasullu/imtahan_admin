@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import StateUtil from '../../utils/StateUtil';
-import {MDBInput, View} from 'mdbreact'
+import {MDBInput} from 'mdbreact'
 
 const style = {
     errorInput: {borderColor:"red", borderWidth:1}
@@ -8,7 +8,9 @@ const style = {
 
 export default class DefaultFormInput extends Component {
     render(){
-        const { placeholder, error, readOnly, type, component, name, key } = this.props;
+        const {item, error, readOnly, component, key } = this.props;
+        
+        const {label, type, name} = item;
         let currentValue = StateUtil.get(component.state, name);
         currentValue = currentValue?currentValue+"":null;
   
@@ -17,11 +19,11 @@ export default class DefaultFormInput extends Component {
                               type={type?type:"text"}
                               rows={10}
                               disabled={readOnly}  
-                              placeholder={placeholder} 
+                              placeholder={label} 
                               value={currentValue} 
                               style={error ? style.errorInput:style.defaultInput} 
                               getValue={(val)=>{ 
-                                StateUtil.handleFieldChange(this, val);
+                                StateUtil.handleFieldChange(this, val, item.name);
                               }
                       }/>;
   
