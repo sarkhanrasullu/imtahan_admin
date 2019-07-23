@@ -31,8 +31,8 @@ class EntityService extends CommonService {
                 });
       }
 
-      loadItem = (url, projection)=>{
-        url = "/api/"+url+"?projection="+projection;
+      loadItem = (url)=>{
+        url = "/api/"+url;
         this.setLoading(true);
         fetch(url)
                 .then(response =>  response.json())

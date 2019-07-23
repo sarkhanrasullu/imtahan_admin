@@ -30,7 +30,7 @@ export default class MenuListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="menus"
-                    searchDataFields={fields}
+                    searchFields={fields}
                     tableProps= {
                         {
                             columns: columns

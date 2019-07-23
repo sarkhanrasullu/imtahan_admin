@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
-import NationalityPicker from '../nationalitypicker/NationalityPicker';
 import MyImagePicker from '../myimagepicker/MyImagePicker';
-import GenderPicker from '../genderpicker/GenderPicker';
-import MapPicker from '../mappicker/MapPicker';
 import DefaultFormInput from '../defaultforminput/DefaultFormInput';
-import MyImagesPicker from '../myimagespicker/MyImagesPicker';
 import ItemPicker from '../ItemPicker';
 import { InputFieldType } from '../datatable/DataTableTypes';
+import DNDatePicker from '../datepicker/DNDatePicker';
 
 const style = {
   errorInput: {borderColor:"red", borderWidth:1, fontSize:16, fontWeight:"bold"},
@@ -20,15 +17,16 @@ export default class FormInput extends Component {
 
     render() {
         if(!this.props.item) return null;
-        const {label, optional, type} = this.props.item;           
+        const {label, optional} = this.props.item;           
         const {unwrap, error, key} = this.props;
-        if(type==="empty") return null;
         const inputComponent = this.getInputComponent();
         
         const result = unwrap?inputComponent:
                 <div key={key} >
-                  {label?<span  style={error ? style.errorInput:style.defaultInput} >{label+(optional?"":" (*)")} </span>:null}
-                  {inputComponent}
+                  {label?<div  style={error ? style.errorInput:style.defaultInput} >{label+(optional?"":" (*)")} </div>:null}
+                  <div>
+                    {inputComponent}
+                  </div>
                 </div>
         return result;        
     }
@@ -41,20 +39,21 @@ export default class FormInput extends Component {
       let result =[];
 
       const {component} = this.props;
-      if(type===InputFieldType.TEXT || type===InputFieldType.TEXT_AREA||type===InputFieldType.PASSWORD){
-        result.push(<DefaultFormInput item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
-      }else if(type === InputFieldType.IMAGE_PICKER || type === InputFieldType.IMAGE_PICKER_BASE64){
+      if(type === InputFieldType.IMAGE_PICKER || type === InputFieldType.IMAGE_PICKER_BASE64){
         result.push(<MyImagePicker item={item} key={key} readOnly={readOnly} error={error} component={component} type={type}/>);
-      }else if(type === InputFieldType.SELECT_BOX) {
+      } else if(type === InputFieldType.SELECT_BOX) {
         result.push(
           <ItemPicker 
-                item={item}
-                error={error}
-                component={component} />
+                item      ={item}
+                error     ={error}
+                component ={component} />
         )
-      }
-      else if(type === "custom"){
+      } else if(type === InputFieldType.CUSTOM){
         result.push(customComponent);
+      } else if(type === InputFieldType.DATE || type === InputFieldType.DATE_TIME){
+        result.push(<DNDatePicker     item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
+      } else {
+        result.push(<DefaultFormInput item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
       } 
 
       return result;

@@ -3,19 +3,19 @@ import EntityListPage from '../../components/entitylistpage/EntityListPage';
 import { TableColumn, InputField, TableColumnType, SelectBox, InputFieldType } from '../../components/datatable/DataTableTypes';
 
 const columns = [
-    new TableColumn("id"                                                                        ),
-    new TableColumn("name"                  ,"Ad"                                               ),
-    new TableColumn("surname"               ,"Soyad"                                            ),
-    new TableColumn("email"                 ,"Email"                                            ),
-    new TableColumn("phone"                 ,"Nömrə"                                            ),
-    new TableColumn("facebook"                                                                  ),
-    new TableColumn("instagram"                                                                 ),
-    new TableColumn("youtube"                                                                   ),
-    new TableColumn("thumbnail"             ,"Şəkil"                    , TableColumnType.IMAGE ),
-    new TableColumn("cityId.name"           ,"Şəhər"                                            ),
-    new TableColumn("address"               ,"Adress"                                           ),
-    new TableColumn("website"               ,"Website"                                          ),
-    new TableColumn("userId.name"           ,"Müştəri"                                          ),
+    new TableColumn("id"    ),
+    new TableColumn("name","Ad"),
+    new TableColumn("surname","Soyad"),
+    new TableColumn("email","Email"),
+    new TableColumn("phone","Nömrə"),
+    new TableColumn("facebook"),
+    new TableColumn("instagram"),
+    new TableColumn("youtube"),
+    new TableColumn("thumbnail","Şəkil", TableColumnType.IMAGE),
+    new TableColumn("cityId.name","Şəhər"),
+    new TableColumn("address","Adress"),
+    new TableColumn("website","Website"),
+    new TableColumn("userId.name","Müştəri"),
 
 
     new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
@@ -24,17 +24,29 @@ const columns = [
 ];
 
 const fields = [
-    new InputField("name"               ,"Ad"                                               ),
-    new InputField("surname"            ,"Soyad"                                            ),
-    new InputField("email"                                                                  ),
-    new InputField("phone"                                                                  ),
-    new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX                                                                  ),
-    new SelectBox ("cityId.id"          ,"Şəhər"                , "/cities" , "id" , "name" ),
-    new SelectBox ("userId.id"          ,"Müştəri"              , "/users"  , "id" , "name" ),
+    {
+        items: [
+            new InputField("name","Ad"),
+            new InputField("surname","Soyad"),
+            new InputField("email"),
+            new InputField("phone"),
+        ]
+    },
+    {
+        items:[
+            new SelectBox ("cityId.id","Şəhər", "/cities", "id", "name"),
+            new SelectBox ("userId.id","Müştəri", "/users", "id", "name"),
+            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+        ]
+    },
+    {
+        items:[
+            new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+            new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX),
+        ]
+    }
 
-  new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-  new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
-  new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
 ];
 
 export default class TeacherListPage extends Component {
@@ -42,7 +54,7 @@ export default class TeacherListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="teachers"
-                    searchDataFields={fields}
+                    searchFields={fields}
                     tableProps= {
                         {
                             columns: columns

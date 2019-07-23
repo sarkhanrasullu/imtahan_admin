@@ -16,7 +16,7 @@ class EntityEditPage extends Component {
       const edit = this.props.match.params.entityId>0;
       if(edit){
         const endpoint = this.props.select_endpoint?this.props.select_endpoint:this.props.endpoint;
-        this.entityService.loadItem(endpoint+"/"+this.props.match.params.entityId, this.props.projection);
+        this.entityService.loadItem(endpoint+"/"+this.props.match.params.entityId);
       }
 
   }
@@ -42,7 +42,7 @@ class EntityEditPage extends Component {
                   target={this.state.target}
                   sections={[
                     {
-                      items: this.props.formDataFields
+                      rows: this.props.formFields
                     }
                   ]}
                   submit={{

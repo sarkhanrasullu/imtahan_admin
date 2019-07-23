@@ -40,7 +40,7 @@ class EntityListPage extends Component {
                 sections={
                   [
                     { 
-                      items: this.props.searchDataFields
+                      rows: this.props.searchFields
                     }
                   ]
                 }

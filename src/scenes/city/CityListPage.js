@@ -21,7 +21,7 @@ export default class CityListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="cities"
-                    searchDataFields={fields}
+                    searchFields={fields}
                     tableProps= {
                         {
                             columns: columns

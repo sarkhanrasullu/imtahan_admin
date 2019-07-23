@@ -3,6 +3,9 @@ import CommonUtil from "./CommonUtil";
 export default class StateUtil {
 
         static get = (state, name) => {
+            name = "target."+name;
+            console.log(state);
+            console.log(name);
             if(!state || !name) return "";
             if(name.length===0) return state;
             const p = name;
@@ -12,7 +15,6 @@ export default class StateUtil {
         } 
 
         static set = (path,schema, value) => {
-            
             if(!path || !schema || value===null) return;
             var pList = path.split('.');
             var len = pList.length;

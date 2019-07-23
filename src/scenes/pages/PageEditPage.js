@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
-import { InputField } from '../../components/datatable/DataTableTypes';
+import { InputField, InputFieldType } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
-const formDataFields = [
-    new InputField("name"       , "Ad"      ),
-    new InputField("enabled"   , "Aktiv" ),
+const formFields = [
+    {
+        items:[
+            new InputField("name", "Ad"),
+        ]
+    },
+    {
+        items:[
+            new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX),
+        ]
+    }
 ];
 
 export default class PageEditPage extends Component {
@@ -12,10 +20,9 @@ export default class PageEditPage extends Component {
         return (
                 <EntityEditPage
                     save_endpoint   ="/pages"
-                    select_endpoint ="/pages"
-                    projection      ="pageProjection"
+                    select_endpoint ="/pages?projection=pageProjection"
                     callback_url    ="/pages"
-                    formDataFields  ={formDataFields}
+                    formFields  ={formFields}
                 />
         )
     }

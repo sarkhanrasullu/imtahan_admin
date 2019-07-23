@@ -36,7 +36,7 @@ export default class AdListPage extends Component {
     return (
       <EntityListPage
         endpoint="ads"
-        searchDataFields={fields}
+        searchFields={fields}
         tableProps={{
           columns: columns
         }}

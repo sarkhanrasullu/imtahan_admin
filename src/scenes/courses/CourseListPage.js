@@ -38,7 +38,7 @@ export default class CourseListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="teachers"
-                    searchDataFields={fields}
+                    searchFields={fields}
                     tableProps= {
                         {
                             columns: columns

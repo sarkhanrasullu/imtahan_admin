@@ -7,7 +7,7 @@ import LoginService from "../../services/LoginService";
 import LoadingSpinner from "../../components/spinner/LoadingSpinner";
 import { InputField } from "../../components/datatable/DataTableTypes";
 
-const formDataFields = [
+const formFields = [
   new InputField("user.email","email"),
   new InputField("user.password", "password", "password"),
 ];
@@ -37,7 +37,7 @@ class Login extends Component {
                       sections={
                           [
                             {
-                              items:formDataFields
+                              items:formFields
                             }          
                           ]
                       }

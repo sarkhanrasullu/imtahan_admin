@@ -1,0 +1,9 @@
+.position_unset {
+    position: unset;
+
+}
+
+.checkbox {
+    position: unset;
+    width: 10%;
+}

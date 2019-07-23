@@ -24,7 +24,7 @@ export default class LessonListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="lessons"
-                    searchDataFields={fields}
+                    searchFields={fields}
                     tableProps= {
                         {
                             columns: columns

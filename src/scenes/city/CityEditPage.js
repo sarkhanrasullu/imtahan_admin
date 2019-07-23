@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { TableColumn } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
-const formDataFields = [
+const formFields = [
     new TableColumn("id"         ),
     new TableColumn("name" ,"Adı"),
 ];
@@ -15,7 +15,7 @@ export default class CityEditPage extends Component {
                     select_endpoint="/cities"
                     projection="cityProjection"
                     callback_url="/cities"
-                    formDataFields={formDataFields}
+                    formFields={formFields}
                 />
         )
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { InputField, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
-const formDataFields = [
+const formFields = [
     new InputField("name"               ,"Adə"                                                      ),
     new InputField("url"                                                                            ),
     new SelectBox ("layoutTypeId.id"    ,"Səhifədə yeri"  , "/menuLayoutTypes",   "id"    ,"name"   ),
@@ -19,7 +19,7 @@ export default class MenuEditPage extends Component {
                 select_endpoint="/menus"
                     projection="menuProjection"
                     callback_url="/menus"
-                    formDataFields={formDataFields}
+                    formFields={formFields}
                 />
         )
     }

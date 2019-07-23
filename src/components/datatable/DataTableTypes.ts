@@ -1,15 +1,16 @@
 export enum InputFieldType {
-     TEXT,
-     PASSWORD,
-     DATE,
-     DATE_TIME,
-     CHECK_BOX,
-     TEXT_AREA,
-     SELECT_BOX,
-     IMAGE,
-     IMAGE_PICKER,
-     IMAGE_PICKER_BASE64,
-     IMAGE_PICKER_MULTIPLE
+     TEXT="text",
+     TEXT_AREA="textarea",
+     PASSWORD="password",
+     DATE ="date",
+     DATE_TIME = "DATE_TIME",
+     CHECK_BOX = "checkbox",
+     SELECT_BOX ="SELECT_BOX",
+     IMAGE_PICKER = "IMAGE_PICKER",
+     IMAGE_PICKER_URL = "IMAGE_PICKER_URL",
+     IMAGE_PICKER_BASE64 = "IMAGE_PICKER_BASE64",
+     IMAGE_PICKER_MULTIPLE = "IMAGE_PICKER_MULTIPLE",
+     CUSTOM = "CUSTOM",
 }
 
 class AbstractInputField {

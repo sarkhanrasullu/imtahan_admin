@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
-const formDataFields = [
+const formFields = [
         new InputField("name"           ,"Ad"                                       ),
         new InputField("email"          ,"Email"                                    ),
         new InputField("phone"          ,"Nömrə"                                    ),
@@ -27,7 +27,7 @@ export default class CourseEditPage extends Component {
                     select_endpoint="/courses"
                     projection="courseProjection"
                     callback_url="/courses"
-                    formDataFields={formDataFields}
+                    formFields={formFields}
                 />
         )
     }

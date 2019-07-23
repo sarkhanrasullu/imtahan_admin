@@ -2,22 +2,60 @@ import React, { Component } from 'react'
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
-const formDataFields = [
-        new InputField("name"       ,"Ad"                                                   ),
-        new InputField("surname"    ,"Soyad"                                                ),
-        new InputField("email"      ,"Email"                                                ),
-        new InputField("phone"      ,"Nömrə"                                                ),
-        new InputField("facebook"                                                           ),
-        new InputField("instagram"                                                          ),
-        new InputField("youtube"                                                            ),
-        new InputField("thumbnail"   ,"Şəkil"        , InputFieldType.IMAGE                 ),
-        new SelectBox("cityId.name"  ,"Şəhər"        ,"/cities"             ,"id","name"    ),
-        new InputField("address"     ,"Adress"                                              ),
-        new InputField("website"     ,"Website"                                             ),
-        new InputField("userId.name" ,"Qeydiyyat edən şəxs"                                 ),
-        new InputField("enabled" ,"Aktiv"                                 ),
-        new InputField("description" ,"Ətraflı"                                             ),
-        new SelectBox("userId.id"    ,"Istifadəçi"   ,"/users"              ,"id"   ,"name" ),
+const formFields = [
+    {
+        items:[
+            new InputField("name","Ad"),
+            new InputField("surname","Soyad"),
+        ]
+    },
+    {
+        items:[
+            new InputField("email","Email"),
+            new InputField("phone","Nömrə"),
+        ]
+    },
+    {
+        items:[
+            new InputField("address","Adress"),
+        ]
+    },
+    {
+        items:[
+            new InputField("facebook"),
+            new InputField("instagram"),
+        ]
+    },
+    {
+        items:[
+            new InputField("youtube"),
+            new InputField("website","Website"),
+        ]
+    },
+    {
+        items:[
+            new InputField("thumbnail","Şəkil", InputFieldType.IMAGE_PICKER),
+            null
+        ]
+    },
+    {
+        items:[
+            new SelectBox("cityId.id","Şəhər","/cities","id","name"),
+            new SelectBox("userId.id","Istifadəçi","/users","id","name"),
+        ]
+    },
+    {
+        items:[
+            new InputField("enabled","Aktiv", InputFieldType.CHECK_BOX),
+            null
+        ]
+    },
+    {
+        items:[
+            new InputField("description","Ətraflı", InputFieldType.TEXT_AREA),
+        ]
+    },
+    
 
     ];
 
@@ -26,10 +64,9 @@ export default class TeacherEditPage extends Component {
         return (
                 <EntityEditPage
                     save_endpoint="/teachers"
-                    select_endpoint="/teachers"
-                    projection="teacherProjection"
+                    select_endpoint="/teachers?projection=teacherProjection"
                     callback_url="/teachers"
-                    formDataFields={formDataFields}
+                    formFields={formFields}
                 />
         )
     }

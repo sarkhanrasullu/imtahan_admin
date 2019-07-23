@@ -38,7 +38,7 @@ export default class AnnouncementListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="announcements"
-                    searchDataFields={fields}
+                    searchFields={fields}
                     tableProps= {
                         {
                             columns: columns

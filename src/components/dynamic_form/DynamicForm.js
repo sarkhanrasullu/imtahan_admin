@@ -60,11 +60,19 @@ class DynamicForm extends Component {
   renderSections = ()=>{
     const {sections} = this.props;
     const sectionsComponent =  sections.map((section, index)=>{
-        const items = section.items?section.items:[];
-        const itemsComponent = items.map((item, index)=>{
-                return <MDBCol md={item.type==="textarea"||item.type==="imagespicker"?12:6} key={index}>{this.renderItem(item, index)}</MDBCol>; 
-        });
-        return <MDBRow key={index}>{itemsComponent}</MDBRow>;
+        const rows = section.rows?section.rows:[];
+        const itemsComponent = rows.map((row, index)=>{
+                  const items = row.items;
+                    const rowComponent = items.map((item, index)=>{
+                      return (
+                            <MDBCol key={index}>
+                                {this.renderItem(item, index)}
+                            </MDBCol>
+                      ); 
+                    });
+                    return <MDBRow key={index}>{rowComponent}</MDBRow>;
+                });
+        return itemsComponent;
       });
 
       return sectionsComponent;
@@ -80,7 +88,6 @@ class DynamicForm extends Component {
                     <div className="text-center">
                         <MDBBtn color="light-blue" onClick={()=>
                           {
-                            console.log(this.state);
                             if(this.state.validate()) {
                               this.props.submit.action(this.state.target)
                             }
