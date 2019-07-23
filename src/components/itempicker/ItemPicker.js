@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import StateUtil from './../utils/StateUtil';
-import EntityService from "../services/EntityService";
-
+import StateUtil from '../../utils/StateUtil';
+import EntityService from "../../services/EntityService";
+import './ItemPicker.css'
 export default class ItemPicker extends Component {
     state = {
       val: null,
@@ -33,9 +33,8 @@ export default class ItemPicker extends Component {
         }
 
         return (
-            <div style={styles.sectionInput}>
               <select
-                style={styles.picker} 
+                className="picker md-form"
                 placeholder={label}
                 onChange={event => {
                   const val = event.target.value;
@@ -52,31 +51,7 @@ export default class ItemPicker extends Component {
               >
                 {pickerItems}
               </select>
-            </div>
         )
     }
 }
-
-const styles = {
-    picker:{
-      height:"100%", width:"100%",marginLeft:0, paddingLeft: 0
-    },
-    pickerText:{
-      paddingLeft:5
-    },
-    pickerPlaceHolder:{
-      color:"#666666", paddingLeft: 5 
-    },
-    pickerPlaceHolderError:{
-      color:"red", paddingLeft: 5 
-    },
-    sectionInput: {
-      width: "100%",
-      borderWidth: 0.3,
-      borderRadius: 2,
-      height: 40,
-      marginTop: 10,
-    },
-    errorInput: {borderColor:"red", borderWidth:1}
-  };
-  
+ 

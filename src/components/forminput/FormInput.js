@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import MyImagePicker from '../myimagepicker/MyImagePicker';
 import DefaultFormInput from '../defaultforminput/DefaultFormInput';
-import ItemPicker from '../ItemPicker';
+import ItemPicker from '../itempicker/ItemPicker';
 import { InputFieldType } from '../datatable/DataTableTypes';
 import DNDatePicker from '../datepicker/DNDatePicker';
+import './FormInput.css';
+import CheckBox from '../checkbox/CheckBox';
 
 const style = {
   errorInput: {borderColor:"red", borderWidth:1, fontSize:16, fontWeight:"bold"},
@@ -22,12 +24,10 @@ export default class FormInput extends Component {
         const inputComponent = this.getInputComponent();
         
         const result = unwrap?inputComponent:
-                <div key={key} >
-                  {label?<div  style={error ? style.errorInput:style.defaultInput} >{label+(optional?"":" (*)")} </div>:null}
-                  <div>
-                    {inputComponent}
-                  </div>
-                </div>
+                <React.Fragment key={key} >
+                  {label?<label  style={error ? style.errorInput:style.defaultInput} >{label+(optional?"":" (*)")} </label>:null}
+                  {inputComponent}
+                </React.Fragment>
         return result;        
     }
 
@@ -50,6 +50,8 @@ export default class FormInput extends Component {
         )
       } else if(type === InputFieldType.CUSTOM){
         result.push(customComponent);
+      } else if(type === InputFieldType.CHECK_BOX){
+        result.push(<CheckBox item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
       } else if(type === InputFieldType.DATE || type === InputFieldType.DATE_TIME){
         result.push(<DNDatePicker     item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
       } else {

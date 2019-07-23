@@ -16,7 +16,7 @@ export default class DefaultFormInput extends Component {
         currentValue = currentValue?currentValue+"":null;
   
         let result = <MDBInput  
-                              className={type}
+                              className={type+" default_input"}
                               key={key}
                               type={type}
                               rows={10}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import StateUtil from '../../utils/StateUtil';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import './DNDatePicker.css';
 
 const style = { 
     errorInput: {borderColor:"red", borderWidth:1}
@@ -15,7 +16,7 @@ export default class DNDatePicker extends Component {
         let currentValue = StateUtil.get(component.state, name);
         currentValue = currentValue?currentValue:null;
         let result = 
-            <div style={{marginTop:7}}>
+            <div className="md-form default_datepicker">
                     <DatePicker
                             selected={currentValue}
                             onChange={(val)=>{ 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ItemPicker from "./../ItemPicker";
+import ItemPicker from "../itempicker/ItemPicker";
 import {connect} from 'react-redux';
 
 class ModelPicker extends Component {

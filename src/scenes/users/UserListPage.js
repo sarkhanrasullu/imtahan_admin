@@ -40,10 +40,10 @@ const fields = [
   },
   {
     items: [
-      new SelectBox("cityId.id", "Şəhər", "/cities", "id", "name"),
-      new SelectBox( "insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
       new InputField("insertDate","Daxil edilmə tarixi",InputFieldType.DATE_TIME),
       new InputField("lastChangeDate","Son dəyişmə tarixi",InputFieldType.DATE_TIME),
+      new SelectBox("cityId.id", "Şəhər", "/cities", "id", "name"),
+      new SelectBox( "insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
       new InputField("approved", "Təsdiqlənib", InputFieldType.CHECK_BOX),
       new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX)
     ]
