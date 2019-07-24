@@ -3,42 +3,48 @@ import EntityListPage from '../../components/entitylistpage/EntityListPage';
 import { TableColumn, InputField, TableColumnType, SelectBox, InputFieldType } from '../../components/datatable/DataTableTypes';
 
 const columns = [
-    new TableColumn("id"                                                                ),
-    new TableColumn("name"          ,"Ad"                                               ),
-    new TableColumn("email"         ,"Email"                                            ),
-    new TableColumn("phone"         ,"Nömrə"                                            ),
-    new TableColumn("facebook"                                                          ),
-    new TableColumn("instagram"                                                         ),
-    new TableColumn("youtube"                                                           ),
-    new TableColumn("thumbnail"     ,"Şəkil"                , TableColumnType.IMAGE     ),
-    new TableColumn("cityId.name"   ,"Şəhər"                                            ),
-    new TableColumn("address"       ,"Adress"                                           ),
-    new TableColumn("website"       ,"Website"                                          ),
-    new TableColumn("userId.name"   ,"Qeydiyyat edən şəxs"                              ),
-
-  new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-  new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
-  new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
+    new TableColumn("id"),
+    new TableColumn("name","Ad"),
+    new TableColumn("email","Email"),
+    new TableColumn("phone","Nömrə"),
+    new TableColumn("facebook"),
+    new TableColumn("instagram"),
+    new TableColumn("youtube"),
+    new TableColumn("thumbnail","Şəkil", TableColumnType.IMAGE),
+    new TableColumn("cityId.name","Şəhər"),
+    new TableColumn("address","Adress"),
+    new TableColumn("website","Website"),
+    new TableColumn("userId.name","Qeydiyyat edən şəxs"),
+    new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+    new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
+    new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
-const fields = [
-    new InputField("name"        ,"Ad"                                                  ),
-    new InputField("email"                                                              ),
-    new InputField("phone"                                                              ),
-    new SelectBox ("cityId.id"   ,"Şəhər"                ,"/cities"  ,"id"   ,"name"    ),
-    new SelectBox ("userId.name" ,"Müştəri"  ,"/users"   ,"id"   ,"name"    ),
-
-    new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-    new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
-    new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+const rows = [
+    {
+        items:[
+            new InputField("name","Ad"),
+            new InputField("email"),
+            new InputField("phone"),
+        ]
+    },
+    {
+        items:[
+            new SelectBox ("cityId.id","Şəhər","/cities","id","name"),
+            new SelectBox ("userId.id","Müştəri","/users","id","name"),
+            new SelectBox ("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+            new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+        ]
+    }
 ];
 
 export default class CourseListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                    endpoint="teachers"
-                    searchFields={fields}
+                    endpoint="courses"
+                    searchFields={rows}
                     tableProps= {
                         {
                             columns: columns

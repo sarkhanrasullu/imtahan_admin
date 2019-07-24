@@ -3,7 +3,11 @@ import { InputField } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
 const formFields = [
-    new InputField("name", "Adı"),
+    {
+        items:[
+            new InputField("name", "Adı"),
+        ]
+    }
 ];
 
 export default class LessonEditPage extends Component {

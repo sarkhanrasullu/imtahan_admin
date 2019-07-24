@@ -21,16 +21,23 @@ const columns = [
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
-const fields = [
-    new InputField("name"           , "Elanın başlığı"                          ),
-    new InputField("classNo"        , "Sinif"                                   ),
-    new InputField("price"          , "Qiymət"                                  ),
-    new SelectBox ("lessonId.id"    , "Dərs"        , "/lessons", "id", "name"  ),
-    new SelectBox ("sectorId.id"    , "Sektor"      , "/sectors", "id", "name"  ),
-
-    new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-    new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
-    new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+const rows = [
+    {
+        items:[
+            new InputField("name"           , "Elanın başlığı"                          ),
+            new InputField("classNo"        , "Sinif"                                   ),
+            new InputField("price"          , "Qiymət"                                  ),
+        ]
+    },
+    {
+        items:[
+            new SelectBox ("lessonId.id"    , "Dərs"        , "/lessons", "id", "name"  ),
+            new SelectBox ("sectorId.id"    , "Sektor"      , "/sectors", "id", "name"  ),
+            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+            new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+        ]
+    }
 ];
 
 export default class AnnouncementListPage extends Component {
@@ -38,7 +45,7 @@ export default class AnnouncementListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="announcements"
-                    searchFields={fields}
+                    searchFields={rows}
                     tableProps= {
                         {
                             columns: columns

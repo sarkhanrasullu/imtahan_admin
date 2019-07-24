@@ -11,12 +11,15 @@ const columns = [
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
-const fields = [
-    new InputField("name", "Adı"),
-
-    new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-    new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
-    new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+const rows = [
+    {
+        items:[
+            new InputField("name", "Adı"),
+            new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+        ]
+    }
 ];
 
 export default class LessonListPage extends Component {
@@ -24,7 +27,7 @@ export default class LessonListPage extends Component {
         return ( 
                 <EntityListPage
                     endpoint="lessons"
-                    searchFields={fields}
+                    searchFields={rows}
                     tableProps= {
                         {
                             columns: columns

@@ -2,22 +2,60 @@ import React, { Component } from 'react'
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
-const formFields = [
-        new InputField("name"           ,"Ad"                                       ),
-        new InputField("email"          ,"Email"                                    ),
-        new InputField("phone"          ,"Nömrə"                                    ),
-        new InputField("facebook"                                                   ),
-        new InputField("instagram"                                                  ),
-        new InputField("youtube"                                                    ),
-        new InputField("thumbnail"      ,"Şəkil"        , InputFieldType.IMAGE      ),
-        new SelectBox ("cityId.name"    ,"Şəhər"        ,"/cities","id","name"      ),
-        new InputField("address"        ,"Adress"                                   ),
-        new InputField("website"        ,"Website"                                  ),
-        new InputField("userId.name"    ,"Qeydiyyat edən şəxs"                      ),
-        new InputField("enabled"    ,"Aktiv", InputFieldType.CHECK_BOX                      ),
-        new InputField("description"    ,"Ətraflı"                                  ),
-        new SelectBox ("userId.id"      ,"Istifadəçi"   ,"/users","id","name"),
-    ];
+const rows = [
+    
+    {
+        items:[
+            new InputField("name","Ad"),
+        ]
+    },
+    {
+        items:[
+            new InputField("email","Email"),
+            new InputField("phone","Nömrə"),
+        ]
+    },
+    {
+        items:[
+            new InputField("facebook"),
+            new InputField("instagram"),
+        ]
+    },
+    {
+        items:[
+            new InputField("youtube"),
+            new InputField("website","Website"),
+        ]
+    },
+    
+    {
+        items:[
+            new SelectBox ("userId.id","Müştəri","/users","id","name"),
+            new SelectBox ("cityId.id","Şəhər","/cities","id","name"),
+        ]
+    },
+    {
+        items:[
+            new InputField("address","Adress"),
+        ]
+    },
+    {
+        items:[
+            new InputField("thumbnail","Şəkil", InputFieldType.IMAGE_PICKER),
+            null
+        ]
+    },
+    {
+        items:[
+            new InputField("description","Ətraflı", InputFieldType.TEXT_AREA),
+        ]
+    },
+    {
+        items:[
+            new InputField("enabled","Aktiv", InputFieldType.CHECK_BOX),
+        ]
+    },
+];
 
 export default class CourseEditPage extends Component {
     render() {
@@ -27,7 +65,7 @@ export default class CourseEditPage extends Component {
                     select_endpoint="/courses"
                     projection="courseProjection"
                     callback_url="/courses"
-                    formFields={formFields}
+                    formFields={rows}
                 />
         )
     }

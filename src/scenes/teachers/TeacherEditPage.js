@@ -46,13 +46,13 @@ const formFields = [
     },
     {
         items:[
-            new InputField("enabled","Aktiv", InputFieldType.CHECK_BOX),
-            null
+            new InputField("description","Ətraflı", InputFieldType.TEXT_AREA),
         ]
     },
     {
         items:[
-            new InputField("description","Ətraflı", InputFieldType.TEXT_AREA),
+            new InputField("enabled","Aktiv", InputFieldType.CHECK_BOX),
+            null
         ]
     },
     
