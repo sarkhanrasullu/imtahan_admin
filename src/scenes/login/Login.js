@@ -8,8 +8,16 @@ import LoadingSpinner from "../../components/spinner/LoadingSpinner";
 import { InputField } from "../../components/datatable/DataTableTypes";
 
 const formFields = [
-  new InputField("user.email","email"),
-  new InputField("user.password", "password", "password"),
+  {
+    rows:[
+        {
+          items:[
+            new InputField("user.email","email"),
+            new InputField("user.password", "password", "password"),
+          ]
+        }
+    ]
+  }
 ];
 
 class Login extends Component {
@@ -18,8 +26,6 @@ class Login extends Component {
     loading: false
   }
 
-  
-  
   service = new LoginService(this);
  
   render() {
@@ -34,13 +40,7 @@ class Login extends Component {
             <MDBCol md="6">
             <DynamicForm 
                       component={this}
-                      sections={
-                          [
-                            {
-                              items:formFields
-                            }          
-                          ]
-                      }
+                      sections={formFields}
                       submit={
                           {
                               label: "Login",
