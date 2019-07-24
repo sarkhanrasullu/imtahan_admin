@@ -83,8 +83,8 @@ class CommonService{
     }
 
     getLoggedInUser = ()=>{
-       return this.get(Constants.const_logged_in_user);
-      // return true;
+      //  return this.get(Constants.const_logged_in_user);
+      return true;
     }
 
     setLoggedInUser = (user)=>{
