@@ -21,7 +21,7 @@ class ModelPicker extends Component {
 }
 
 const state = state =>{
-    console.log(state);
+    //console.log(state);
     return {
         models: state.entities.models
     }

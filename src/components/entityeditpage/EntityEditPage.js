@@ -10,21 +10,25 @@ class EntityEditPage extends Component {
   state = {
     loading: false
   }
-  entityService = new EntityService(this);
+
+  entityService = new EntityService(this, this.props.endpoint_select, this.props.endpoint_add_or_save);
 
   componentDidMount() {
       const edit = this.props.match.params.entityId>0;
       if(edit){
-        const endpoint = this.props.select_endpoint?this.props.select_endpoint:this.props.endpoint;
-        this.entityService.loadItem(endpoint+"/"+this.props.match.params.entityId);
+        this.entityService.loadItem(this.props.match.params.entityId);
       }
+  }
 
+  getRedirectUrl = ()=>{
+    var arr = window.location.href.split('/');
+    var lastOne = "/"+arr[arr.length-1];
+    var redirect_url = window.location.href.replace(lastOne,"");
+    return redirect_url;
   }
 
   handleSubmitBtn=(target) =>{
-    console.log('save');
-    console.log(target);
-    this.entityService.saveItem(this.props.endpoint, target, this.props.callback_url);
+    this.entityService.saveItem(target, this.getRedirectUrl());
   }
 
   render() {

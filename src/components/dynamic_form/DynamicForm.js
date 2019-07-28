@@ -22,8 +22,8 @@ class DynamicForm extends Component {
     
     const {sections} = this.props;
     sections.forEach((section)=>{
-       const {items} = section;
-       items.forEach((item)=>{
+       const {rows} = section;
+       rows.forEach((item)=>{
          if(!item.name || item.type==="empty") return;
          validation[item.name] = false;
          if(!item.optional){

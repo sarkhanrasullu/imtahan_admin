@@ -63,8 +63,8 @@ export default class TeacherEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    save_endpoint="/teachers"
-                    select_endpoint="/teachers?projection=teacherProjection"
+                    endpoint_select="/api/teachers?projection=teacherProjection"
+                    endpoint_add_or_save="/api/teachers"
                     callback_url="/teachers"
                     formFields={formFields}
                 />

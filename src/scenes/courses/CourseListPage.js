@@ -43,7 +43,8 @@ export default class CourseListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                    endpoint="courses"
+                endpoint_select="/api/courses?projection=courseProjection"
+                endpoint_delete="/api/courses"
                     searchFields={rows}
                     tableProps= {
                         {

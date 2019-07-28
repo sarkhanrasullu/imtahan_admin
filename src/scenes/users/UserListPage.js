@@ -54,7 +54,8 @@ export default class UserListPage extends Component {
   render() {
     return (
       <EntityListPage
-        endpoint="users"
+        endpoint_select="/api/users"
+        endpoint_delete="/api/users"
         searchFields={fields}
         tableProps={{
           columns: columns

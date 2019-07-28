@@ -55,9 +55,8 @@ export default class AnnouncementEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    save_endpoint="/announcements"
-                    select_endpoint="/announcements?projection=announcementProjection"
-                    callback_url="/announcements"
+                    endpoint_add_or_save="/api/announcements"
+                    endpoint_select="/api/announcements?projection=announcementProjection"
                     formFields={rows}
                 />
         )

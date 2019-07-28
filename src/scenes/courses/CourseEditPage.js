@@ -61,10 +61,8 @@ export default class CourseEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    save_endpoint="/courses"
-                    select_endpoint="/courses"
-                    projection="courseProjection"
-                    callback_url="/courses"
+                    endpoint_select="/api/courses?projection=courseProjection"
+                    endpoint_add_or_save="/api/courses"
                     formFields={rows}
                 />
         )

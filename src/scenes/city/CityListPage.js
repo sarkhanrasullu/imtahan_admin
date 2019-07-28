@@ -20,7 +20,8 @@ export default class CityListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                    endpoint="cities"
+                endpoint_select="/api/cities?projection=idNameProjection"
+                endpoint_delete="/api/cities"
                     searchFields={fields}
                     tableProps= {
                         {

@@ -43,11 +43,12 @@ export default class AdListPage extends Component {
   render() {
     return (
       <EntityListPage
-        endpoint="ads"
-        searchFields={rows}
-        tableProps={{
-          columns: columns
-        }}
+      endpoint_select="/api/ads"
+      endpoint_delete="/api/ads"
+      searchFields={rows}
+          tableProps={{
+            columns: columns
+          }}
       />
     );
   }

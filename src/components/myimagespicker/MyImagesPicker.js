@@ -11,7 +11,7 @@ export default class MyImagesPicker extends Component {
         const {name} = item;
         let list = StateUtil.get(component.state, name);
         let imagePickerList = null;
-        console.log(list);
+        //console.log(list);
         if(list!==null) {
             imagePickerList = list.map((image, index)=>{
                 const nm = name+"."+index+".mediafile";
@@ -41,11 +41,11 @@ export default class MyImagesPicker extends Component {
         const {component, name} = this.props;
         let list = StateUtil.get(component.state, name);
         list = list.filter((item, index)=>index!==i);
-        console.log(component.state);
-        console.log(i);
+        //console.log(component.state);
+        //console.log(i);
         StateUtil.handleFieldChange(this, list);
-        console.log(list);
-        console.log(component.state);
+        //console.log(list);
+        //console.log(component.state);
 
         this.setState({});
     }
@@ -57,9 +57,9 @@ export default class MyImagesPicker extends Component {
             list=[];
         }
         const newItem = {mediafile:""};
-        console.log(component.state);
+        //console.log(component.state);
         newItem[parent] = {id: StateUtil.get(component.state, "target.id")};
-        console.log(newItem);
+        //console.log(newItem);
         list.push(newItem);
         StateUtil.handleFieldChange(this, list);
         this.setState({});

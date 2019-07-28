@@ -28,7 +28,9 @@ export default class PageListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                        endpoint="pages"
+                endpoint_select="/api/pages?projection=idNameProjection"
+                endpoint_delete="/api/pages"
+                endpoint_add_or_save="/api/pages"
                         searchFields={rows}
                         tableProps= {
                             {

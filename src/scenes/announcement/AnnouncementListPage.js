@@ -44,7 +44,9 @@ export default class AnnouncementListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                    endpoint="announcements"
+                endpoint_select="/api/announcements"
+                endpoint_delete="/api/announcements"
+                
                     searchFields={rows}
                     tableProps= {
                         {

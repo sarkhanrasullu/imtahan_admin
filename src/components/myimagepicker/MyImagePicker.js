@@ -11,7 +11,7 @@ export default class MyImagePicker extends Component {
         const {type, name} = item;
         const value = StateUtil.get(component.state, name);
         let result = value;
-        console.log(result);
+        //console.log(result);
         if(value===null || !value || value.trim().length===0) {
             result = "/upload.svg";
         } else if(type === InputFieldType.IMAGE_PICKER_BASE64){

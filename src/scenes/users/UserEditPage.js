@@ -51,10 +51,10 @@ class UserEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    save_endpoint   ="admin/users"
-                    select_endpoint ="/users?projection=userProjection"
-                    callback_url    ="/users"
-                    formFields  ={formFields}
+                    endpoint_select="/api/users?projection=userProjection"
+                    endpoint_add_or_save="/api/admin/users"
+                    endpoint_delete="/api/users"
+                    formFields={formFields}
                 />
         )
     }

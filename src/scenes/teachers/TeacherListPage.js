@@ -34,9 +34,9 @@ const fields = [
     },
     {
         items:[
-            new SelectBox ("cityId.id","Şəhər", "/cities", "id", "name"),
-            new SelectBox ("userId.id","Müştəri", "/users", "id", "name"),
-            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+            new SelectBox ("cityId.id","Şəhər", "/api/cities", "id", "name"),
+            new SelectBox ("userId.id","Müştəri", "/api/users", "id", "name"),
+            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
         ]
     },
     {
@@ -53,7 +53,9 @@ export default class TeacherListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                    endpoint="teachers"
+                endpoint_select="/api/teachers?projection=teacherProjection"
+                endpoint_delete="/api/teachers"
+                endpoint_add_or_save="/api/teachers"
                     searchFields={fields}
                     tableProps= {
                         {

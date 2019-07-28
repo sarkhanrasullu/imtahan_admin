@@ -2,12 +2,19 @@ import React, { Component } from 'react'
 import { MDBTable,MDBIcon, MDBTableHead, MDBTableBody, MDBNavLink, MDBBtn} from 'mdbreact';
 import PaginationWrapper from '../UI/PaginationWrapper';
 import StateUtil from '../../utils/StateUtil';
+import ModalYesNo from '../modalyesno/ModalYesNo';
 
 export default class DataTableComponent extends Component {
  
+    state = {
+        selectedRowData:null,
+        modalState:{
+            show:false
+        }
+    }
+
     render() {
-        const {data, columns} = this.props; 
-        return this.renderTable()
+        return this.renderTable();
     }
 
     renderHeader(){
@@ -16,7 +23,6 @@ export default class DataTableComponent extends Component {
             if(column.type!=="empty"){
                 return <th key={"h"+index}>{column.label}</th>
             }
-
             return null;
         });
         result.push(
@@ -25,48 +31,47 @@ export default class DataTableComponent extends Component {
         result.push(
             <th style={{width:60}} key={"remove"}></th>
         )
-         
-       return (<tr>{result}</tr>);
+        return (<tr>{result}</tr>);
     }
 
-    appendEdit(row, rowData){
+    appendEdit(row){
         row.push(
             <td key={"edit"}>
-                <MDBNavLink to={this.props.endpoint+"/"+rowData.id}>
-                    <MDBIcon size="lg" far icon="edit" />
+                <MDBNavLink to={""}>
+                    <MDBIcon size="lg" far icon="edit" onClick={()=>{this.props.handleEdit(row.id)}}/>
                 </MDBNavLink>
             </td>
         )
     }
 
-    appendRemove(row, rowData){
+    appendRemove(row, data){
         row.push(
             <td key={"remove"}>
-                <MDBNavLink to={this.props.endpoint+"/"+rowData.id}>
-                    <MDBIcon size="lg" far icon="trash-alt" />
+                <MDBNavLink to={"#"}>
+                    <MDBIcon onClick={()=>{this.toggle(data)}} size="lg" far icon="trash-alt" />
                 </MDBNavLink>
             </td>
         )
+    } 
+
+    toggle = (data)=>{
+        const {modalState} = this.state;
+        this.state.selectedRowData = data;
+        modalState.show = !modalState.show;
+        this.setState({});
     }
-
-
-    handleAdd = ()=>{
-        window.location.href= this.props.endpoint+"/create";
-    }
-
-    renderAddButton = ()=>{
-        return (
-            <MDBBtn onClick={()=>{this.handleAdd()}}>Add</MDBBtn>
-        )
-    }
-
+ 
     renderBody(){
         const {data, columns} = this.props; 
+        console.log(data);
         if(!data || data.length===0||!columns || columns.length===0) return null;
 
         const result= data.map((row, index)=>{
             const resRow = columns.map((column, index)=>{
+                // console.log(row);
+                // console.log(column);
                 let data = StateUtil.renderData(row, column); 
+                //console.log(data);
                 if(data===null) return null;
                 return <td style={{height:10}} key={"btd"+index}>{data}</td>
             });
@@ -75,24 +80,25 @@ export default class DataTableComponent extends Component {
             return (<tr key={"btr"+index}>{resRow}</tr>)
         });
         
-
        return result;
     }
 
     renderTable(){
+       const {handleRemove} = this.props;
        const result = (
            <React.Fragment>
                <PaginationWrapper/>
-                {this.renderAddButton()}
+                <MDBBtn onClick={()=>{this.props.handleAdd()}}>Add</MDBBtn>
                 <MDBTable bordered className={"table-sm"}>
-                        <MDBTableHead>
-                            {this.renderHeader()}
-                        </MDBTableHead>
-                        <MDBTableBody>
+                    <MDBTableHead>
+                        {this.renderHeader()}
+                    </MDBTableHead>
+                    <MDBTableBody>
                         {this.renderBody()}
-                        </MDBTableBody>
+                    </MDBTableBody>
                 </MDBTable>
                 <PaginationWrapper/>
+                <ModalYesNo state={this.state.modalState} onClickYes={()=>handleRemove(this.state.selectedRowData)}/>
             </React.Fragment>
        )
 

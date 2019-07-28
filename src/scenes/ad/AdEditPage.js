@@ -49,9 +49,8 @@ export default class AdEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    save_endpoint="/ads"
-                    select_endpoint="/ads?projection=adProjection"
-                    callback_url="/ads"
+                    endpoint_select="/api/ads?projection=adProjection"
+                    endpoint_add_or_save="/api/ads"
                     formFields={rows}
                 />
         )

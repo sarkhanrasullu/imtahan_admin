@@ -34,7 +34,9 @@ export default class MenuListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                    endpoint="menus"
+                endpoint_select="/api/menus?projection=idNameProjection"
+                endpoint_delete="/api/menus"
+                endpoint_add_or_save="/api/menus"
                     searchFields={rows}
                     tableProps= {
                         {

@@ -31,10 +31,8 @@ export default class MenuEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                save_endpoint="/menus"
-                select_endpoint="/menus"
-                    projection="menuProjection"
-                    callback_url="/menus"
+                    endpoint_select="/api/menus?projection=idNameProjection"
+                    endpoint_add_or_save="/api/menus"
                     formFields={formFields}
                 />
         )

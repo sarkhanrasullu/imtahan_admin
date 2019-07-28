@@ -12,7 +12,7 @@ export default class ItemPicker extends Component {
 
     componentDidMount(){
       const {item} = this.props;
-      console.log(item);
+      //console.log(item);
       if(item.endPoint!=null){
         this.service.loadItems(item.endPoint);
       }
@@ -44,7 +44,7 @@ export default class ItemPicker extends Component {
                     }
                     // this.setState({val: val});
                     StateUtil.handleFieldChange(this, val);
-                    console.log(component.state);
+                    //console.log(component.state);
                   } 
                 }
                 value={this.state.val}

@@ -14,10 +14,8 @@ export default class LessonEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    save_endpoint="/lessons"
-                    select_endpoint="/lessons"
-                    projection="lessonProjection"
-                    callback_url="/lessons"
+                    endpoint_select="/api/lessons?projection=idNameProjection"
+                    endpoint_add_or_save="/api/lessons"
                     formFields={formFields}
                 />
         )

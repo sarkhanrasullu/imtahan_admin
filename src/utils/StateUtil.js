@@ -3,9 +3,8 @@ import CommonUtil from "./CommonUtil";
 export default class StateUtil {
 
         static get = (state, name) => {
-            name = "target."+name;
-            console.log(state);
-            console.log(name);
+            //console.log(state);
+            //console.log(name);
             if(!state || !name) return "";
             if(name.length===0) return state;
             const p = name;
@@ -35,21 +34,21 @@ export default class StateUtil {
             name = "target."+name;
             if(name && component){
                 const st = component.state;
-                console.log(name);
-                console.log(st);
-                console.log(val);
-                console.log('-------')
+                //console.log(name);
+                //console.log(st);
+                //console.log(val);
+                //console.log('-------')
                 StateUtil.set(name, st, val);
                 component.setState(st);
-                console.log(component);
-                console.log(component.state);
+                //console.log(component);
+                //console.log(component.state);
             }
         };
 
         static renderData(row, column){
             let data = StateUtil.get(row, column.name); 
-            console.log(column);
-            console.log(data);
+            //console.log(column);
+            //console.log(data);
             if(data===null) return "";
             let result = data;
             if(column.type==="empty"){
