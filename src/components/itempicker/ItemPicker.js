@@ -23,14 +23,20 @@ export default class ItemPicker extends Component {
 
         let items = this.props.items;
         if(!items) items = this.state.list;
-
         const {label} = this.props.item;
-        let pickerItems = null;
+        let pickerItemsTemp = null;
         if(items!=null){
-          pickerItems = items.map((item_, index)=>{
+          pickerItemsTemp = items.map((item_, index)=>{
               return <option key={index} value={item_[item.valueParam]}>{item_[item.displayParam]}</option>
           })
         }
+
+        const selectOption = <option key={-1} value={null}>{"select"}</option>;
+
+        const pickerItems = [
+          selectOption,
+          [...pickerItemsTemp]
+        ]
 
         return (
               <select

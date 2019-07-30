@@ -19,9 +19,8 @@ export default class PageEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    endpoint_select="/api/pages?projection=pageProjection"
+                    endpoint_select="/api/pages/{id}?projection=pageProjection"
                     endpoint_add_or_save="/api/pages"
-                    callback_url="/pages"
                     formFields={formFields}
                 />
         )

@@ -6,7 +6,7 @@ const rows = [
     {
         items:[
             new InputField("target.name", "Reklamın adı"),
-            new SelectBox("target.userId.id"       , "Reklamı verən şəxs", "/users","id","name"),
+            new SelectBox("target.userId.id"       , "Reklamı verən şəxs", "/api/users","id","name"),
         ]
     },
     {
@@ -49,7 +49,7 @@ export default class AdEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    endpoint_select="/api/ads?projection=adProjection"
+                    endpoint_select="/api/ads/{id}?projection=adProjection"
                     endpoint_add_or_save="/api/ads"
                     formFields={rows}
                 />

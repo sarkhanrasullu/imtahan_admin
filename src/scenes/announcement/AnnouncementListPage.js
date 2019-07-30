@@ -16,7 +16,7 @@ const columns = [
     new TableColumn("userId.name"       , "Müştərinin adı"  ),
     new TableColumn("enabled"            , "Aktiv"           ),
 
-    new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+    new TableColumn("insertUserId.id", "Daxil edən şəxs"),
     new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
@@ -31,9 +31,9 @@ const rows = [
     },
     {
         items:[
-            new SelectBox ("lessonId.id"    , "Dərs"        , "/lessons", "id", "name"  ),
-            new SelectBox ("sectorId.id"    , "Sektor"      , "/sectors", "id", "name"  ),
-            new SelectBox("target.insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+            new SelectBox ("target.lessonId.id"    , "Dərs"        , "/api/lessons", "id", "name"  ),
+            new SelectBox ("target.sectorId.id"    , "Sektor"      , "/api/sectors", "id", "name"  ),
+            new SelectBox ("target.insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
             new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
             new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
         ]
@@ -44,8 +44,8 @@ export default class AnnouncementListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                endpoint_select="/api/announcements"
-                endpoint_delete="/api/announcements"
+                    endpoint_select="/api/announcements?projection=announcementProjection"
+                    endpoint_delete="/api/announcements"
                 
                     searchFields={rows}
                     tableProps= {

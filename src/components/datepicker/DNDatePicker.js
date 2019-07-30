@@ -3,6 +3,7 @@ import StateUtil from '../../utils/StateUtil';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import './DNDatePicker.css';
+import CommonUtil from '../../utils/CommonUtil';
 
 const style = { 
     errorInput: {borderColor:"red", borderWidth:1}
@@ -14,6 +15,9 @@ export default class DNDatePicker extends Component {
             
         const {label, type, name} = item;
         let currentValue = StateUtil.get(component.state, name);
+        if(typeof currentValue === "string"){
+            currentValue = new Date(currentValue);
+        }
         currentValue = currentValue?currentValue:null;
         let result = 
             <div className="md-form default_datepicker">

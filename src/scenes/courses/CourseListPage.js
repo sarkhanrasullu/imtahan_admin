@@ -15,7 +15,7 @@ const columns = [
     new TableColumn("address","Adress"),
     new TableColumn("website","Website"),
     new TableColumn("userId.name","Qeydiyyat edən şəxs"),
-    new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+    new TableColumn("insertUserId.id", "Daxil edən şəxs"),
     new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
@@ -30,9 +30,9 @@ const rows = [
     },
     {
         items:[
-            new SelectBox ("cityId.id","Şəhər","/api/cities","id","name"),
-            new SelectBox ("userId.id","Müştəri","/api/users","id","name"),
-            new SelectBox ("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+            new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
+            new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
+            new SelectBox ("target.insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
             new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
             new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
         ]
@@ -43,8 +43,8 @@ export default class CourseListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                endpoint_select="/api/courses?projection=courseProjection"
-                endpoint_delete="/api/courses"
+                    endpoint_select="/api/courses?projection=courseProjection"
+                    endpoint_delete="/api/courses"
                     searchFields={rows}
                     tableProps= {
                         {

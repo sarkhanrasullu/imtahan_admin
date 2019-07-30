@@ -7,7 +7,7 @@ const columns = [
     new TableColumn("name","Ad"),
     new TableColumn("enabled","Aktiv"),
 
-    new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+    new TableColumn("insertUserId.name", "Daxil edən şəxs", "/users", "id", "name"),
     new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];

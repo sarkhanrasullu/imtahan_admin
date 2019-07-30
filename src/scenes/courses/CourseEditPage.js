@@ -30,8 +30,8 @@ const rows = [
     
     {
         items:[
-            new SelectBox ("userId.id","Müştəri","/api/users","id","name"),
-            new SelectBox ("cityId.id","Şəhər","/api/cities","id","name"),
+            new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
+            new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
         ]
     },
     {
@@ -61,7 +61,7 @@ export default class CourseEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    endpoint_select="/api/courses?projection=courseProjection"
+                    endpoint_select="/api/courses/{id}?projection=courseProjection"
                     endpoint_add_or_save="/api/courses"
                     formFields={rows}
                 />

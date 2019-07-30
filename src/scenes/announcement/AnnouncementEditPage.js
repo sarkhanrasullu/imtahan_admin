@@ -10,26 +10,26 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.classNo","Sinif"             ),
-            new InputField("target.price","Qiymət"            ),
+            new InputField("target.classNo","Sinif"),
+            new InputField("target.price","Qiymət"),
         ]
     },
     {
         items:[
-            new SelectBox ("teacherId.id","Müəllim","/teachers","id","name"),
-            new SelectBox ("courseId.id","Kurs","/courses","id","name"),
-            new SelectBox ("userId.id","Müştəri","/api/users","id","name"),
+            new SelectBox ("target.teacherId.id","Müəllim","/api/teachers","id","name"),
+            new SelectBox ("target.courseId.id","Kurs","/api/courses","id","name"),
+            new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
         ]
     },
     {
         items:[
-            new SelectBox ("lessonId.id","Dərs","/lessons","id","name"),
-            new SelectBox ("sectorId.id","Sektor","/sectors","id","name"),
+            new SelectBox ("target.lessonId.id","Dərs","/api/lessons","id","name"),
+            new SelectBox ("target.sectorId.id","Sektor","/api/sectors","id","name"),
         ]
     },
     {
         items:[
-            new SelectBox ("cityId.id","Dərs","/lessons","id","nameAz"),
+            new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
             new InputField("target.endDate","Elanın bitmə tarixi", InputFieldType.DATE),
         ]
     },
@@ -56,7 +56,7 @@ export default class AnnouncementEditPage extends Component {
         return (
                 <EntityEditPage
                     endpoint_add_or_save="/api/announcements"
-                    endpoint_select="/api/announcements?projection=announcementProjection"
+                    endpoint_select="/api/announcements/{id}?projection=announcementProjection"
                     formFields={rows}
                 />
         )

@@ -10,12 +10,12 @@ const formFields = [
     },
     {
         items:[
-            new SelectBox ("layoutTypeId.id","Səhifədə yeri", "/menuLayoutTypes",   "id","name"),
+            new SelectBox ("target.layoutTypeId.id","Səhifədə yeri", "/api/menuLayoutTypes",   "id","name"),
         ]
     },
     {
         items:[
-            new InputField("target.url"),
+            new InputField("target.url", "url"),
         ]
     },
     {
@@ -31,7 +31,7 @@ export default class MenuEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    endpoint_select="/api/menus?projection=idNameProjection"
+                    endpoint_select="/api/menus/{id}?projection=idNameProjection"
                     endpoint_add_or_save="/api/menus"
                     formFields={formFields}
                 />

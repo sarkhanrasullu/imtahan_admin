@@ -52,7 +52,7 @@ class UserEditPage extends Component {
         return (
                 <EntityEditPage
                     endpoint_select="/api/users/{id}?projection=userProjection"
-                    endpoint_add_or_save="/api/users"
+                    endpoint_add_or_save="/api/admin/users"
                     endpoint_delete="/api/users"
                     formFields={formFields}
                 />
