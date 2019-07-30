@@ -3,8 +3,8 @@ import CommonUtil from "./CommonUtil";
 export default class StateUtil {
 
         static get = (state, name) => {
-            //console.log(state);
-            //console.log(name);
+            console.log(state);
+            console.log(name);
             if(!state || !name) return "";
             if(name.length===0) return state;
             const p = name;
@@ -28,10 +28,9 @@ export default class StateUtil {
             schema[lastOne] = value;
         }
 
-        static handleFieldChange = (owner, val, name) => {
+        static handleFieldChange = (owner, val, name, direct) => {
             owner.setState({val: val})
             const {component} = owner.props;
-            name = "target."+name;
             if(name && component){
                 const st = component.state;
                 //console.log(name);

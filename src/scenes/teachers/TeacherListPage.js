@@ -53,9 +53,9 @@ export default class TeacherListPage extends Component {
     render() {
         return ( 
                 <EntityListPage
-                endpoint_select="/api/teachers?projection=teacherProjection"
-                endpoint_delete="/api/teachers"
-                endpoint_add_or_save="/api/teachers"
+                    endpoint_select="/api/teachers?projection=teacherProjection"
+                    endpoint_delete="/api/teachers"
+                    endpoint_add_or_save="/api/teachers"
                     searchFields={fields}
                     tableProps= {
                         {

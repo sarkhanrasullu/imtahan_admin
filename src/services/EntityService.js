@@ -39,13 +39,14 @@ class EntityService extends CommonService {
 
       loadItem = (id)=>{
         this.setLoading(true);
-        fetch(this.endpoint_select+"/"+id)
+        fetch(this.endpoint_select.replace("{id}",id))
                 .then(response =>  response.json())
                 .then(response => {
                   const state = this.component.state;
                   state.target = response;
                   this.setLoading(false);
                   this.component.setState(state);
+                  console.log(this.component.state);
                 })
                 .catch((error) => {
                 });
@@ -53,7 +54,7 @@ class EntityService extends CommonService {
       
       saveItem = (data, callback_url)=>{
         this.setLoading(true);
-        fetch(this.endpoint_add_or_save, this.POST_HEADER(data))
+        fetch(this.endpoint_add_or_save+(data.id?"/"+data.id:""), data.id? this.PUT_HEADER(data): this.POST_HEADER(data))
                 .then(response =>  response.json())
                 .then(response => { 
                   if(data.id>0)

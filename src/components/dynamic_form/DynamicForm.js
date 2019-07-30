@@ -11,8 +11,7 @@ class DynamicForm extends Component {
   state = {
       validate: ()=>this.validate(),
       validation: {},
-      target: {},
-      carUtilities: []
+      target:this.props.target?this.props.target:{}
   }
 
   validate=()=>{

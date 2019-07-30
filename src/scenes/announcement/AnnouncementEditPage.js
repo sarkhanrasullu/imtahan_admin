@@ -30,7 +30,7 @@ const rows = [
     {
         items:[
             new SelectBox ("cityId.id","Dərs","/lessons","id","nameAz"),
-            new InputField("endDate","Elanın bitmə tarixi"),
+            new InputField("endDate","Elanın bitmə tarixi", InputFieldType.DATE),
         ]
     },
     {

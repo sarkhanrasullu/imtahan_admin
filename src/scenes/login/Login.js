@@ -12,8 +12,8 @@ const formFields = [
     rows:[
         {
           items:[
-            new InputField("user.email","email"),
-            new InputField("user.password", "password", "password"),
+            new InputField("target.user.email","email"),
+            new InputField("target.user.password", "password", "password"),
           ]
         }
     ]

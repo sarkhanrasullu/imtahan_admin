@@ -12,7 +12,8 @@ export default class CheckBox extends Component {
         
         const {label, type, name} = item;
         let currentValue = StateUtil.get(component.state, name);
-        currentValue = currentValue?currentValue:null;
+        console.log(currentValue);
+        currentValue = currentValue?currentValue:false;
   
         let result = <span className="checkbox_container md-form" key={key}>
                           <input 

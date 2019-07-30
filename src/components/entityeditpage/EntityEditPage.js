@@ -8,7 +8,8 @@ import LoadingSpinner from "../spinner/LoadingSpinner";
 class EntityEditPage extends Component {
 
   state = {
-    loading: false
+    loading: false,
+    target:{}
   }
 
   entityService = new EntityService(this, this.props.endpoint_select, this.props.endpoint_add_or_save);
@@ -42,7 +43,6 @@ class EntityEditPage extends Component {
             <MDBCol md={3}></MDBCol>
             <MDBCol md={6}>
                 <DynamicForm
-                  component={this}
                   target={this.state.target}
                   sections={[
                     {

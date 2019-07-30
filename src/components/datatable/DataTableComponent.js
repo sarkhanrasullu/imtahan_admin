@@ -34,11 +34,11 @@ export default class DataTableComponent extends Component {
         return (<tr>{result}</tr>);
     }
 
-    appendEdit(row){
+    appendEdit(row, data){
         row.push(
             <td key={"edit"}>
                 <MDBNavLink to={""}>
-                    <MDBIcon size="lg" far icon="edit" onClick={()=>{this.props.handleEdit(row.id)}}/>
+                    <MDBIcon size="lg" far icon="edit" onClick={()=>{this.props.handleEdit(data.id)}}/>
                 </MDBNavLink>
             </td>
         )

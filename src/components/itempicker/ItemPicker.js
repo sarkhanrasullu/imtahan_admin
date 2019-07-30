@@ -43,11 +43,11 @@ export default class ItemPicker extends Component {
                       onValueChange(val);
                     }
                     // this.setState({val: val});
-                    StateUtil.handleFieldChange(this, val);
+                    StateUtil.handleFieldChange(this, val, item.name, true);
                     //console.log(component.state);
                   } 
                 }
-                value={this.state.val}
+                value={StateUtil.get(component.state, item.name)}
               >
                 {pickerItems}
               </select>
