@@ -6,53 +6,53 @@ const rows = [
     
     {
         items:[
-            new InputField("name","Ad"),
+            new InputField("target.name","Ad"),
         ]
     },
     {
         items:[
-            new InputField("email","Email"),
-            new InputField("phone","Nömrə"),
+            new InputField("target.email","Email"),
+            new InputField("target.phone","Nömrə"),
         ]
     },
     {
         items:[
-            new InputField("facebook"),
-            new InputField("instagram"),
+            new InputField("target.facebook"),
+            new InputField("target.instagram"),
         ]
     },
     {
         items:[
-            new InputField("youtube"),
-            new InputField("website","Website"),
+            new InputField("target.youtube"),
+            new InputField("target.website","Website"),
         ]
     },
     
     {
         items:[
-            new SelectBox ("userId.id","Müştəri","/users","id","name"),
-            new SelectBox ("cityId.id","Şəhər","/cities","id","name"),
+            new SelectBox ("userId.id","Müştəri","/api/users","id","name"),
+            new SelectBox ("cityId.id","Şəhər","/api/cities","id","name"),
         ]
     },
     {
         items:[
-            new InputField("address","Adress"),
+            new InputField("target.address","Adress"),
         ]
     },
     {
         items:[
-            new InputField("thumbnail","Şəkil", InputFieldType.IMAGE_PICKER),
+            new InputField("target.thumbnail","Şəkil", InputFieldType.IMAGE_PICKER),
             null
         ]
     },
     {
         items:[
-            new InputField("description","Ətraflı", InputFieldType.TEXT_AREA),
+            new InputField("target.description","Ətraflı", InputFieldType.TEXT_AREA),
         ]
     },
     {
         items:[
-            new InputField("enabled","Aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.enabled","Aktiv", InputFieldType.CHECK_BOX),
         ]
     },
 ];

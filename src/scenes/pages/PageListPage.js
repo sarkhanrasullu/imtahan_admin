@@ -15,11 +15,11 @@ const columns = [
 const rows = [
     {
         items:[
-            new InputField("name","Ad"),
-            new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
-            new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
-            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-            new InputField("enabled","Aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.name","Ad"),
+            new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+            new SelectBox("target.insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+            new InputField("target.enabled","Aktiv", InputFieldType.CHECK_BOX),
         ]
     }
 ];

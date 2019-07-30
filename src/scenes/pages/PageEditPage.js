@@ -5,12 +5,12 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const formFields = [
     {
         items:[
-            new InputField("name", "Ad"),
+            new InputField("target.name", "Ad"),
         ]
     },
     {
         items:[
-            new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.enabled", "Aktiv", InputFieldType.CHECK_BOX),
         ]
     }
 ];

@@ -5,43 +5,43 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const formFields = [
     {
         items: [
-            new InputField("name", "Ad"),
-            new InputField("surname", "Soyad"),
+            new InputField("target.name", "Ad"),
+            new InputField("target.surname", "Soyad"),
         ]
     },
     {
         items: [
-            new InputField("age", "Yaş"),
-            new InputField("balance", "Balans"),
+            new InputField("target.age", "Yaş"),
+            new InputField("target.balance", "Balans"),
         ]
     },
     {
         items: [
-            new InputField("email"),
-            new InputField("password", "Parol",InputFieldType.PASSWORD),
+            new InputField("target.email"),
+            new InputField("target.password", "Parol",InputFieldType.PASSWORD),
         ]
     },
     {
         items: [
-            new InputField("phone", "Nömrə"),
-            new InputField("address", "Address"),
+            new InputField("target.phone", "Nömrə"),
+            new InputField("target.address", "Address"),
         ]
     },
     {
         items: [
-            new SelectBox ("cityId.id", "Şəhər","/cities","id","name"),
-            new SelectBox ("roleId.id", "Pozisiya","/userRoles","id","name"),
+            new SelectBox("target.cityId.id", "Şəhər","/api/cities","id","name"),
+            new SelectBox("target.roleId.id", "Pozisiya","/api/userRoles","id","name"),
         ]
     },
     {
         items: [
-            new InputField("approved", "Email Təsdiqlənib", InputFieldType.CHECK_BOX),
-            new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.approved", "Email Təsdiqlənib", InputFieldType.CHECK_BOX),
+            new InputField("target.enabled", "Aktiv", InputFieldType.CHECK_BOX),
         ]
     },
     {
         items: [
-            new InputField("thumbnail", "Şəkil", InputFieldType.IMAGE_PICKER),
+            new InputField("target.thumbnail", "Şəkil", InputFieldType.IMAGE_PICKER),
             null,
         ]
     },
@@ -51,8 +51,8 @@ class UserEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
-                    endpoint_select="/api/users?projection=userProjection"
-                    endpoint_add_or_save="/api/admin/users"
+                    endpoint_select="/api/users/{id}?projection=userProjection"
+                    endpoint_add_or_save="/api/users"
                     endpoint_delete="/api/users"
                     formFields={formFields}
                 />

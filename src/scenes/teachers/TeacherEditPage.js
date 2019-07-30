@@ -40,8 +40,8 @@ const formFields = [
     },
     {
         items:[
-            new SelectBox("target.cityId.id","Şəhər","/api/cities","id","name"),
-            new SelectBox("target.userId.id","Istifadəçi","/api/users","id","name"),
+            new SelectBox("target.target.cityId.id","Şəhər","/api/cities","id","name"),
+            new SelectBox("target.target.userId.id","Istifadəçi","/api/users","id","name"),
         ]
     },
     {

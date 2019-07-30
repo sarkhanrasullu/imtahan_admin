@@ -5,7 +5,7 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const formFields = [
     {
         items:[
-            new InputField("name","Adı"),
+            new InputField("target.name","Adı"),
         ]
     },
     {
@@ -15,14 +15,14 @@ const formFields = [
     },
     {
         items:[
-            new InputField("url"),
+            new InputField("target.url"),
         ]
     },
     {
         items:[
-            new InputField("orderNo", "Sıra nömrəsi"),
-            new InputField("iframe","iframe", InputFieldType.CHECK_BOX),
-            new InputField("enabled","Aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.orderNo", "Sıra nömrəsi"),
+            new InputField("target.iframe","iframe", InputFieldType.CHECK_BOX),
+            new InputField("target.enabled","Aktiv", InputFieldType.CHECK_BOX),
         ]
     }
 ];

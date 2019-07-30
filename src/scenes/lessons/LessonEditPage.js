@@ -5,7 +5,7 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const formFields = [
     {
         items:[
-            new InputField("name", "Adı"),
+            new InputField("target.name", "Adı"),
         ]
     }
 ];

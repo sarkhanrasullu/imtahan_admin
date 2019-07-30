@@ -5,42 +5,42 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const rows = [
     {
         items:[
-            new InputField("name", "Reklamın adı"),
-            new SelectBox("userId.id"       , "Reklamı verən şəxs", "/users","id","name"),
+            new InputField("target.name", "Reklamın adı"),
+            new SelectBox("target.userId.id"       , "Reklamı verən şəxs", "/users","id","name"),
         ]
     },
     {
         items:[
-            new InputField("leftSide"       , "Solda reklam"),
-            new InputField("leftSideLink"   , "Sol reklam keçidi"),
+            new InputField("target.leftSide"       , "Solda reklam"),
+            new InputField("target.leftSideLink"   , "Sol reklam keçidi"),
         ]
     },
     {
         items:[
-            new InputField("rightSide"      , "Sağda reklam"),
-            new InputField("rightSideLink"  , "Sağ reklam keçidi"),
+            new InputField("target.rightSide"      , "Sağda reklam"),
+            new InputField("target.rightSideLink"  , "Sağ reklam keçidi"),
         ]
     },
     {
         items:[
-            new InputField("upSide"         , "Yuxarıda reklam"),
-            new InputField("upSideLink"     , "Yuxarı reklam keçidi"),
+            new InputField("target.upSide"         , "Yuxarıda reklam"),
+            new InputField("target.upSideLink"     , "Yuxarı reklam keçidi"),
         ]
     },
     {
         items:[
-            new InputField("downSide"       , "Aşağıda reklam"),
-            new InputField("downSideLink"   , "Aşağı reklam keçidi"),
+            new InputField("target.downSide"       , "Aşağıda reklam"),
+            new InputField("target.downSideLink"   , "Aşağı reklam keçidi"),
         ]
     },
     {
         items:[
-            new InputField("endDate"        , "Reklamın bitmə tarixi"   , InputFieldType.DATE),
+            new InputField("target.endDate"        , "Reklamın bitmə tarixi"   , InputFieldType.DATE),
         ]
     },
     {
         items:[
-            new InputField("enabled"         , "Aktiv"                  , InputFieldType.CHECK_BOX),
+            new InputField("target.enabled"         , "Aktiv"                  , InputFieldType.CHECK_BOX),
         ]
     }
 ];

@@ -5,20 +5,20 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const rows = [
     {
         items:[
-            new InputField("title","Elanın başlığı"),
+            new InputField("target.title","Elanın başlığı"),
         ]
     },
     {
         items:[
-            new InputField("classNo","Sinif"             ),
-            new InputField("price","Qiymət"            ),
+            new InputField("target.classNo","Sinif"             ),
+            new InputField("target.price","Qiymət"            ),
         ]
     },
     {
         items:[
             new SelectBox ("teacherId.id","Müəllim","/teachers","id","name"),
             new SelectBox ("courseId.id","Kurs","/courses","id","name"),
-            new SelectBox ("userId.id","Müştəri","/users","id","name"),
+            new SelectBox ("userId.id","Müştəri","/api/users","id","name"),
         ]
     },
     {
@@ -30,23 +30,23 @@ const rows = [
     {
         items:[
             new SelectBox ("cityId.id","Dərs","/lessons","id","nameAz"),
-            new InputField("endDate","Elanın bitmə tarixi", InputFieldType.DATE),
+            new InputField("target.endDate","Elanın bitmə tarixi", InputFieldType.DATE),
         ]
     },
     {
         items:[
-            new InputField("thumbnail","Şəkil",InputFieldType.IMAGE_PICKER),
+            new InputField("target.thumbnail","Şəkil",InputFieldType.IMAGE_PICKER),
             null
         ]
     },
     {
         items:[
-            new InputField("description","Ətraflı",InputFieldType.TEXT_AREA),
+            new InputField("target.description","Ətraflı",InputFieldType.TEXT_AREA),
         ]
     },
     {
         items:[
-            new InputField("enabled","Aktiv",InputFieldType.CHECK_BOX),
+            new InputField("target.enabled","Aktiv",InputFieldType.CHECK_BOX),
         ]
     }
 ];

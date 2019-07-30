@@ -24,18 +24,18 @@ const columns = [
 const rows = [
     {
         items:[
-            new InputField("name"           , "Elanın başlığı"                          ),
-            new InputField("classNo"        , "Sinif"                                   ),
-            new InputField("price"          , "Qiymət"                                  ),
+            new InputField("target.name"           , "Elanın başlığı"                          ),
+            new InputField("target.classNo"        , "Sinif"                                   ),
+            new InputField("target.price"          , "Qiymət"                                  ),
         ]
     },
     {
         items:[
             new SelectBox ("lessonId.id"    , "Dərs"        , "/lessons", "id", "name"  ),
             new SelectBox ("sectorId.id"    , "Sektor"      , "/sectors", "id", "name"  ),
-            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-            new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
-            new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+            new SelectBox("target.insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
+            new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
         ]
     }
 ];

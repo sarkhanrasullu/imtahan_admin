@@ -12,8 +12,8 @@ const columns = [
 ];
 
 const fields = [
-    new InputField("id"),
-    new InputField("name", "Adı"),
+    new InputField("target.id"),
+    new InputField("target.name", "Adı"),
 ];
 
 export default class CityListPage extends Component {

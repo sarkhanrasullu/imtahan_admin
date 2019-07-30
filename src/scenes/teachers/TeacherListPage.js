@@ -26,24 +26,24 @@ const columns = [
 const fields = [
     {
         items: [
-            new InputField("name","Ad"),
-            new InputField("surname","Soyad"),
-            new InputField("email"),
-            new InputField("phone"),
+            new InputField("target.name","Ad"),
+            new InputField("target.surname","Soyad"),
+            new InputField("target.email"),
+            new InputField("target.phone"),
         ]
     },
     {
         items:[
             new SelectBox ("cityId.id","Şəhər", "/api/cities", "id", "name"),
             new SelectBox ("userId.id","Müştəri", "/api/users", "id", "name"),
-            new SelectBox("insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
+            new SelectBox("target.insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
         ]
     },
     {
         items:[
-            new InputField("insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
-            new InputField("lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
-            new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
+            new InputField("target.enabled", "Aktiv", InputFieldType.CHECK_BOX),
         ]
     }
 

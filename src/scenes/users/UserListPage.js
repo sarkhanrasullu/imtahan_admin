@@ -31,21 +31,21 @@ const columns = [
 const fields = [
   {
     items: [
-      new InputField("name", "Ad"),
-      new InputField("surname", "Soyad"),
-      new InputField("email", "Email"),
-      new InputField("phone", "Nömrə"),
-      new InputField("age", "Yaş"),
+      new InputField("target.name", "Ad"),
+      new InputField("target.surname", "Soyad"),
+      new InputField("target.email", "Email"),
+      new InputField("target.phone", "Nömrə"),
+      new InputField("target.age", "Yaş"),
     ]
   },
   {
     items: [
-      new InputField("insertDate","Daxil edilmə tarixi",InputFieldType.DATE_TIME),
-      new InputField("lastChangeDate","Son dəyişmə tarixi",InputFieldType.DATE_TIME),
-      new SelectBox("cityId.id", "Şəhər", "/cities", "id", "name"),
+      new InputField("target.insertDate","Daxil edilmə tarixi",InputFieldType.DATE_TIME),
+      new InputField("target.lastChangeDate","Son dəyişmə tarixi",InputFieldType.DATE_TIME),
+      new SelectBox("target.cityId.id", "Şəhər", "/cities", "id", "name"),
       new SelectBox( "insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-      new InputField("approved", "Təsdiqlənib", InputFieldType.CHECK_BOX),
-      new InputField("enabled", "Aktiv", InputFieldType.CHECK_BOX)
+      new InputField("target.approved", "Təsdiqlənib", InputFieldType.CHECK_BOX),
+      new InputField("target.enabled", "Aktiv", InputFieldType.CHECK_BOX)
     ]
   }
 ];
