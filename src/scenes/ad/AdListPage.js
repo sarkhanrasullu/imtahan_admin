@@ -12,10 +12,10 @@ const columns = [
   new TableColumn("id"),
   new TableColumn("name", "Adı"),
   new TableColumn("userId.name", "Müştəri"),
-  new TableColumn("endDate", "Birmət vaxtı"),
+  new TableColumn("endDate", "Birmət tarixi"),
 
   new TableColumn("insertUserId.name", "Daxil edən şəxs", "/users", "id", "name"),
-  new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
+  new TableColumn("insertDate", "Daxil edilmə tarixi", TableColumnType.DATE_TIME),
   new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
@@ -24,7 +24,7 @@ const rows = [
     items:[
       new InputField("target.id", "id"),
       new InputField("target.name", "Adı"),
-      new InputField("target.endDate", "Bitmə vaxtı", InputFieldType.DATE),
+      new InputField("target.endDate", "Bitmə tarixi", InputFieldType.DATE),
     ]
   },
   {

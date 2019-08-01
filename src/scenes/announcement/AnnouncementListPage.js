@@ -3,38 +3,38 @@ import EntityListPage from '../../components/entitylistpage/EntityListPage';
 import { TableColumn, InputField, SelectBox, TableColumnType, InputFieldType } from '../../components/datatable/DataTableTypes';
 
 const columns = [
-    new TableColumn("id"                                    ),
-    new TableColumn("title"             , "Elanın başlığı"  ),
-    new TableColumn("classNo"           , "Sinif"           ),
-    new TableColumn("price"             , "Qiymət"          ),
-    new TableColumn("thumbnail"         , "Şəkil"           ),
-    new TableColumn("lessonId.name"     , "Dərs"            ),
-    new TableColumn("sectorId.name"     , "Sektor"          ),
-    new TableColumn("cityId.name"       , "Şəhər adı"       ),
-    new TableColumn("teacherId.name"    , "Müəllimin adı"   ),
-    new TableColumn("courseId.name"     , "Kursun adı"      ),
-    new TableColumn("userId.name"       , "Müştərinin adı"  ),
-    new TableColumn("enabled"            , "Aktiv"           ),
+    new TableColumn("id"),
+    new TableColumn("title", "Elanın başlığı"),
+    new TableColumn("classNo", "Sinif"),
+    new TableColumn("price", "Qiymət"),
+    new TableColumn("thumbnail", "Şəkil", TableColumnType.IMAGE),
+    new TableColumn("lessonId.name", "Dərs"),
+    new TableColumn("sectorId.name", "Sektor"),
+    new TableColumn("cityId.name", "Şəhər adı"),
+    new TableColumn("teacherId.name", "Müəllimin adı"),
+    new TableColumn("courseId.name", "Kursun adı"),
+    new TableColumn("userId.name", "Müştərinin adı"),
+    new TableColumn("enabled", "Aktiv"),
 
-    new TableColumn("insertUserId.id", "Daxil edən şəxs"),
-    new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
+    new TableColumn("insertUserId.name", "Daxil edən şəxs"),
+    new TableColumn("insertDate","Daxil edilmə tarixi", TableColumnType.DATE_TIME),
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
 const rows = [
     {
         items:[
-            new InputField("target.name"           , "Elanın başlığı"                          ),
-            new InputField("target.classNo"        , "Sinif"                                   ),
-            new InputField("target.price"          , "Qiymət"                                  ),
+            new InputField("target.name", "Elanın başlığı"),
+            new InputField("target.classNo", "Sinif"),
+            new InputField("target.price", "Qiymət"),
         ]
     },
     {
         items:[
-            new SelectBox ("target.lessonId.id"    , "Dərs"        , "/api/lessons", "id", "name"  ),
-            new SelectBox ("target.sectorId.id"    , "Sektor"      , "/api/sectors", "id", "name"  ),
+            new SelectBox ("target.lessonId.id", "Dərs", "/api/lessons", "id", "name"),
+            new SelectBox ("target.sectorId.id", "Sektor", "/api/sectors", "id", "name"),
             new SelectBox ("target.insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
-            new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("target.insertDate", "Daxil edilmə tarixi", InputFieldType.DATE_TIME),
             new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
         ]
     }

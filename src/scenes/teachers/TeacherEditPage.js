@@ -34,14 +34,14 @@ const formFields = [
     },
     {
         items:[
-            new InputField("target.thumbnail","Şəkil", InputFieldType.IMAGE_PICKER),
+            new InputField("target.thumbnail","Şəkil", InputFieldType.IMAGE_PICKER_BASE64),
             null
         ]
     },
     {
         items:[
-            new SelectBox("target.target.cityId.id","Şəhər","/api/cities","id","name"),
-            new SelectBox("target.target.userId.id","Istifadəçi","/api/users","id","name"),
+            new SelectBox("target.cityId.id","Şəhər","/api/cities","id","name"),
+            new SelectBox("target.userId.id","Istifadəçi","/api/users","id","name"),
         ]
     },
     {

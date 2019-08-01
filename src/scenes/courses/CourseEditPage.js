@@ -41,7 +41,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.thumbnail","Şəkil", InputFieldType.IMAGE_PICKER),
+            new InputField("target.thumbnail","Şəkil", InputFieldType.IMAGE_PICKER_BASE64),
             null
         ]
     },

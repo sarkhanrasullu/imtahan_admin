@@ -12,7 +12,7 @@ const columns = [
     new TableColumn("orderNo","Sıra yeri"),
 
     new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-    new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
+    new TableColumn("insertDate", "Daxil edilmə tarixi", TableColumnType.DATE_TIME),
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
@@ -22,7 +22,7 @@ const rows = [
             new InputField("target.id", "Id"),
             new InputField("target.name","Adı"),
         
-            new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("target.insertDate", "Daxil edilmə tarixi", InputFieldType.DATE_TIME),
             new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
             new SelectBox("target.insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
         ]

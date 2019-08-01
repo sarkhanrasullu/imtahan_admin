@@ -15,7 +15,7 @@ const columns = [
   new TableColumn("age", "Yaş"),
   new TableColumn("email", "Email"),
   new TableColumn("phone", "Nömrə"),
-  new TableColumn("thumbnail", "Şəkil", "image"),
+  new TableColumn("thumbnail", "Şəkil", TableColumnType.IMAGE_BASE64),
   new TableColumn("cityId.name", "Şəhər"),
   new TableColumn("address", "Address"),
   new TableColumn("roleId.name", "Role"),
@@ -24,7 +24,7 @@ const columns = [
   new TableColumn("enabled", "Aktiv"),
 
   new TableColumn("insertUserId.id", "Daxil edən şəxs", "/users", "id", "name"),
-  new TableColumn("insertDate","Daxil edilmə vaxtı",TableColumnType.DATE_TIME),
+  new TableColumn("insertDate","Daxil edilmə tarixi",TableColumnType.DATE_TIME),
   new TableColumn("lastChangeDate","Son dəyişilmə tarixi",TableColumnType.DATE_TIME)
 ];
 

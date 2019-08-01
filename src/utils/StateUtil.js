@@ -1,10 +1,11 @@
 import CommonUtil from "./CommonUtil";
+import { TableColumnType } from "../components/datatable/DataTableTypes";
 
 export default class StateUtil {
 
         static get = (state, name) => {
-            console.log(state);
-            console.log(name);
+           // console.log(state);
+            //console.log(name);
             if(!state || !name) return "";
             if(name.length===0) return state;
             const p = name;
@@ -52,10 +53,14 @@ export default class StateUtil {
             let result = data;
             if(column.type==="empty"){
                 return null;
-            }else if(column.type==="image"){
-                result = CommonUtil.imageFormatter(data, column);
-            }else if(column.type==="date"){
+            }else if(column.type===TableColumnType.IMAGE){
+                result = CommonUtil.imageFormatter(data);
+            }else if(column.type===TableColumnType.IMAGE_BASE64){
+                result = CommonUtil.imageFormatterBase64(data);
+            }else if(column.type===TableColumnType.DATE){
                 result = CommonUtil.formatDate(data);
+            }else if(column.type===TableColumnType.DATE_TIME){
+                result = CommonUtil.formatDateTime(data);
             }else if( (typeof data) === "object"){
                 const objectKeys = Object.keys(data);
                 result = objectKeys.reduce((keyP, keyN)=>{

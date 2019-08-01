@@ -5,7 +5,12 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const formFields = [
     {
         items:[
-            new InputField("target.name", "Ad"),
+            new InputField("target.name", "Ad")
+        ]
+    },
+    {
+        items:[
+            new InputField("target.pageBody", "Kontent", InputFieldType.EDITOR)
         ]
     },
     {

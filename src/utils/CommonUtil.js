@@ -2,8 +2,13 @@ import React from 'react'
 
 export default class CommonUtil {
 
-    static imageFormatter = (data, column) => {
-      const url = column.type==="image_base64"?`data:image/png;base64, ${data}`:data;
+    static imageFormatter = (data) => {
+      const url = data;
+      return <img src={url} alt="thumbnail" className="img-thumbnail" style={{width:120}}/>;
+    }
+
+    static imageFormatterBase64 = (data) => {
+      const url = `data:image/png;base64, ${data}`;
       return <img src={url} alt="thumbnail" className="img-thumbnail" style={{width:120}}/>;
     }
 
@@ -11,7 +16,7 @@ export default class CommonUtil {
         return cell;
     }
 
-    static formatDate = date => { 
+    static formatDate = (date, splitter="/") => { 
       if (!date) return "";
       if(typeof date === "string") date = new Date(date);
   
@@ -23,21 +28,26 @@ export default class CommonUtil {
   
       let year = date.getFullYear();
       
-      const r = day+"/"+month+"/"+year;
+      const r = day+splitter+month+splitter+year;
       return r;
     }; 
+
+    static formatTime = (date) => { 
+      if (!date) return "";
+      if(typeof date === "string") date = new Date(date);
   
-    static formatDateByDash = date => {
-        if (!date) return "";
-        if(typeof date === "string") date = new Date(date);
-        let month = date.getMonth()+1;
-        month = month<=9? "0"+month:month;
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+      
+      const r = hours+":"+minutes+":"+seconds;
+      return r;
+    }; 
+
+    static formatDateTime = (date, dateSplitter="/")=>{
+      const result = this.formatDate(date)+" "+this.formatTime(date);
+      return result;
+    }
   
-        let day = date.getDate();
-        day = day<=9?"0"+day:day;
-  
-        let year = date.getFullYear();
-        const r = year+"-"+month+"-"+ day;
-        return r;
-      }; 
-  }
+}
+

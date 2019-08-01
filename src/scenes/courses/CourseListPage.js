@@ -10,13 +10,13 @@ const columns = [
     new TableColumn("facebook"),
     new TableColumn("instagram"),
     new TableColumn("youtube"),
-    new TableColumn("thumbnail","Şəkil", TableColumnType.IMAGE),
+    new TableColumn("thumbnail","Şəkil", TableColumnType.IMAGE_BASE64),
     new TableColumn("cityId.name","Şəhər"),
     new TableColumn("address","Adress"),
     new TableColumn("website","Website"),
     new TableColumn("userId.name","Qeydiyyat edən şəxs"),
     new TableColumn("insertUserId.id", "Daxil edən şəxs"),
-    new TableColumn("insertDate", "Daxil edilmə vaxtı", TableColumnType.DATE_TIME),
+    new TableColumn("insertDate", "Daxil edilmə tarixi", TableColumnType.DATE_TIME),
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
 
@@ -33,7 +33,7 @@ const rows = [
             new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
             new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
             new SelectBox ("target.insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
-            new InputField("target.insertDate", "Daxil edilmə vaxtı", InputFieldType.DATE_TIME),
+            new InputField("target.insertDate", "Daxil edilmə tarixi", InputFieldType.DATE_TIME),
             new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
         ]
     }
