@@ -7,7 +7,7 @@ const columns = [
     new TableColumn("title", "Elanın başlığı"),
     new TableColumn("classNo", "Sinif"),
     new TableColumn("price", "Qiymət"),
-    new TableColumn("thumbnail", "Şəkil", TableColumnType.IMAGE),
+    new TableColumn("thumbnail", "Şəkil", TableColumnType.IMAGE_BASE64),
     new TableColumn("lessonId.name", "Dərs"),
     new TableColumn("sectorId.name", "Sektor"),
     new TableColumn("cityId.name", "Şəhər adı"),

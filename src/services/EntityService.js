@@ -55,7 +55,7 @@ class EntityService extends CommonService {
       saveItem = (data, callback_url)=>{
         this.setLoading(true);
         fetch(this.endpoint_add_or_save+(data.id?"/"+data.id:""), data.id? this.PUT_HEADER(data): this.POST_HEADER(data))
-                .then(response =>  response.json())
+                // .then(response =>  response.json())
                 .then(response => { 
                   if(data.id>0)
                     window.location.reload();
