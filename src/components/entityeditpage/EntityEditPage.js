@@ -36,12 +36,14 @@ class EntityEditPage extends Component {
     if(this.state.loading){
       return <LoadingSpinner/>;
     }
+
+    const {fullscreen} = this.props;
     
     return (
       <MDBContainer style={{ margin: "auto"}}>
         <MDBRow>
-            <MDBCol md={3}></MDBCol>
-            <MDBCol md={6}>
+            {fullscreen?null:<MDBCol md={3}></MDBCol>}
+            <MDBCol md={fullscreen?12:6}>
                 <DynamicForm
                   target={this.state.target}
                   sections={[

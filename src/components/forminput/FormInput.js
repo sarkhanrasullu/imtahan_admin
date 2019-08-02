@@ -6,6 +6,7 @@ import { InputFieldType } from '../datatable/DataTableTypes';
 import DNDatePicker from '../datepicker/DNDatePicker';
 import './FormInput.css';
 import CheckBox from '../checkbox/CheckBox';
+import Editor from '../editor';
 
 const style = {
   errorInput: {borderColor:"red", borderWidth:1, fontSize:16, fontWeight:"bold"},
@@ -53,8 +54,10 @@ export default class FormInput extends Component {
       } else if(type === InputFieldType.CHECK_BOX){
         result.push(<CheckBox item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
       } else if(type === InputFieldType.DATE || type === InputFieldType.DATE_TIME){
-        result.push(<DNDatePicker     item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
-      } else {
+        result.push(<DNDatePicker item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
+      } else if(type === InputFieldType.EDITOR){
+        result.push(<Editor item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
+      }else {
         result.push(<DefaultFormInput item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
       } 
 
