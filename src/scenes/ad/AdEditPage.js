@@ -11,25 +11,25 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.leftSide","Solda reklam", InputFieldType.IMAGE_PICKER_BASE64),
+            new InputField("target.leftSide","Solda reklam", InputFieldType.IMAGE_BASE64),
             new InputField("target.leftSideLink","Sol reklam keçidi"),
         ]
     },
     {
         items:[
-            new InputField("target.rightSide","Sağda reklam",InputFieldType.IMAGE_PICKER_BASE64),
+            new InputField("target.rightSide","Sağda reklam",InputFieldType.IMAGE_BASE64),
             new InputField("target.rightSideLink","Sağ reklam keçidi"),
         ]
     },
     {
         items:[
-            new InputField("target.upSide","Yuxarıda reklam", InputFieldType.IMAGE_PICKER_BASE64),
+            new InputField("target.upSide","Yuxarıda reklam", InputFieldType.IMAGE_BASE64),
             new InputField("target.upSideLink","Yuxarı reklam keçidi"),
         ]
     },
     {
         items:[
-            new InputField("target.downSide","Aşağıda reklam", InputFieldType.IMAGE_PICKER_BASE64),
+            new InputField("target.downSide","Aşağıda reklam", InputFieldType.IMAGE_BASE64),
             new InputField("target.downSideLink","Aşağı reklam keçidi"),
         ]
     },

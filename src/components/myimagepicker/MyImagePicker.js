@@ -36,7 +36,7 @@ export default class MyImagePicker extends Component {
         const {type, name} = item;
         const value = StateUtil.get(component.state, name);
         let result = value;
-        if(type === InputFieldType.IMAGE_PICKER_BASE64){
+        if(type === InputFieldType.IMAGE_BASE64){
             result = "data:;base64,"+value;
         }
 
@@ -69,7 +69,7 @@ export default class MyImagePicker extends Component {
                             maxFileSize={5242880}
                         />
                     {
-                        type === InputFieldType.IMAGE_PICKER_URL?(
+                        type === InputFieldType.IMAGE_URL?(
                             <FormInput item={inputItem} key={2} readOnly={readOnly} error={error} component={component}/>
                         ):null
                     }
