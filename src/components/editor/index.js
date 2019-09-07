@@ -2,16 +2,17 @@
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'froala-editor/css/froala_style.css';
 import 'froala-editor/js/plugins.pkgd.min.js';
-
+import React from 'react';
 import FroalaEditor from 'react-froala-wysiwyg';
 import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
-import React from 'react';
 import StateUtil from '../../utils/StateUtil';
+
 
 export default class EditorComponent extends React.Component {
 
     state = {
-        val: null
+        val: null,
+        ready: false
     }
 
   constructor() {
@@ -23,7 +24,7 @@ export default class EditorComponent extends React.Component {
   componentDidMount = ()=>{
     const {component, item} = this.props;
     const html = StateUtil.get(component.state, item.name);
-    this.setState({val: html});
+    this.setState({val: html, ready:true});
   }
 
   handleModelChange (model) {
@@ -32,7 +33,7 @@ export default class EditorComponent extends React.Component {
   }
 
   render () {
-      if(this.state.val===null) return null;
+      if(!this.state.ready) return null;
     return(
       <div className="sample">
         <FroalaEditor

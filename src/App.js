@@ -1,29 +1,30 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "mdbreact/dist/css/mdb.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import "mdbreact/dist/css/mdb.css";
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import MainPageContainer from "./containers/mainpage/MainPageContainer";
-import UserListPage from "./scenes/users/UserListPage";
-import UserEditPage from "./scenes/users/UserEditPage";
-import Login from "./scenes/login/Login";
-import LoginService from "./services/LoginService";
-import { withRouter } from "react-router-dom";
-import TeacherListPage from "./scenes/teachers/TeacherListPage";
-import TeacherEditPage from "./scenes/teachers/TeacherEditPage";
-import PageListPage from "./scenes/pages/PageListPage";
-import PageEditPage from "./scenes/pages/PageEditPage";
-import MenuListPage from "./scenes/menu/MenuListPage";
-import MenuEditPage from "./scenes/menu/MenuEditPage";
-import LessonListPage from "./scenes/lessons/LessonListPage";
-import LessonEditPage from "./scenes/lessons/LessonEditPage";
-import CourseListPage from "./scenes/courses/CourseListPage";
-import CourseEditPage from "./scenes/courses/CourseEditPage";
-import AnnouncementListPage from "./scenes/announcement/AnnouncementListPage";
-import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
-import AdListPage from "./scenes/ad/AdListPage";
 import AdEditPage from "./scenes/ad/AdEditPage";
+import AdListPage from "./scenes/ad/AdListPage";
+import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
+import AnnouncementListPage from "./scenes/announcement/AnnouncementListPage";
+import CourseEditPage from "./scenes/courses/CourseEditPage";
+import CourseListPage from "./scenes/courses/CourseListPage";
+import ExamEditPage from "./scenes/exam/ExamEditPage";
+import ExamListPage from "./scenes/exam/ExamListPage";
+import LessonEditPage from "./scenes/lessons/LessonEditPage";
+import LessonListPage from "./scenes/lessons/LessonListPage";
+import Login from "./scenes/login/Login";
+import MenuEditPage from "./scenes/menu/MenuEditPage";
+import MenuListPage from "./scenes/menu/MenuListPage";
+import PageEditPage from "./scenes/pages/PageEditPage";
+import PageListPage from "./scenes/pages/PageListPage";
+import TeacherEditPage from "./scenes/teachers/TeacherEditPage";
+import TeacherListPage from "./scenes/teachers/TeacherListPage";
+import UserEditPage from "./scenes/users/UserEditPage";
+import UserListPage from "./scenes/users/UserListPage";
+import LoginService from "./services/LoginService";
 
 class App extends Component {
 
@@ -51,6 +52,8 @@ class App extends Component {
             <Route exact path="/announcements/:entityId" component={AnnouncementEditPage} />
             <Route exact path="/ads" component={AdListPage} />
             <Route exact path="/ads/:entityId" component={AdEditPage} />
+            <Route exact path="/exams" component={ExamListPage} />
+            <Route exact path="/exams/:entityId" component={ExamEditPage} />
             <Route component={UserListPage} />
           </Switch>:    
           <Switch>

@@ -1,13 +1,5 @@
+import { MDBCollapse, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavItem, MDBNavLink } from "mdbreact";
 import React, { Component } from "react";
-import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBNavbarToggler,
-  MDBCollapse
-} from "mdbreact";
 import { connect } from "react-redux";
 import LoginService from "../../services/LoginService";
 
@@ -64,6 +56,7 @@ class NavbarWrapper extends Component {
                 {this.linkItem("/courses","Təhsil mərkəzləri")}
                 {this.linkItem("/announcements","Elanlar")}
                 {this.linkItem("/ads","Reklamlar")}
+                {this.linkItem("/exams","İmtahanlar")}
               </MDBNavbarNav>
               <MDBNavbarNav right>
                 <MDBNavItem onClick={() => this.service_login.logout()}>
