@@ -1,7 +1,7 @@
+import { MDBBtn } from 'mdbreact';
 import React, { Component } from 'react';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
-
 const rows = [
     {
         items:[
@@ -18,7 +18,7 @@ const rows = [
       items:[
         new InputField("target.duration", "Müddəti"),
         new InputField("target.price", "Qiymət"),
-        new InputField("target.enabled", "Aktiv", InputFieldType.CHECK_BOX),
+        new InputField("target.classes", "Siniflər"),
       ]
     },
     {
@@ -31,17 +31,35 @@ const rows = [
       items:[
         new InputField("target.description", "İzahat", InputFieldType.TEXT_AREA),
       ]
-    }
+    },
+    {
+      items:[
+        new InputField("target.enabled", "Aktiv", InputFieldType.CHECK_BOX),
+      ]
+    },
   ];
 
 export default class ExamEditPage extends Component {
     render() {
         return (
-                <EntityEditPage
-                    endpoint_select="/api/exams/{id}?projection=examProjection"
-                    endpoint_add_or_save="/api/exams"
-                    formFields={rows}
-                />
+                <React.Fragment>
+                  <div className="text-center">
+                        <MDBBtn color="light-blue" onClick={()=>
+                          {
+                            window.location.href= "/questions";
+                          } 
+                        }>
+                            SUALLARI ƏLAVƏ ET
+                        </MDBBtn>
+                    </div>
+                  <EntityEditPage
+                      endpoint_select="/api/exams/{id}?projection=examProjection"
+                      endpoint_add_or_save="/api/exams"
+                      formFields={rows}
+                  />
+                  
+                  
+                </React.Fragment>
         )
     }
 }

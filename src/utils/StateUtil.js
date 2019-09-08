@@ -1,5 +1,5 @@
-import CommonUtil from "./CommonUtil";
 import { TableColumnType } from "../components/datatable/DataTableTypes";
+import CommonUtil from "./CommonUtil";
 
 export default class StateUtil {
 

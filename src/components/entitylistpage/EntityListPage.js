@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import EntityService from '../../services/EntityService';
 import DataTableComponent from '../datatable/DataTableComponent';
 import DynamicForm from '../dynamic_form/DynamicForm';
-import EntityService from '../../services/EntityService';
 import LoadingSpinner from '../spinner/LoadingSpinner';
 
 
@@ -49,7 +49,8 @@ class EntityListPage extends Component {
     render() {
         return (
             <React.Fragment>
-              <DynamicForm 
+              {
+              this.props.searchFields?<DynamicForm 
                   sections={
                     [
                       { 
@@ -57,7 +58,8 @@ class EntityListPage extends Component {
                       }
                     ]
                   }
-                  submit={{label:"Search", action:null}}/>
+                  submit={{label:"Search", action:null}}/>:null
+                }
                   {this.renderBody()}
           </React.Fragment> 
         )

@@ -13,6 +13,8 @@ import CourseEditPage from "./scenes/courses/CourseEditPage";
 import CourseListPage from "./scenes/courses/CourseListPage";
 import ExamEditPage from "./scenes/exam/ExamEditPage";
 import ExamListPage from "./scenes/exam/ExamListPage";
+import ExamQuestionEditPage from "./scenes/examquestion/ExamQuestionEditPage";
+import ExamQuestionListPage from "./scenes/examquestion/ExamQuestionListPage";
 import LessonEditPage from "./scenes/lessons/LessonEditPage";
 import LessonListPage from "./scenes/lessons/LessonListPage";
 import Login from "./scenes/login/Login";
@@ -54,6 +56,8 @@ class App extends Component {
             <Route exact path="/ads/:entityId" component={AdEditPage} />
             <Route exact path="/exams" component={ExamListPage} />
             <Route exact path="/exams/:entityId" component={ExamEditPage} />
+            <Route exact path="/questions" component={ExamQuestionListPage} />
+            <Route exact path="/questions/:entityId" component={ExamQuestionEditPage} />
             <Route component={UserListPage} />
           </Switch>:    
           <Switch>
