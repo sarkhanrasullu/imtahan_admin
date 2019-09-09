@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 import { TableColumn } from "../../components/datatable/DataTableTypes";
 import EntityListPage from "../../components/entitylistpage/EntityListPage";
 
@@ -12,13 +13,13 @@ const columns = [
 
 
 
-export default class ExamQuestionListPage extends Component {
+class ExamQuestionListPage extends Component {
   render() {
     return (
       <div style={{marginTop:10}}>
         <h1 className="text-center">Sualları əlavə edin</h1>
         <EntityListPage
-            endpoint_select="/api/examQuestions?projection=examQuestionProjection"
+            endpoint_select={"/api/examQuestions/search/getAllByExamId?examId="+this.props.match.params.examId}
             endpoint_delete="/api/examQuestions"
             tableProps={{
               columns: columns
@@ -28,3 +29,5 @@ export default class ExamQuestionListPage extends Component {
     );
   }
 }
+
+export default withRouter(ExamQuestionListPage)

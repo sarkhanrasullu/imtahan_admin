@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import EntityService from '../../services/EntityService';
 import DataTableComponent from '../datatable/DataTableComponent';
 import DynamicForm from '../dynamic_form/DynamicForm';
 import LoadingSpinner from '../spinner/LoadingSpinner';
-
 
 class EntityListPage extends Component {
   
@@ -26,11 +26,11 @@ class EntityListPage extends Component {
         return <LoadingSpinner/>;
       }else{
            return <DataTableComponent 
-                handleRemove={this.handleRemove}
-                handleAdd={this.handleAdd}
-                handleEdit={this.handleEdit}
-                data={list}  
-                columns={columns} />
+                    handleRemove={this.handleRemove}
+                    handleAdd   ={this.handleAdd}
+                    handleEdit  ={this.handleEdit}
+                    data        ={list}  
+                    columns     ={columns} />
       }
     }
 
@@ -39,11 +39,11 @@ class EntityListPage extends Component {
     }
 
     handleAdd = ()=>{
-      window.location.href= window.location.href+"/create";
+      this.props.history.push(this.props.location.pathname+"/create");
     }
 
     handleEdit = (id)=>{
-      window.location.href= window.location.href+"/"+id;
+      this.props.history.push(this.props.location.pathname+"/"+id);
     }
 
     render() {
@@ -66,4 +66,4 @@ class EntityListPage extends Component {
     }
 }
  
-export default EntityListPage;
+export default withRouter(EntityListPage);

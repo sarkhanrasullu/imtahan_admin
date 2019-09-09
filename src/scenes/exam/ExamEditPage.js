@@ -1,7 +1,9 @@
 import { MDBBtn } from 'mdbreact';
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
+
 const rows = [
     {
         items:[
@@ -39,19 +41,22 @@ const rows = [
     },
   ];
 
-export default class ExamEditPage extends Component {
+class ExamEditPage extends Component {
     render() {
         return (
                 <React.Fragment>
-                  <div className="text-center">
+                  {
+                    this.props.match.params.entityId>0?
+                    <div className="text-center">
                         <MDBBtn color="light-blue" onClick={()=>
                           {
-                            window.location.href= "/questions";
+                            window.location.href= "/exams/"+this.props.match.params.entityId+"/questions";
                           } 
                         }>
                             SUALLARI ƏLAVƏ ET
                         </MDBBtn>
-                    </div>
+                    </div>:null
+                  }
                   <EntityEditPage
                       endpoint_select="/api/exams/{id}?projection=examProjection"
                       endpoint_add_or_save="/api/exams"
@@ -63,3 +68,5 @@ export default class ExamEditPage extends Component {
         )
     }
 }
+
+export default withRouter(ExamEditPage);

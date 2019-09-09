@@ -38,6 +38,14 @@ export default class ExamQuestionEditPage extends Component {
     render() {
         return (
                 <EntityEditPage
+                    fullscreen
+                    defaultTarget={
+                      {
+                        examId:{
+                          id:this.props.match.params.examId
+                        }
+                      }
+                    }
                     endpoint_select="/api/examQuestions/{id}"
                     endpoint_add_or_save="/api/examQuestions"
                     formFields={fields}

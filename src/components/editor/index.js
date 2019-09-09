@@ -39,6 +39,7 @@ export default class EditorComponent extends React.Component {
         <FroalaEditor
           model={this.state.val}
           config={{
+            heightMin:300,
             placeholder: "Edit Me",
             events:{
                 'image.beforeUpload': function (files) {
@@ -68,6 +69,7 @@ export default class EditorComponent extends React.Component {
           }}
           onModelChange={this.handleModelChange}
         />
+        <label style={{fontSize: '16px', fontWeight: 'bold'}}>Aşağıdakı şəkildə görsənəcək:</label>
         <FroalaEditorView model={this.state.val} />
       </div>
     );

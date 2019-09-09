@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { MDBTable,MDBIcon, MDBTableHead, MDBTableBody, MDBNavLink, MDBBtn} from 'mdbreact';
-import PaginationWrapper from '../UI/PaginationWrapper';
+import { MDBBtn, MDBIcon, MDBNavLink, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import React, { Component } from 'react';
 import StateUtil from '../../utils/StateUtil';
 import ModalYesNo from '../modalyesno/ModalYesNo';
+import PaginationWrapper from '../UI/PaginationWrapper';
 
 export default class DataTableComponent extends Component {
  
@@ -37,9 +37,7 @@ export default class DataTableComponent extends Component {
     appendEdit(row, data){
         row.push(
             <td key={"edit"}>
-                <MDBNavLink to={""}>
-                    <MDBIcon size="lg" far icon="edit" onClick={()=>{this.props.handleEdit(data.id)}}/>
-                </MDBNavLink>
+                <MDBIcon style={{margin:"10px 10px 10px 15px",cursor:"pointer"}} size="lg" far icon="edit" onClick={()=>{this.props.handleEdit(data.id)}}/>
             </td>
         )
     }

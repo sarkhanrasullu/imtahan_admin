@@ -38,30 +38,30 @@ class App extends Component {
       <MainPageContainer>
            {loggedInUser?
          <Switch>
-            <Route exact path="/users" component={UserListPage} />
-            <Route exact path="/users/:entityId" component={UserEditPage} />
-            <Route exact path="/teachers" component={TeacherListPage} />
-            <Route exact path="/teachers/:entityId" component={TeacherEditPage} />
-            <Route exact path="/pages" component={PageListPage} />
-            <Route exact path="/pages/:entityId" component={PageEditPage} />
-            <Route exact path="/menus" component={MenuListPage} />
-            <Route exact path="/menus/:entityId" component={MenuEditPage} />
-            <Route exact path="/lessons" component={LessonListPage} />
-            <Route exact path="/lessons/:entityId" component={LessonEditPage} />
-            <Route exact path="/courses" component={CourseListPage} />
-            <Route exact path="/courses/:entityId" component={CourseEditPage} />
-            <Route exact path="/announcements" component={AnnouncementListPage} />
-            <Route exact path="/announcements/:entityId" component={AnnouncementEditPage} />
-            <Route exact path="/ads" component={AdListPage} />
-            <Route exact path="/ads/:entityId" component={AdEditPage} />
-            <Route exact path="/exams" component={ExamListPage} />
-            <Route exact path="/exams/:entityId" component={ExamEditPage} />
-            <Route exact path="/questions" component={ExamQuestionListPage} />
-            <Route exact path="/questions/:entityId" component={ExamQuestionEditPage} />
-            <Route component={UserListPage} />
+            <Route exact path="/users"                              component={UserListPage}          />
+            <Route exact path="/users/:entityId"                    component={UserEditPage}          />
+            <Route exact path="/teachers"                           component={TeacherListPage}       />
+            <Route exact path="/teachers/:entityId"                 component={TeacherEditPage}       />
+            <Route exact path="/pages"                              component={PageListPage}          />
+            <Route exact path="/pages/:entityId"                    component={PageEditPage}          />
+            <Route exact path="/menus"                              component={MenuListPage}          />
+            <Route exact path="/menus/:entityId"                    component={MenuEditPage}          />
+            <Route exact path="/lessons"                            component={LessonListPage}        />
+            <Route exact path="/lessons/:entityId"                  component={LessonEditPage}        />
+            <Route exact path="/courses"                            component={CourseListPage}        />
+            <Route exact path="/courses/:entityId"                  component={CourseEditPage}        />
+            <Route exact path="/announcements"                      component={AnnouncementListPage}  />
+            <Route exact path="/announcements/:entityId"            component={AnnouncementEditPage}  />
+            <Route exact path="/ads"                                component={AdListPage}            />
+            <Route exact path="/ads/:entityId"                      component={AdEditPage}            />
+            <Route exact path="/exams"                              component={ExamListPage}          />
+            <Route exact path="/exams/:entityId"                    component={ExamEditPage}          />
+            <Route exact path="/exams/:examId/questions"            component={ExamQuestionListPage}  />
+            <Route exact path="/exams/:examId/questions/:entityId"  component={ExamQuestionEditPage}  />
+            <Route                                                  component={UserListPage}          />
           </Switch>:    
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/"                                   component={Login} />
           </Switch>
         }
       </MainPageContainer>        

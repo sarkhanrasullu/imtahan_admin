@@ -1,8 +1,8 @@
+import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { Component } from "react";
-import DynamicForm from "../dynamic_form/DynamicForm";
-import { MDBRow, MDBCol, MDBContainer } from "mdbreact";
-import EntityService from "../../services/EntityService";
 import { withRouter } from "react-router-dom";
+import EntityService from "../../services/EntityService";
+import DynamicForm from "../dynamic_form/DynamicForm";
 import LoadingSpinner from "../spinner/LoadingSpinner";
 
 class EntityEditPage extends Component {
@@ -14,8 +14,16 @@ class EntityEditPage extends Component {
 
   entityService = new EntityService(this, this.props.endpoint_select, this.props.endpoint_add_or_save);
 
+  componentWillMount(){
+    console.log(this.props.defaultTarget);
+    if(this.props.defaultTarget){
+      this.setState({target:this.props.defaultTarget});
+    }
+  }
+  
   componentDidMount() {
       const edit = this.props.match.params.entityId>0;
+      
       if(edit){
         this.entityService.loadItem(this.props.match.params.entityId);
       }
@@ -42,6 +50,7 @@ class EntityEditPage extends Component {
     return (
       <MDBContainer style={{ margin: "auto"}}>
         <MDBRow>
+            
             {fullscreen?null:<MDBCol md={3}></MDBCol>}
             <MDBCol md={fullscreen?12:6}>
                 <DynamicForm
