@@ -82,11 +82,11 @@ export default class DataTableComponent extends Component {
     }
 
     renderTable(){
-       const {handleRemove} = this.props;
+       const {handleRemove, readOnly, noPagination} = this.props;
        const result = (
            <React.Fragment>
-               <PaginationWrapper/>
-                <MDBBtn onClick={()=>{this.props.handleAdd()}}>Add</MDBBtn>
+                {noPagination?null:<PaginationWrapper/>}
+                {readOnly?null:<MDBBtn onClick={()=>{this.props.handleAdd()}}>Add</MDBBtn>}
                 <MDBTable bordered className={"table-sm"}>
                     <MDBTableHead>
                         {this.renderHeader()}
@@ -95,7 +95,7 @@ export default class DataTableComponent extends Component {
                         {this.renderBody()}
                     </MDBTableBody>
                 </MDBTable>
-                <PaginationWrapper/>
+                {noPagination?null:<PaginationWrapper/>}
                 <ModalYesNo state={this.state.modalState} onClickYes={()=>handleRemove(this.state.selectedRowData)}/>
             </React.Fragment>
        )

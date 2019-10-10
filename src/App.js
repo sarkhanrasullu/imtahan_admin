@@ -11,10 +11,12 @@ import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
 import AnnouncementListPage from "./scenes/announcement/AnnouncementListPage";
 import CourseEditPage from "./scenes/courses/CourseEditPage";
 import CourseListPage from "./scenes/courses/CourseListPage";
+import CourseEditPagePublic from "./scenes/courses_public/CourseEditPagePublic";
 import ExamEditPage from "./scenes/exam/ExamEditPage";
 import ExamListPage from "./scenes/exam/ExamListPage";
 import ExamQuestionEditPage from "./scenes/examquestion/ExamQuestionEditPage";
 import ExamQuestionListPage from "./scenes/examquestion/ExamQuestionListPage";
+import ExamListPagePublic from "./scenes/exam_public/ExamListPagePublic";
 import LessonEditPage from "./scenes/lessons/LessonEditPage";
 import LessonListPage from "./scenes/lessons/LessonListPage";
 import Login from "./scenes/login/Login";
@@ -24,8 +26,10 @@ import PageEditPage from "./scenes/pages/PageEditPage";
 import PageListPage from "./scenes/pages/PageListPage";
 import TeacherEditPage from "./scenes/teachers/TeacherEditPage";
 import TeacherListPage from "./scenes/teachers/TeacherListPage";
+import TeacherEditPagePublic from "./scenes/teachers_public/TeacherEditPagePublic";
 import UserEditPage from "./scenes/users/UserEditPage";
 import UserListPage from "./scenes/users/UserListPage";
+import UserRegisterPage from "./scenes/users_public/UserRegisterPage";
 import LoginService from "./services/LoginService";
 
 class App extends Component {
@@ -35,7 +39,7 @@ class App extends Component {
   render() {
     const loggedInUser = this.service_login.getLoggedInUser();
     return (
-      <MainPageContainer>
+      <MainPageContainer loggedInUser={loggedInUser}>
            {loggedInUser?
          <Switch>
             <Route exact path="/users"                              component={UserListPage}          />
@@ -61,7 +65,11 @@ class App extends Component {
             <Route                                                  component={UserListPage}          />
           </Switch>:    
           <Switch>
-            <Route exact path="/"                                   component={Login} />
+            <Route exact path="/usersregister/:entityId"            component={UserRegisterPage}       />
+            <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
+            <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
+            <Route exact path="/examlist"                           component={ExamListPagePublic}     />
+            <Route exact path="/"                                   component={Login}                  />
           </Switch>
         }
       </MainPageContainer>        

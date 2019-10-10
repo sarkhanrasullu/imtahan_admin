@@ -1,19 +1,23 @@
+import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { Component } from "react";
-import { MDBRow, MDBCol, MDBContainer } from "mdbreact";
-import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
-import DynamicForm from "../../components/dynamic_form/DynamicForm";
-import LoginService from "../../services/LoginService";
-import LoadingSpinner from "../../components/spinner/LoadingSpinner";
 import { InputField } from "../../components/datatable/DataTableTypes";
+import DynamicForm from "../../components/dynamic_form/DynamicForm";
+import LoadingSpinner from "../../components/spinner/LoadingSpinner";
+import LoginService from "../../services/LoginService";
+import * as actions from "../../store/actions/index";
 
 const formFields = [
   {
     rows:[
         {
           items:[
-            new InputField("target.user.email","email"),
-            new InputField("target.user.password", "password", "password"),
+            new InputField("target.user.email","Email"),
+          ]
+        },
+        {
+          items:[
+            new InputField("target.user.password", "Password", "password"),
           ]
         }
     ]

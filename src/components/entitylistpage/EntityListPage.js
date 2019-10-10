@@ -26,6 +26,8 @@ class EntityListPage extends Component {
         return <LoadingSpinner/>;
       }else{
            return <DataTableComponent 
+                    noPagination={this.props.noPagination}
+                    readOnly={this.props.readOnly}
                     handleRemove={this.handleRemove}
                     handleAdd   ={this.handleAdd}
                     handleEdit  ={this.handleEdit}

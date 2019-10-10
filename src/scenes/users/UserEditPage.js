@@ -1,42 +1,42 @@
-import React, { Component } from 'react'
-import { InputField, SelectBox, InputFieldType } from '../../components/datatable/DataTableTypes';
+import React, { Component } from 'react';
+import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
 const formFields = [
     {
         items: [
-            new InputField("target.name", "Ad"),
-            new InputField("target.surname", "Soyad"),
+            new InputField("target.name", "ad"),
+            new InputField("target.surname", "soyad"),
         ]
     },
     {
         items: [
-            new InputField("target.age", "Yaş"),
-            new InputField("target.balance", "Balans"),
+            new InputField("target.age", "yaş"),
+            new InputField("target.balance", "balans"),
         ]
     },
     {
         items: [
-            new InputField("target.email"),
-            new InputField("target.password", "Parol",InputFieldType.PASSWORD),
+            new InputField("target.email", "email"),
+            new InputField("target.password", "parol",InputFieldType.PASSWORD),
         ]
     },
     {
         items: [
-            new InputField("target.phone", "Nömrə"),
-            new InputField("target.address", "Address"),
+            new InputField("target.phone", "nömrə"),
+            new InputField("target.address", "address"),
         ]
     },
     {
         items: [
-            new SelectBox("target.cityId.id", "Şəhər","/api/cities","id","name"),
-            new SelectBox("target.roleId.id", "Pozisiya","/api/userRoles","id","name"),
+            new SelectBox("target.cityId.id", "şəhər","/api/cities","id","name"),
+            new SelectBox("target.roleId.id", "pozisiya","/api/userRoles","id","name"),
         ]
     },
     {
         items: [
-            new InputField("target.approved", "Email Təsdiqlənib", InputFieldType.CHECK_BOX),
-            new InputField("target.enabled", "Aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.approved", "email təsdiqlənib", InputFieldType.CHECK_BOX),
+            new InputField("target.enabled", "aktiv", InputFieldType.CHECK_BOX),
         ]
     },
     {
