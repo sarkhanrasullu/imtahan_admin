@@ -28,7 +28,7 @@ class UserLabel extends Component {
                     <li className="nav-item d-flex justify-content-center">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-blue">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
-                                <a href="https://eimtahanadmin.herokuapp.com/dashboard" 
+                                <a target="_blank" href="https://eimtahanadmin.herokuapp.com/dashboard" 
                                     class="nav-link p-0 text-blue mr-1" >
                                     {loggedInUser.name+" "+loggedInUser.surname}
                                 </a>
