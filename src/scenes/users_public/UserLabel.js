@@ -15,7 +15,7 @@ class UserLabel extends Component {
                                     <a class="nav-link p-0 text-blue mr-1" href="/login" target="_blank">
                                         Daxil ol 
                                     </a> / 
-                                    <a class="nav-link p-0 text-blue ml-1" href="https://eimtahanadmin.herokuapp.com/registration" target="_blank">
+                                    <a class="nav-link p-0 text-blue ml-1" href="http://eimtahan.herokuapp.com/registration" target="_blank">
                                         Qeydiyyat
                                     </a>
                                 </span>
