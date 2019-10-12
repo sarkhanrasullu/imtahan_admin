@@ -1,7 +1,6 @@
 import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from 'react-router-dom';
 import { InputField } from "../../components/datatable/DataTableTypes";
 import DynamicForm from "../../components/dynamic_form/DynamicForm";
 import LoadingSpinner from "../../components/spinner/LoadingSpinner";
@@ -33,13 +32,16 @@ class Login extends Component {
 
   service = new LoginService(this);
  
-  callback_ = ()=>{
-    if(this.props.redirectUrl){
-      this.props.history.push(this.props.redirectUrl);
-    }
-  }
-  
   render() {
+
+    const loggedInUser = this.service.getLoggedInUser();
+    if(loggedInUser!==null){
+      return(
+        <h4 className="text-center">
+          Uğurla daxil oldunuz. <a href="http://eimtahan.herokuapp.com" target="_blank">Əsas səhifəyə geri dön!</a>
+        </h4>
+      );
+    }
     if(this.state.loading){
       return <LoadingSpinner/>;
     }
@@ -55,7 +57,7 @@ class Login extends Component {
                       submit={
                           {
                               label: "Daxil ol",
-                              action: (target)=>{this.service.handleLogin(target, true, this.callback_)}
+                              action: (target)=>{this.service.handleLogin(target)}
                           }
                       }
                     />
@@ -87,6 +89,6 @@ const mapDispatchToProps = dispatch => {
   return {
     setLoading: loading => dispatch(actions.setLoading(loading))
   };
-}; 
+};
 
-export default connect( mapStateToProps, mapDispatchToProps )(withRouter(Login));
+export default connect( mapStateToProps, mapDispatchToProps )(Login);

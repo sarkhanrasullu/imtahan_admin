@@ -4,7 +4,6 @@ import "mdbreact/dist/css/mdb.css";
 import React, { Component } from 'react';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import MainPageContainer from "./containers/mainpage/MainPageContainer";
 import AdEditPage from "./scenes/ad/AdEditPage";
 import AdListPage from "./scenes/ad/AdListPage";
 import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
@@ -20,6 +19,7 @@ import ExamListPagePublic from "./scenes/exam_public/ExamListPagePublic";
 import LessonEditPage from "./scenes/lessons/LessonEditPage";
 import LessonListPage from "./scenes/lessons/LessonListPage";
 import Login from "./scenes/login/Login";
+import UserLoginPublic from "./scenes/login/UserLoginPublic";
 import MainPage from "./scenes/main/MainPage";
 import MenuEditPage from "./scenes/menu/MenuEditPage";
 import MenuListPage from "./scenes/menu/MenuListPage";
@@ -42,7 +42,6 @@ class App extends Component {
     const loggedInUser = this.service_login.getLoggedInUser();
     return (
             loggedInUser? 
-            <MainPageContainer loggedInUser={loggedInUser}>
                     <Switch>
                         <Route exact path="/users"                              component={UserListPage}          />
                         <Route exact path="/users/:entityId"                    component={UserEditPage}          />
@@ -64,18 +63,21 @@ class App extends Component {
                         <Route exact path="/exams/:entityId"                    component={ExamEditPage}          />
                         <Route exact path="/exams/:examId/questions"            component={ExamQuestionListPage}  />
                         <Route exact path="/exams/:examId/questions/:entityId"  component={ExamQuestionEditPage}  />
+                        <Route exact path="/"                                   component={MainPage}              />
                         
                         <Route exact path="/usersregister/:entityId"            component={UserRegisterPage}       />
                         <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
                         <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
                         <Route exact path="/examlist"                           component={ExamListPagePublic}     />
-                        <Route exact path="/login"                              component={Login}     />
+                        <Route exact path="/login"                              component={UserLoginPublic}     />
                         <Route exact path="/userlabel"                          component={UserLabel}     />
-                        <Route exact path="/"                                   component={MainPage}              />
                     </Switch>
-            </MainPageContainer>:
+            :
             <Switch>
+              <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
+              <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
               <Route exact path="/userlabel"                                    component={UserLabel}     />
+              <Route exact path="/login"                                        component={UserLoginPublic}     />
               <Route exact path="/"                                             component={Login}              />
             </Switch>
     )

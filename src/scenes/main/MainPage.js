@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import NavbarWrapper from "../../components/UI/NavbarWrapper";
 export default class MainPage extends Component {
   render() {
     return (
           <div>
+             <NavbarWrapper />
               <h1 className="text-center">
                   Admin Panel
               </h1>

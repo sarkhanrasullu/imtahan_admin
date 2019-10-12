@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
+import LoginFirst from '../../components/loginfirst/LoginFirst';
+import LoginService from '../../services/LoginService';
 
 const rows = [
     
@@ -53,7 +55,14 @@ const rows = [
 ];
 
 export default class CourseEditPagePublic extends Component {
+    service = new LoginService(this);
     render() {
+        const loggedInUser = this.service.getLoggedInUser();
+        if(!loggedInUser){
+            return (
+                <LoginFirst redirectUrl="/courseprofile/create"/>
+            );
+        }
         return (
                 <EntityEditPage
                     endpoint_select="/api/courses/{id}?projection=courseProjection"

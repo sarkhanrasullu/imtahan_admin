@@ -15,8 +15,7 @@ class EntityEditPage extends Component {
 
   entityService = new EntityService(this, this.props.endpoint_select, this.props.endpoint_add_or_save);
 
-  componentWillMount(){
-    console.log(this.props.defaultTarget);
+  componentWillMount(){ 
     if(this.props.defaultTarget){
       this.setState({target:this.props.defaultTarget});
     }
@@ -41,7 +40,10 @@ class EntityEditPage extends Component {
     this.entityService.saveItem(target, this.getRedirectUrl());
   }
 
-  render() {
+  
+
+  render() { 
+
     if(this.state.loading){
       return <LoadingSpinner/>;
     }
@@ -52,7 +54,7 @@ class EntityEditPage extends Component {
       <MDBContainer style={{ margin: "auto"}}>
             <MDBRow>
               <MDBCol>
-                <NavbarWrapper/>
+                <NavbarWrapper />
               </MDBCol>
             </MDBRow>
             <MDBRow>

@@ -50,14 +50,14 @@ class NavbarWrapper extends Component {
     if(this.show()===false){
       return null;
     }
-    const {show} = this.props;
-    if(!show) return null;
+    const {notVisible} = this.props;
+    if(notVisible) return null;
 
    
     const loggedInUser = this.service_login.getLoggedInUser();
     return (
       <React.Fragment>
-        <MDBNavbar style={{ backgroundColor: "#82b1ff" }} dark expand="md">
+        <MDBNavbar style={{ backgroundColor: "#82b1ff", marginBottom: 30, }} dark expand="md">
           <MDBNavbarBrand>
             <MDBNavLink to="/">
               <strong className="white-text">ADMIN PANEL</strong>

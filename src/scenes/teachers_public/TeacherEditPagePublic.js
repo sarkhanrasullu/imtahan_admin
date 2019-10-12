@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
+import LoginFirst from '../../components/loginfirst/LoginFirst';
+import LoginService from '../../services/LoginService';
 
 const formFields = [
     {
@@ -51,8 +53,16 @@ const formFields = [
     },
     ];
 
+    
 export default class TeacherEditPagePublic extends Component {
+    service = new LoginService(this);
     render() {
+        const loggedInUser = this.service.getLoggedInUser();
+        if(!loggedInUser){
+            return (
+                <LoginFirst redirectUrl="/teacherprofile/create"/>
+            );
+        }
         return (
                 <EntityEditPage
                     endpoint_select="/api/teachers/{id}?projection=teacherProjection"
