@@ -30,6 +30,7 @@ import TeacherListPage from "./scenes/teachers/TeacherListPage";
 import TeacherEditPagePublic from "./scenes/teachers_public/TeacherEditPagePublic";
 import UserEditPage from "./scenes/users/UserEditPage";
 import UserListPage from "./scenes/users/UserListPage";
+import UserLabel from "./scenes/users_public/UserLabel";
 import UserRegisterPage from "./scenes/users_public/UserRegisterPage";
 import LoginService from "./services/LoginService";
 
@@ -69,12 +70,14 @@ class App extends Component {
                         <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
                         <Route exact path="/examlist"                           component={ExamListPagePublic}     />
                         <Route exact path="/login"                              component={Login}     />
+                        <Route exact path="/userlabel"                          component={UserLabel}     />
                         <Route exact path="/"                                   component={MainPage}              />
                     </Switch>
             </MainPageContainer>:
             <Switch>
-              <Route exact path="/login"                                          component={Login}     />
-              <Route exact path="/"                                               component={Login}     />
+              <Route exact path="/login"                                        component={Login}     />
+              <Route exact path="/userlabel"                                    component={UserLabel}     />
+              <Route exact path="/"                                             component={Login}     />
             </Switch>
     )
   }

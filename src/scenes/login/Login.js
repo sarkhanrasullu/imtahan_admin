@@ -33,6 +33,15 @@ class Login extends Component {
   service = new LoginService(this);
  
   render() {
+
+    const loggedInUser = this.service.getLoggedInUser();
+    if(loggedInUser!==null){
+      return(
+        <h4 className="text-center">
+          Uğurla daxil oldunuz. <a href="http://localhost:8000" target="_blank">Əsas səhifəyə geri dön!</a>
+        </h4>
+      );
+    }
     if(this.state.loading){
       return <LoadingSpinner/>;
     }
@@ -47,11 +56,22 @@ class Login extends Component {
                       sections={formFields}
                       submit={
                           {
-                              label: "Login",
+                              label: "Daxil ol",
                               action: (target)=>{this.service.handleLogin(target)}
                           }
                       }
                     />
+            </MDBCol>
+          </MDBRow>
+          <MDBRow>
+          <MDBCol md="3" />
+            <MDBCol md="6">
+            <h6 className="text-center w-100 mt-3 forget">
+                <a href="registration" target="_blank">Şifrəni Unutmusan?</a> 
+                </h6>
+            <h6 className="text-center w-100 mt-1 forget">Hesabın yoxdur? 
+            <a href="registration" target="_blank">Qeydiyyat</a> 
+            </h6>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
