@@ -15,7 +15,7 @@ class UserLabel extends Component {
                                     <a class="nav-link p-0 text-blue mr-1" href="/login" target="_blank">
                                         Daxil ol 
                                     </a> / 
-                                    <a class="nav-link p-0 text-blue ml-1" href="http://localhost:8000/registration" target="_blank">
+                                    <a class="nav-link p-0 text-blue ml-1" href="https://eimtahanadmin.herokuapp.com/registration" target="_blank">
                                         Qeydiyyat
                                     </a>
                                 </span>
@@ -28,7 +28,8 @@ class UserLabel extends Component {
                     <li className="nav-item d-flex justify-content-center">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-blue">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
-                                <a class="nav-link p-0 text-blue mr-1" >
+                                <a href="https://eimtahanadmin.herokuapp.com/dashboard" 
+                                    class="nav-link p-0 text-blue mr-1" >
                                     {loggedInUser.name+" "+loggedInUser.surname}
                                 </a>
                             </span>
