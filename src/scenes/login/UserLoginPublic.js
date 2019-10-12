@@ -37,7 +37,7 @@ class Login extends Component {
     const loggedInUser = this.service.getLoggedInUser();
     if(loggedInUser!==null){
       return(
-        <h4 className="text-center">
+        <h4 className="text-center" style={{ margin: "auto", marginTop:"10%" }}>
           Uğurla daxil oldunuz. <a href="http://eimtahan.herokuapp.com" target="_blank">Əsas səhifəyə geri dön!</a>
         </h4>
       );
@@ -47,7 +47,7 @@ class Login extends Component {
     }
 
     return (
-        <MDBContainer style={{ margin: "auto" }}>
+        <MDBContainer style={{ margin: "auto", marginTop:"10%" }}>
           <MDBRow>
             <MDBCol md="3" />
             <MDBCol md="6">
