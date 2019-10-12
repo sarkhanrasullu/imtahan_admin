@@ -74,8 +74,8 @@ class App extends Component {
                     </Switch>
             :
             <Switch>
-              <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
-              <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
+              <Route exact path="/teacherprofile/:entityId"                     component={TeacherEditPagePublic}  />
+              <Route exact path="/courseprofile/:entityId"                      component={CourseEditPagePublic}   />
               <Route exact path="/userlabel"                                    component={UserLabel}     />
               <Route exact path="/login"                                        component={UserLoginPublic}     />
               <Route exact path="/"                                             component={Login}              />
