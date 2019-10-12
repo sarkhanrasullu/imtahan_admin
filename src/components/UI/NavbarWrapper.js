@@ -1,6 +1,7 @@
 import { MDBCollapse, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavItem, MDBNavLink } from "mdbreact";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom';
 import LoginService from "../../services/LoginService";
 
 class NavbarWrapper extends Component {
@@ -34,7 +35,25 @@ class NavbarWrapper extends Component {
     );
   };
 
+  show = ()=>{
+    const pathname = this.props.location.pathname;
+
+    if(pathname.includes("login") ||
+    pathname.includes("examlist")||
+    pathname.includes("courseprofile")||
+    pathname.includes("teacherprofile")||
+    pathname.includes("usersregister")) return false;
+
+    return true;
+  }
   render() {
+    if(this.show()===false){
+      return null;
+    }
+    const {show} = this.props;
+    if(!show) return null;
+
+   
     const loggedInUser = this.service_login.getLoggedInUser();
     return (
       <React.Fragment>
@@ -82,4 +101,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NavbarWrapper);
+)(withRouter(NavbarWrapper));
