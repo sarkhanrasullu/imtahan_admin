@@ -71,6 +71,7 @@ class App extends Component {
             <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
             <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
             <Route exact path="/examlist"                           component={ExamListPagePublic}     />
+            <Route exact path="/login"                              component={Login}                  />
             <Route exact path="/"                                   component={Login}                  />
           </Switch>
         }
