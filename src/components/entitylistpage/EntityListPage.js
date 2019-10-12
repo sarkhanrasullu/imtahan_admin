@@ -4,6 +4,7 @@ import EntityService from '../../services/EntityService';
 import DataTableComponent from '../datatable/DataTableComponent';
 import DynamicForm from '../dynamic_form/DynamicForm';
 import LoadingSpinner from '../spinner/LoadingSpinner';
+import NavbarWrapper from '../UI/NavbarWrapper';
 
 class EntityListPage extends Component {
   
@@ -51,6 +52,7 @@ class EntityListPage extends Component {
     render() {
         return (
             <React.Fragment>
+               <NavbarWrapper/>
               {
               this.props.searchFields?<DynamicForm 
                   sections={

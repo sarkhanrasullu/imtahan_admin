@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import EntityService from "../../services/EntityService";
 import DynamicForm from "../dynamic_form/DynamicForm";
 import LoadingSpinner from "../spinner/LoadingSpinner";
+import NavbarWrapper from "../UI/NavbarWrapper";
 
 class EntityEditPage extends Component {
 
@@ -49,7 +50,12 @@ class EntityEditPage extends Component {
     
     return (
       <MDBContainer style={{ margin: "auto"}}>
-        <MDBRow>
+            <MDBRow>
+              <MDBCol>
+                <NavbarWrapper/>
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
             
             {fullscreen?null:<MDBCol md={3}></MDBCol>}
             <MDBCol md={fullscreen?12:6}>

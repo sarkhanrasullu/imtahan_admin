@@ -75,9 +75,8 @@ class App extends Component {
                     </Switch>
             </MainPageContainer>:
             <Switch>
-              <Route exact path="/login"                                        component={Login}     />
               <Route exact path="/userlabel"                                    component={UserLabel}     />
-              <Route exact path="/"                                             component={Login}     />
+              <Route exact path="/"                                             component={Login}              />
             </Switch>
     )
   }
