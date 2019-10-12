@@ -20,6 +20,7 @@ import ExamListPagePublic from "./scenes/exam_public/ExamListPagePublic";
 import LessonEditPage from "./scenes/lessons/LessonEditPage";
 import LessonListPage from "./scenes/lessons/LessonListPage";
 import Login from "./scenes/login/Login";
+import MainPage from "./scenes/main/MainPage";
 import MenuEditPage from "./scenes/menu/MenuEditPage";
 import MenuListPage from "./scenes/menu/MenuListPage";
 import PageEditPage from "./scenes/pages/PageEditPage";
@@ -62,7 +63,8 @@ class App extends Component {
             <Route exact path="/exams/:entityId"                    component={ExamEditPage}          />
             <Route exact path="/exams/:examId/questions"            component={ExamQuestionListPage}  />
             <Route exact path="/exams/:examId/questions/:entityId"  component={ExamQuestionEditPage}  />
-            <Route                                                  component={UserListPage}          />
+            <Route exact path="/login"                              component={Login}                  />
+            <Route exact                                            component={MainPage}          />
           </Switch>:    
           <Switch>
             <Route exact path="/usersregister/:entityId"            component={UserRegisterPage}       />
