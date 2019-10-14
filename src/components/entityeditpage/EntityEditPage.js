@@ -51,31 +51,29 @@ class EntityEditPage extends Component {
     const {fullscreen} = this.props;
     
     return (
-      <MDBContainer style={{ margin: "auto"}}>
-            <MDBRow>
-              <MDBCol>
-                <NavbarWrapper />
-              </MDBCol>
+      <React.Fragment>
+        <NavbarWrapper />
+        <MDBContainer style={{ margin: "auto"}}>
+              <MDBRow>
+              
+              {fullscreen?null:<MDBCol md={3}></MDBCol>}
+              <MDBCol md={fullscreen?12:6}>
+                  <DynamicForm
+                    target={this.state.target}
+                    sections={[
+                      {
+                        rows: this.props.formFields
+                      }
+                    ]}
+                    submit={{
+                      label: "Save",
+                      action: this.handleSubmitBtn
+                    }}
+                  />
+                </MDBCol>
             </MDBRow>
-            <MDBRow>
-            
-            {fullscreen?null:<MDBCol md={3}></MDBCol>}
-            <MDBCol md={fullscreen?12:6}>
-                <DynamicForm
-                  target={this.state.target}
-                  sections={[
-                    {
-                      rows: this.props.formFields
-                    }
-                  ]}
-                  submit={{
-                    label: "Save",
-                    action: this.handleSubmitBtn
-                  }}
-                />
-              </MDBCol>
-          </MDBRow>
-      </MDBContainer>
+        </MDBContainer>
+      </React.Fragment>
     );
   }
 }
