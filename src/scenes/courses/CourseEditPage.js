@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
@@ -17,14 +17,14 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.facebook"),
-            new InputField("target.instagram"),
+            new InputField("target.facebook", "Facebook"),
+            new InputField("target.instagram", "Instagram"),
         ]
     },
     {
         items:[
-            new InputField("target.youtube"),
-            new InputField("target.website","Website"),
+            new InputField("target.youtube", "YouTube"),
+            new InputField("target.website", "Website","Website"),
         ]
     },
     
