@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
+import NavbarWrapper from '../../components/UI/NavbarWrapper';
 
 const fields = [
   {
@@ -37,7 +38,10 @@ const fields = [
 export default class ExamQuestionEditPage extends Component {
     render() {
         return (
+          <React.Fragment>
+                <NavbarWrapper/>
                 <EntityEditPage
+                    notVisible
                     fullscreen
                     defaultTarget={
                       {
@@ -50,6 +54,7 @@ export default class ExamQuestionEditPage extends Component {
                     endpoint_add_or_save="/api/examQuestions"
                     formFields={fields}
                 />
+                </React.Fragment>
         )
     }
 }
