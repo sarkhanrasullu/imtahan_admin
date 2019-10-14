@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import {MDBBtn, MDBCol, MDBRow} from 'mdbreact'
-import MyImagePicker from '../myimagepicker/MyImagePicker';
+import { MDBBtn, MDBCol, MDBRow } from 'mdbreact';
+import React, { Component } from 'react';
 import StateUtil from '../../utils/StateUtil';
 import { InputField } from '../datatable/DataTableTypes';
+import MyImagePicker from '../myimagepicker/MyImagePicker';
 
 export default class MyImagesPicker extends Component {
 
@@ -66,7 +66,7 @@ export default class MyImagesPicker extends Component {
     }
     renderAddButton = ()=>{
         return (
-            <MDBBtn onClick={()=>{this.handleAddBtn()}}>Add</MDBBtn>
+            <MDBBtn onClick={()=>{this.handleAddBtn()}}>Əlavə Et</MDBBtn>
         )
     }
 }

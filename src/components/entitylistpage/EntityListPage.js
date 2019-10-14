@@ -62,7 +62,7 @@ class EntityListPage extends Component {
                       }
                     ]
                   }
-                  submit={{label:"Search", action:null}}/>:null
+                  submit={{label:"Axtar", action:null}}/>:null
                 }
                   {this.renderBody()}
           </React.Fragment> 

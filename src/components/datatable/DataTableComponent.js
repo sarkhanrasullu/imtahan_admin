@@ -86,7 +86,7 @@ export default class DataTableComponent extends Component {
        const result = (
            <React.Fragment>
                 {noPagination?null:<PaginationWrapper/>}
-                {readOnly?null:<MDBBtn onClick={()=>{this.props.handleAdd()}}>Add</MDBBtn>}
+                {readOnly?null:<MDBBtn onClick={()=>{this.props.handleAdd()}}>Əlavə Et</MDBBtn>}
                 <MDBTable bordered className={"table-sm"}>
                     <MDBTableHead>
                         {this.renderHeader()}
