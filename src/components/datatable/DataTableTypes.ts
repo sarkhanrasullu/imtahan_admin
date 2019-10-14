@@ -62,11 +62,13 @@ export class TableColumn {
     name: string;
     label: string;
     type: TableColumnType;
+    customComponent: any;
 
-    constructor(name: string, label: string = name, columnType: TableColumnType = TableColumnType.TEXT){
+    constructor(name: string, label: string = name, columnType: TableColumnType = TableColumnType.TEXT, customComponent:any=""){
         this.label = label;
         this.name = name;
         this.type = columnType;
+        this.customComponent = customComponent;
     }
 
 }

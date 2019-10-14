@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
+import NavbarWrapper from '../../components/UI/NavbarWrapper';
 
 const rows = [
     {
@@ -45,6 +46,7 @@ class ExamEditPage extends Component {
     render() {
         return (
                 <React.Fragment>
+                  <NavbarWrapper/>
                   {
                     this.props.match.params.entityId>0?
                     <div className="text-center">
@@ -58,12 +60,11 @@ class ExamEditPage extends Component {
                     </div>:null
                   }
                   <EntityEditPage
+                      notVisible={true}
                       endpoint_select="/api/exams/{id}?projection=examProjection"
                       endpoint_add_or_save="/api/exams"
                       formFields={rows}
                   />
-                  
-                  
                 </React.Fragment>
         )
     }

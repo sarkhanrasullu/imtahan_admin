@@ -46,6 +46,9 @@ export default class StateUtil {
         };
 
         static renderData(row, column){
+            if(column.type===TableColumnType.CUSTOM_COMPONENT){
+                return column.customComponent;
+            }
             let data = StateUtil.get(row, column.name); 
             //console.log(column);
             //console.log(data);

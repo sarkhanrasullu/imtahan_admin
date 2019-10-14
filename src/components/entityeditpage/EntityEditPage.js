@@ -52,7 +52,7 @@ class EntityEditPage extends Component {
     
     return (
       <React.Fragment>
-        <NavbarWrapper />
+        <NavbarWrapper notVisible={this.props.notVisible}/>
         <MDBContainer style={{ margin: "auto"}}>
               <MDBRow>
               

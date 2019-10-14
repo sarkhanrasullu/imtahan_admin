@@ -25,12 +25,15 @@ export default class DataTableComponent extends Component {
             }
             return null;
         });
-        result.push(
-            <th style={{width:60}} key={"edit"}></th>
-        )
-        result.push(
-            <th style={{width:60}} key={"remove"}></th>
-        )
+
+        if(this.props.handleEdit)
+            result.push(
+                <th style={{width:60}} key={"edit"}></th>
+            );
+        if(this.props.handleRemove)
+            result.push(
+                <th style={{width:60}} key={"remove"}></th>
+            );
         return (<tr>{result}</tr>);
     }
 
@@ -73,7 +76,9 @@ export default class DataTableComponent extends Component {
                 if(data===null) return null;
                 return <td style={{height:10}} key={"btd"+index}>{data}</td>
             });
-            this.appendEdit(resRow, row);
+            if(this.props.handleEdit)
+                this.appendEdit(resRow, row);
+            if(this.props.handleRemove)
             this.appendRemove(resRow, row);
             return (<tr key={"btr"+index}>{resRow}</tr>)
         });

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import EntityService from '../../services/EntityService';
 import DataTableComponent from '../datatable/DataTableComponent';
-import DynamicForm from '../dynamic_form/DynamicForm';
 import LoadingSpinner from '../spinner/LoadingSpinner';
 import NavbarWrapper from '../UI/NavbarWrapper';
 
@@ -22,16 +21,17 @@ class EntityListPage extends Component {
 
     renderBody = ()=>{
       const {columns} = this.props.tableProps;
+      const {noRemove, noEdit} = this.props;
       const {list} = this.state;
       if(this.state.loading){
         return <LoadingSpinner/>;
-      }else{
+      }else{ 
            return <DataTableComponent 
-                    noPagination={this.props.noPagination}
+                    noPagination={true}//this.props.noPagination
                     readOnly={this.props.readOnly}
-                    handleRemove={this.handleRemove}
+                    handleRemove={noRemove?null:this.handleRemove}
                     handleAdd   ={this.handleAdd}
-                    handleEdit  ={this.handleEdit}
+                    handleEdit  ={noEdit?null:this.handleEdit}
                     data        ={list}  
                     columns     ={columns} />
       }
@@ -53,7 +53,7 @@ class EntityListPage extends Component {
         return (
             <React.Fragment>
                <NavbarWrapper/>
-              {
+              {/* {
               this.props.searchFields?<DynamicForm 
                   sections={
                     [
@@ -63,7 +63,7 @@ class EntityListPage extends Component {
                     ]
                   }
                   submit={{label:"Axtar", action:null}}/>:null
-                }
+                } */}
                   {this.renderBody()}
           </React.Fragment> 
         )
