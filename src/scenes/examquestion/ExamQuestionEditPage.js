@@ -41,7 +41,7 @@ export default class ExamQuestionEditPage extends Component {
           <React.Fragment>
                 <NavbarWrapper/>
                 <EntityEditPage
-                    notVisible
+                    notVisible={true}
                     fullscreen
                     defaultTarget={
                       {
@@ -54,7 +54,7 @@ export default class ExamQuestionEditPage extends Component {
                     endpoint_add_or_save="/api/examQuestions"
                     formFields={fields}
                 />
-                </React.Fragment>
+          </React.Fragment>
         )
     }
 }

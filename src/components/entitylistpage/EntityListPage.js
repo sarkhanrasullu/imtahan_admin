@@ -52,7 +52,7 @@ class EntityListPage extends Component {
     render() {
         return (
             <React.Fragment>
-               <NavbarWrapper/>
+               <NavbarWrapper notVisible={this.props.notVisible}/>
               {/* {
               this.props.searchFields?<DynamicForm 
                   sections={
