@@ -10,12 +10,12 @@ class UserLabel extends Component {
         return (
             <div className="d-sm-flex d-block">
                     <li className="nav-item d-flex justify-content-center">
-                            <span className="d-flex align-items-center mx-2 top-nav-link text-blue">
+                            <span className="d-flex align-items-center mx-2 top-nav-link text-dark">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
-                                    <a class="nav-link p-0 text-blue mr-1" href="/login" target="_blank">
+                                    <a class="nav-link p-0 text-dark mr-1" href="/login" target="_blank">
                                         Daxil ol 
                                     </a> / 
-                                    <a class="nav-link p-0 text-blue ml-1" href="http://eimtahan.herokuapp.com/registration" target="_blank">
+                                    <a class="nav-link p-0 text-dark ml-1" href="http://www.imtahanlar.az/registration" target="_blank">
                                         Qeydiyyat
                                     </a>
                                 </span>
@@ -26,12 +26,20 @@ class UserLabel extends Component {
             return (
                 <div className="d-sm-flex d-block">
                     <li className="nav-item d-flex justify-content-center">
-                            <span className="d-flex align-items-center mx-2 top-nav-link text-blue">
+                            <span className="d-flex align-items-center mx-2 top-nav-link text-black">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
-                                <a target="_blank" href="http://eimtahan.herokuapp.com/dashboard" 
-                                    class="nav-link p-0 text-blue mr-1" >
+                                <a target="_blank" href="http://www.imtahanlar.az/dashboard" 
+                                    class="nav-link p-0 mr-1 text-dark" >
                                     {loggedInUser.name+" "+loggedInUser.surname}
                                 </a>
+                            </span>
+                    </li>
+                    <li className="nav-item d-flex justify-content-center" 
+                        style={{cursor:'pointer'}}
+                    onClick={() => this.service.logout()}>
+                            <span className="d-flex align-items-center mx-2 top-nav-link text-blue">
+                                <i className="fas fa-sign-out-alt mb-0 text-dark mr-2"></i>
+                                    Çıxış et
                             </span>
                     </li>
                 </div>

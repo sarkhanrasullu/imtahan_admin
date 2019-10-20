@@ -36,11 +36,11 @@ class Login extends Component {
 
     const loggedInUser = this.service.getLoggedInUser();
     if(loggedInUser!==null){
-      return(
-        <h4 className="text-center" style={{ margin: "auto", marginTop:"10%" }}>
-          Uğurla daxil oldunuz. <a href="http://eimtahan.herokuapp.com" target="_blank">Əsas səhifəyə geri dön!</a>
-        </h4>
-      );
+        // <h4 className="text-center" style={{ margin: "auto", marginTop:"10%" }}>
+        //   Uğurla daxil oldunuz. <a href="http://www.imtahanlar.az" target="_blank">Əsas səhifəyə geri dön!</a>
+        // </h4>
+        window.location.href = 'http://www.imtahanlar.az';
+        return null;
     }
     if(this.state.loading){
       return <LoadingSpinner/>;
