@@ -30,11 +30,12 @@ export default class ExamListPagePublic extends Component {
   render() {
     return (
       <EntityListPage
+        notVisible
           noPagination
           readOnly
-          endpoint_select="/api/exams"
           noEdit
           noRemove
+          endpoint_select="/api/exams"
           tableProps={{
             columns: columns
           }}

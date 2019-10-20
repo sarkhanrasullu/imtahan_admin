@@ -8,6 +8,8 @@ import AdEditPage from "./scenes/ad/AdEditPage";
 import AdListPage from "./scenes/ad/AdListPage";
 import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
 import AnnouncementListPage from "./scenes/announcement/AnnouncementListPage";
+import AnnouncementEditPagePublic from "./scenes/announcement_public/AnnouncementEditPagePublic";
+import AnnouncementListPagePublic from "./scenes/announcement_public/AnnouncementListPagePublic";
 import CourseEditPage from "./scenes/courses/CourseEditPage";
 import CourseListPage from "./scenes/courses/CourseListPage";
 import CourseEditPagePublic from "./scenes/courses_public/CourseEditPagePublic";
@@ -71,6 +73,8 @@ class App extends Component {
                         <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
                         <Route exact path="/examlist"                           component={ExamListPagePublic}     />
                         <Route exact path="/examlist/:examId"                   component={ExamPagePublic}     />
+                        <Route exact path="/announcementlist"                   component={AnnouncementListPagePublic}  />
+                        <Route exact path="/announcementlist/:entityId"         component={AnnouncementEditPagePublic}  />
                         <Route exact path="/login"                              component={UserLoginPublic}     />
                         <Route exact path="/userlabel"                          component={UserLabel}     />
                     </Switch>
