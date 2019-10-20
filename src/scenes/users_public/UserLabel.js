@@ -8,7 +8,7 @@ class UserLabel extends Component {
         const loggedInUser = this.service.getLoggedInUser();
         if(!loggedInUser){
         return (
-            <div className="d-sm-flex d-block">
+            <div className="d-flex d-block">
                     <li className="nav-item d-flex justify-content-center">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-dark">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
@@ -24,7 +24,7 @@ class UserLabel extends Component {
         )
         }else{
             return (
-                <div className="d-sm-flex d-block">
+                <div className="d-flex d-block">
                     <li className="nav-item d-flex justify-content-center">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-black">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
