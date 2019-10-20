@@ -6,7 +6,7 @@ import React from 'react';
 import FroalaEditor from 'react-froala-wysiwyg';
 import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
 import StateUtil from '../../utils/StateUtil';
-
+import './editorcss.css';
 
 export default class EditorComponent extends React.Component {
 

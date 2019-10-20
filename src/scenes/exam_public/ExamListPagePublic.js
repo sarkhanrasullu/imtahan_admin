@@ -13,7 +13,14 @@ const columns = [
   new TableColumn("startExam", "", TableColumnType.CUSTOM_COMPONENT, <MDBBtn
                                                                         size="sm"
                                                                         color="danger"
-                                                                        className="float-right badge p-1"
+                                                                        className="float-right badge p-1 start_btn"
+                                                                        onClick={(evt, data)=>{
+                                                                          var clickedElement = evt.currentTarget;
+                                                                          var btns = document.getElementsByClassName('start_btn');
+                                                                          var index = [].indexOf.call(btns, clickedElement);
+                                                                          index = index++;
+                                                                          window.location.href="/examlist/"+index;
+                                                                        }}
                                                                       >
                                                                         <span>Başla</span>
                                                                       </MDBBtn>),

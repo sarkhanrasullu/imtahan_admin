@@ -16,6 +16,7 @@ import ExamListPage from "./scenes/exam/ExamListPage";
 import ExamQuestionEditPage from "./scenes/examquestion/ExamQuestionEditPage";
 import ExamQuestionListPage from "./scenes/examquestion/ExamQuestionListPage";
 import ExamListPagePublic from "./scenes/exam_public/ExamListPagePublic";
+import ExamPagePublic from "./scenes/exam_public/exampage_public/ExamPagePublic";
 import LessonEditPage from "./scenes/lessons/LessonEditPage";
 import LessonListPage from "./scenes/lessons/LessonListPage";
 import Login from "./scenes/login/Login";
@@ -69,6 +70,7 @@ class App extends Component {
                         <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
                         <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
                         <Route exact path="/examlist"                           component={ExamListPagePublic}     />
+                        <Route exact path="/examlist/:examId"                   component={ExamPagePublic}     />
                         <Route exact path="/login"                              component={UserLoginPublic}     />
                         <Route exact path="/userlabel"                          component={UserLabel}     />
                     </Switch>
