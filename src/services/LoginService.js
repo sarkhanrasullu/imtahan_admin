@@ -1,6 +1,5 @@
 import CommonService from './CommonService';
 import Constants from './Constants';
-import Settings from './Settings';
 
 class LoginService extends CommonService {
 
@@ -78,9 +77,13 @@ class LoginService extends CommonService {
 
 
 
-    logout = ()=>{
+    logout = (redirect_url)=>{
         this.persist(Constants.const_logged_in_user, null);
-        window.location.href="/"
+        if(redirect_url){
+            window.location.href=redirect_url;
+        }else{
+            window.location.href="/";
+        }
     }
 }
 

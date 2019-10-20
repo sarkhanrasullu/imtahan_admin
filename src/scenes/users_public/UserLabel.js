@@ -36,7 +36,7 @@ class UserLabel extends Component {
                     </li>
                     <li className="nav-item d-flex justify-content-center" 
                         style={{cursor:'pointer'}}
-                    onClick={() => this.service.logout()}>
+                    onClick={() => this.service.logout('/userlabel')}>
                             <span className="d-flex align-items-center mx-2 top-nav-link text-blue">
                                 <i className="fas fa-sign-out-alt mb-0 text-dark mr-2"></i>
                                     Çıxış et
