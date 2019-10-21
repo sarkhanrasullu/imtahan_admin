@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
+import { InputField, InputFieldType } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 import LoginFirst from '../../components/loginfirst/LoginFirst';
 import LoginService from '../../services/LoginService';
@@ -69,7 +69,7 @@ const formFields = [
     {
         items:[
             // new SelectBox("target.cityId.id","Şəhər","/api/cities","id","name"),
-            new SelectBox("target.userId.id","Istifadəçi","/api/users","id","name"),
+            // new SelectBox("target.userId.id","Istifadəçi","/api/users","id","name"),
         ]
     },
 
