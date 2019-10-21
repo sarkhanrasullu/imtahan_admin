@@ -66,7 +66,7 @@ class EntityEditPage extends Component {
                       }
                     ]}
                     submit={{
-                      label: "Save",
+                      label: this.props.btnLabel?this.props.btnLabel:"Qəbul et",
                       action: this.handleSubmitBtn
                     }}
                   />

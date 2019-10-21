@@ -10,6 +10,9 @@ import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
 import AnnouncementListPage from "./scenes/announcement/AnnouncementListPage";
 import AnnouncementEditPagePublic from "./scenes/announcement_public/AnnouncementEditPagePublic";
 import AnnouncementListPagePublic from "./scenes/announcement_public/AnnouncementListPagePublic";
+import CooperationEditPage from "./scenes/cooperation/CooperationEditPage";
+import CooperationEditPagePublic from "./scenes/cooperation/CooperationEditPagePublic";
+import CooperationListPage from "./scenes/cooperation/CooperationListPage";
 import CourseEditPage from "./scenes/courses/CourseEditPage";
 import CourseListPage from "./scenes/courses/CourseListPage";
 import CourseEditPagePublic from "./scenes/courses_public/CourseEditPagePublic";
@@ -68,6 +71,9 @@ class App extends Component {
                         <Route exact path="/exams/:examId/questions/:entityId"  component={ExamQuestionEditPage}  />
                         <Route exact path="/"                                   component={MainPage}              />
                         
+                        <Route exact path="/cooperations"                       component={CooperationListPage}     />
+                        <Route exact path="/cooperations/:entityId"             component={CooperationEditPage}     />
+                        <Route exact path="/cooperationlist/create"             component={CooperationEditPagePublic}     />
                         <Route exact path="/usersregister/:entityId"            component={UserRegisterPage}       />
                         <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
                         <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
@@ -78,7 +84,7 @@ class App extends Component {
                         <Route exact path="/login"                              component={UserLoginPublic}     />
                         <Route exact path="/userlabel"                          component={UserLabel}     />
                     </Switch>
-            :
+                    :
             <Switch>
               <Route exact path="/teacherprofile/:entityId"                     component={TeacherEditPagePublic}  />
               <Route exact path="/courseprofile/:entityId"                      component={CourseEditPagePublic}   />

@@ -6,58 +6,72 @@ const formFields = [
     {
         items:[
             new InputField("target.name","Ad"),
+        ]
+    },
+    {
+        items:[
             new InputField("target.surname","Soyad"),
         ]
     },
     {
         items:[
-            new InputField("target.email","Email"),
-            new InputField("target.phone","Nömrə"),
+            new InputField("target.address","Ünvan"),
         ]
     },
     {
         items:[
-            new InputField("target.address","Adress"),
+            new InputField("target.speciality","İxtisas (məs. Coğrafiya)"),
         ]
     },
     {
         items:[
-            new InputField("target.facebook", "Facebook"),
-            new InputField("target.instagram", "Instagram"),
+            new InputField("target.phone","Mobil"),
         ]
     },
     {
         items:[
-            new InputField("target.youtube", "YouTube"),
-            new InputField("target.website", "Website","Website"),
+            new InputField("target.email","E-mail"),
         ]
     },
     {
         items:[
-            new InputField("target.thumbnail","Şəkil", InputFieldType.IMAGE_BASE64),
+            new InputField("target.facebook", "Facebook hesabı"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.instagram", "Instagram hesabı"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.website", "Veb sayt"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.youtube", "YouTube keçid"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.description", "Fəaliyyət barədə məlumat", InputFieldType.TEXT_AREA),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.thumbnail", "Profil şəkli yüklə", InputFieldType.IMAGE_BASE64),
             null
         ]
     },
     {
         items:[
-            new SelectBox("target.cityId.id","Şəhər","/api/cities","id","name"),
+            // new SelectBox("target.cityId.id","Şəhər","/api/cities","id","name"),
             new SelectBox("target.userId.id","Istifadəçi","/api/users","id","name"),
         ]
     },
-    {
-        items:[
-            new InputField("target.description","Ətraflı", InputFieldType.TEXT_AREA),
-        ]
-    },
-    {
-        items:[
-            new InputField("target.enabled","Aktiv", InputFieldType.CHECK_BOX),
-            null
-        ]
-    },
-    
 
-    ];
+];
 
 export default class TeacherEditPage extends Component {
     render() {

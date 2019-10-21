@@ -1,18 +1,12 @@
 import React, { Component } from "react";
+import { InputField, InputFieldType, SelectBox, TableColumn, TableColumnType } from "../../components/datatable/DataTableTypes";
 import EntityListPage from "../../components/entitylistpage/EntityListPage";
-import {
-  TableColumn,
-  InputField,
-  SelectBox,
-  InputFieldType,
-  TableColumnType
-} from "../../components/datatable/DataTableTypes";
 
 const columns = [
   new TableColumn("id"),
   new TableColumn("name", "Adı"),
   new TableColumn("userId.name", "Müştəri"),
-  new TableColumn("endDate", "Birmət tarixi"),
+  new TableColumn("endDate", "Bitmə tarixi"),
 
   new TableColumn("insertUserId.name", "Daxil edən şəxs", "/users", "id", "name"),
   new TableColumn("insertDate", "Daxil edilmə tarixi", TableColumnType.DATE_TIME),

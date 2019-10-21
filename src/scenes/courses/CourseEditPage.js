@@ -2,61 +2,74 @@ import React, { Component } from 'react';
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
+
 const rows = [
     
     {
         items:[
-            new InputField("target.name","Ad"),
+            new InputField("target.name","Kursun adı"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.address","Ünvan"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.speciality","İxtisas (məs. Coğrafiya)"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.phone","Mobil"),
         ]
     },
     {
         items:[
             new InputField("target.email","Email"),
-            new InputField("target.phone","Nömrə"),
         ]
     },
     {
         items:[
-            new InputField("target.facebook", "Facebook"),
-            new InputField("target.instagram", "Instagram"),
+            new InputField("target.facebook", "Facebook hesabı"),
         ]
     },
     {
         items:[
-            new InputField("target.youtube", "YouTube"),
-            new InputField("target.website", "Website","Website"),
-        ]
-    },
-    
-    {
-        items:[
-            new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
-            new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
+            new InputField("target.instagram", "Instagram hesabı"),
         ]
     },
     {
         items:[
-            new InputField("target.address","Adress"),
+            new InputField("target.website", "Veb sayt"),
         ]
     },
     {
         items:[
-            new InputField("target.thumbnail","Şəkil", InputFieldType.IMAGE_BASE64),
+            new InputField("target.youtube", "YouTube keçid"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.description","Xidmətləri və fəaliyyət barədə məlumat", InputFieldType.TEXT_AREA),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.thumbnail","Profil şəkli yüklə", InputFieldType.IMAGE_BASE64),
             null
         ]
     },
     {
         items:[
-            new InputField("target.description","Ətraflı", InputFieldType.TEXT_AREA),
+            new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
+            // new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
         ]
     },
-    {
-        items:[
-            new InputField("target.enabled","Aktiv", InputFieldType.CHECK_BOX),
-        ]
-    },
-];
 
+    
+];
 export default class CourseEditPage extends Component {
     render() {
         return (

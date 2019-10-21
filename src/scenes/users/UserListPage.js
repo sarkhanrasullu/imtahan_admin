@@ -1,12 +1,6 @@
 import React, { Component } from "react";
+import { InputField, InputFieldType, SelectBox, TableColumn, TableColumnType } from "../../components/datatable/DataTableTypes";
 import EntityListPage from "../../components/entitylistpage/EntityListPage";
-import {
-  TableColumn,
-  InputField,
-  InputFieldType,
-  SelectBox,
-  TableColumnType
-} from "../../components/datatable/DataTableTypes";
 
 const columns = [
   new TableColumn("id"),
@@ -54,7 +48,7 @@ export default class UserListPage extends Component {
   render() {
     return (
       <EntityListPage
-        endpoint_select="/api/users"
+        endpoint_select="/api/users?projection=userProjection"
         endpoint_delete="/api/users"
         searchFields={fields}
         tableProps={{

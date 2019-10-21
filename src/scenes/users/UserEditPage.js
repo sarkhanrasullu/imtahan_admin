@@ -5,46 +5,54 @@ import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 const formFields = [
     {
         items: [
-            new InputField("target.name", "ad"),
-            new InputField("target.surname", "soyad"),
+            new InputField("target.name", "Ad"),
         ]
     },
     {
         items: [
-            new InputField("target.age", "yaş"),
-            new InputField("target.balance", "balans"),
+            new InputField("target.surname", "Soyad"),
         ]
     },
     {
         items: [
-            new InputField("target.email", "email"),
-            new InputField("target.password", "parol",InputFieldType.PASSWORD),
+            new InputField("target.fatherName", "Ata adı"),
         ]
     },
     {
         items: [
-            new InputField("target.phone", "nömrə"),
-            new InputField("target.address", "address"),
+            new SelectBox("target.genderId.id", "Cinsiniz","/genders","id","name"),
         ]
     },
     {
         items: [
-            new SelectBox("target.cityId.id", "şəhər","/api/cities","id","name"),
-            new SelectBox("target.roleId.id", "pozisiya","/api/userRoles","id","name"),
+            new InputField("target.email", "E-mail"),
         ]
     },
     {
         items: [
-            new InputField("target.approved", "email təsdiqlənib", InputFieldType.CHECK_BOX),
-            new InputField("target.enabled", "aktiv", InputFieldType.CHECK_BOX),
+            new InputField("target.phone", "Mobil telefon"),
         ]
     },
     {
         items: [
-            new InputField("target.thumbnail", "Şəkil", InputFieldType.IMAGE_BASE64),
-            null,
+            new SelectBox("target.status", "Status","/usersstatuses","id","name"),
         ]
     },
+    {
+        items: [
+            new InputField("target.password", "Şifrə", InputFieldType.PASSWORD),
+        ]
+    },
+    {
+        items: [
+            new SelectBox("target.cityId.id", "Yaşadığınız yer","/api/cities","id","name"),
+        ]
+    },
+    {
+        items: [
+            new SelectBox("target.schoolId.id", "Oxuduğunuz məktəb","/api/cities","id","name"),
+        ]
+    }
 ];
 
 class UserEditPage extends Component {
