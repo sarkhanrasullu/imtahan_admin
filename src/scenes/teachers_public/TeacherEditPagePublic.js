@@ -66,12 +66,12 @@ const formFields = [
             null
         ]
     },
-    {
-        items:[
-            // new SelectBox("target.cityId.id","Şəhər","/api/cities","id","name"),
-            // new SelectBox("target.userId.id","Istifadəçi","/api/users","id","name"),
-        ]
-    },
+    // {
+    //     items:[
+    //         // new SelectBox("target.cityId.id","Şəhər","/api/cities","id","name"),
+    //         // new SelectBox("target.userId.id","Istifadəçi","/api/users","id","name"),
+    //     ]
+    // },
 
 ];
 

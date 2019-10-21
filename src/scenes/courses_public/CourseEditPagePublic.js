@@ -62,12 +62,12 @@ const rows = [
             null
         ]
     },
-    {
-        items:[
-            // new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
-            // new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
-        ]
-    },
+    // {
+    //     items:[
+    //         // new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
+    //         // new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
+    //     ]
+    // },
 
     
 ];
