@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { InputField, SelectBox, InputFieldType } from '../../components/datatable/DataTableTypes';
+import React, { Component } from 'react';
+import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
 const rows = [
@@ -17,20 +17,177 @@ const rows = [
     },
     {
         items:[
+            new InputField("target.leftSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.leftSide2","Solda reklam 2", InputFieldType.IMAGE_BASE64),
+            new InputField("target.leftSideLink2","Sol reklam 2 keçidi"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.leftSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.leftSide3","Solda reklam3 ", InputFieldType.IMAGE_BASE64),
+            new InputField("target.leftSideLink3","Sol reklam 3 keçidi"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.leftSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.leftSide4","Solda reklam 4", InputFieldType.IMAGE_BASE64),
+            new InputField("target.leftSideLink4","Sol reklam 4 keçidi"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.leftSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
             new InputField("target.rightSide","Sağda reklam",InputFieldType.IMAGE_BASE64),
             new InputField("target.rightSideLink","Sağ reklam keçidi"),
         ]
     },
     {
         items:[
+            new InputField("target.rightSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.rightSide2","Sağda reklam 2",InputFieldType.IMAGE_BASE64),
+            new InputField("target.rightSideLink2","Sağ reklam 2 keçidi"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.rightSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.rightSide3","Sağda reklam 3",InputFieldType.IMAGE_BASE64),
+            new InputField("target.rightSideLink3","Sağ reklam 3 keçidi"),
+            
+        ]
+    },
+    {
+        items:[
+            new InputField("target.rightSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.rightSide4","Sağda reklam 4",InputFieldType.IMAGE_BASE64),
+            new InputField("target.rightSideLink4","Sağ reklam 4 keçidi"),
+             
+        ]
+    },
+    {
+        items:[
+            new InputField("target.rightSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+
+    {
+        items:[
             new InputField("target.upSide","Yuxarıda reklam", InputFieldType.IMAGE_BASE64),
             new InputField("target.upSideLink","Yuxarı reklam keçidi"),
+            
+        ]
+    },
+    {
+        items:[
+            new InputField("target.upSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.upSide2","Yuxarıda reklam 2", InputFieldType.IMAGE_BASE64),
+            new InputField("target.upSideLink2","Yuxarı reklam 2 keçidi"),
+            
+        ]
+    },
+    {
+        items:[
+            new InputField("target.upSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.upSide3","Yuxarıda reklam 3", InputFieldType.IMAGE_BASE64),
+            new InputField("target.upSideLink3","Yuxarı reklam 3 keçidi"),
+        ]
+    },
+    {
+        items:[
+            new InputField("target.upSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.upSide4","Yuxarıda reklam 4", InputFieldType.IMAGE_BASE64),
+            new InputField("target.upSideLink4","Yuxarı reklam 4 keçidi"), 
+        ]
+    },
+    {
+        items:[
+            new InputField("target.upSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX,true)
         ]
     },
     {
         items:[
             new InputField("target.downSide","Aşağıda reklam", InputFieldType.IMAGE_BASE64),
-            new InputField("target.downSideLink","Aşağı reklam keçidi"),
+            new InputField("target.downSideLink","Aşağı reklam keçidi"), 
+        ]
+    },
+    {
+        items:[
+            new InputField("target.downSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.downSide2","Aşağıda reklam 2", InputFieldType.IMAGE_BASE64),
+            new InputField("target.downSideLink2","Aşağı reklam 2 keçidi"), 
+        ]
+    },
+    {
+        items:[
+            new InputField("target.downSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.downSide3","Aşağıda reklam 3", InputFieldType.IMAGE_BASE64),
+            new InputField("target.downSideLink3","Aşağı reklam 3keçidi"), 
+        ]
+    },
+    {
+        items:[
+            new InputField("target.downSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+        ]
+    },
+    {
+        items:[
+            new InputField("target.downSide4","Aşağıda reklam 4", InputFieldType.IMAGE_BASE64),
+            new InputField("target.downSideLink4","Aşağı reklam 4keçidi"), 
+        ]
+    },
+    {
+        items:[
+            new InputField("target.downSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -40,7 +197,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.enabled","Aktiv"     ,InputFieldType.CHECK_BOX),
+            new InputField("target.enabled","Aktiv"     ,InputFieldType.CHECK_BOX, true),
         ]
     }
 ];
