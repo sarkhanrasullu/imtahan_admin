@@ -12,12 +12,10 @@ export default class ItemPicker extends Component {
 
     componentDidMount(){
       const {item} = this.props;
-      console.log(item);
       if(item.endPoint!=null){
         this.service.loadItems(item.endPoint);
       }else if(item.defaultList!=null){
         const {item} = this.props;
-        console.log(item);
         this.setState({list: item.defaultList});
       }
     }
