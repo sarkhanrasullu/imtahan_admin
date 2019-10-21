@@ -28,7 +28,7 @@ class ExamPagePublic extends Component {
                     const list = response._embedded[firstElementKey];
                     const state = this.state;
                     const examIndex = this.props.match.params.examId;
-                    const selectedExam = list[examIndex];
+                    const selectedExam = list[examIndex-1];
                     state.selectedExam = selectedExam;
                     this.loadQuestions(selectedExam);
             })
@@ -77,11 +77,6 @@ class ExamPagePublic extends Component {
   renderBody = ()=>{
     return <React.Fragment>
       <MDBContainer>
-      {/* <MDBRow>
-          <MDBCol md={4}>
-           {this.renderInfo()}
-          </MDBCol>
-        </MDBRow> */}
         <MDBRow>
           <MDBCol md={8}>
             {this.renderQuestionBody()}
