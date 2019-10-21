@@ -20,12 +20,33 @@ const rows = [
     },
     {
         items:[
-            new SelectBox ("target.lessonId.id","Hansı dərsi tədris edirsiniz","/api/lessons","id","name"),
+            new SelectBox ("target.lessonId.id","Hansı dərsi tədris edirsiniz (Kurs olaraq elan verirsinizsə boş saxlaya bilərsiniz)","/api/lessons","id","name", true),
         ]
     },
     {
         items:[
-            new SelectBox("target.endDate","Elanın müddəti", '','id','name'),
+            new SelectBox("target.endDate","Elanın müddəti", null,'id','name', false, [
+                {
+                    id: 1,
+                    name:'1 ay'
+                }, 
+                {
+                    id: 2,
+                    name:'3 ay'
+                }, 
+                {
+                    id: 3,
+                    name:'6 ay'
+                }, 
+                {
+                    id: 4,
+                    name:'9 ay'
+                }, 
+                {
+                    id: 5,
+                    name:'12 ay'
+                }, 
+            ]),
         ]
     },
     {

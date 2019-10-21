@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import MyImagePicker from '../myimagepicker/MyImagePicker';
-import DefaultFormInput from '../defaultforminput/DefaultFormInput';
-import ItemPicker from '../itempicker/ItemPicker';
+import React, { Component } from 'react';
+import CheckBox from '../checkbox/CheckBox';
 import { InputFieldType } from '../datatable/DataTableTypes';
 import DNDatePicker from '../datepicker/DNDatePicker';
-import './FormInput.css';
-import CheckBox from '../checkbox/CheckBox';
+import DefaultFormInput from '../defaultforminput/DefaultFormInput';
 import Editor from '../editor';
+import ItemPicker from '../itempicker/ItemPicker';
+import MyImagePicker from '../myimagepicker/MyImagePicker';
+import './FormInput.css';
 
 const style = {
   errorInput: {borderColor:"red", borderWidth:1, fontSize:16, fontWeight:"bold"},
@@ -41,13 +41,15 @@ export default class FormInput extends Component {
 
       const {component} = this.props;
       if(type === InputFieldType.IMAGE_PICKER || type === InputFieldType.IMAGE_BASE64){
-        result.push(<MyImagePicker item={item} key={key} readOnly={readOnly} error={error} component={component} type={type}/>);
+        result.push(
+                <MyImagePicker item={item} key={key} readOnly={readOnly} error={error} component={component} type={type}/>
+        );
       } else if(type === InputFieldType.SELECT_BOX) {
         result.push(
-          <ItemPicker 
-                item      ={item}
-                error     ={error}
-                component ={component} />
+                <ItemPicker 
+                      item      ={item}
+                      error     ={error}
+                      component ={component} />
         )
       } else if(type === InputFieldType.CUSTOM){
         result.push(customComponent);

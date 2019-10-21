@@ -38,12 +38,14 @@ export class SelectBox extends AbstractInputField {
     endPoint: string;
     valueParam:string;
     displayParam: string;
+    defaultList: any;
 
-    constructor(  name: string, label: string = name, endpoint:string, valueParam:string, displayParam:string, optional=false){
+    constructor(name: string, label: string = name, endpoint:string, valueParam:string, displayParam:string, optional=false, defaultList:any){
         super(name, label, InputFieldType.SELECT_BOX, optional);
         this.endPoint = endpoint;
         this.valueParam = valueParam;
         this.displayParam = displayParam;
+        this.defaultList = defaultList;
     }
 
 }

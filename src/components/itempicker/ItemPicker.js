@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import StateUtil from '../../utils/StateUtil';
 import EntityService from "../../services/EntityService";
-import './ItemPicker.css'
+import StateUtil from '../../utils/StateUtil';
+import './ItemPicker.css';
 export default class ItemPicker extends Component {
     state = {
       val: null,
@@ -12,9 +12,13 @@ export default class ItemPicker extends Component {
 
     componentDidMount(){
       const {item} = this.props;
-      //console.log(item);
+      console.log(item);
       if(item.endPoint!=null){
         this.service.loadItems(item.endPoint);
+      }else if(item.defaultList!=null){
+        const {item} = this.props;
+        console.log(item);
+        this.setState({list: item.defaultList});
       }
     }
 

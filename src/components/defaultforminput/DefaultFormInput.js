@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import { MDBInput } from 'mdbreact';
+import React, { Component } from 'react';
 import StateUtil from '../../utils/StateUtil';
-import {MDBInput} from 'mdbreact'
 import './DefaultFormInput.css';
 
 const style = { 
