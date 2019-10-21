@@ -148,7 +148,7 @@ class ExamPagePublic extends Component {
   }
 
   renderAnswersBody = ()=>{
-    const {questions} = this.state;
+    const {questions,selectedExam} = this.state;
     const question = questions[0];
     const rightAnswersSplitted = question.rightAnswer.split(',');
     const rightAnswerRadioButtons = [];
@@ -158,6 +158,7 @@ class ExamPagePublic extends Component {
     });
             return <div style={{position: "fixed"}}>
                       <div style={{marginBottom:'50px'}}>{this.renderInfo()}</div>
+                      <div style={{marginBottom:'50px'}}>{selectedExam.description}</div>
                       <div>{rightAnswerRadioButtons}</div>
                 </div> 
   }
@@ -171,6 +172,7 @@ class ExamPagePublic extends Component {
           <span>{variants[i]}</span>
           <input
               type="radio"
+              name={index+"_answers"}
               value={variants[i]}
               style={{marginLeft: "5px", height: "18px"}}
               />
