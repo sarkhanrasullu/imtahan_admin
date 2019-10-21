@@ -86,6 +86,7 @@ class App extends Component {
                     </Switch>
                     :
             <Switch>
+              <Route exact path="/cooperationlist/create"             component={CooperationEditPagePublic}     />
               <Route exact path="/teacherprofile/:entityId"                     component={TeacherEditPagePublic}  />
               <Route exact path="/courseprofile/:entityId"                      component={CourseEditPagePublic}   />
               <Route exact path="/usersregister/create"                         component={UserRegisterPage}       />
