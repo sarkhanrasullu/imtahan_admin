@@ -18,8 +18,11 @@ const columns = [
                                                                           var clickedElement = evt.currentTarget;
                                                                           var btns = document.getElementsByClassName('start_btn');
                                                                           var index = [].indexOf.call(btns, clickedElement);
-                                                                          index = index++;
-                                                                          window.location.href="/examlist/"+index;
+                                                                          index+=1;
+                                                                          window.open(
+                                                                            "https://www.imtahanlar.az/startexam/"+index,
+                                                                            '_blank'
+                                                                          );
                                                                         }}
                                                                       >
                                                                         <span>Başla</span>
