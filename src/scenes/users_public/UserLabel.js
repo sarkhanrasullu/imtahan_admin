@@ -28,7 +28,7 @@ class UserLabel extends Component {
                     <li className="nav-item d-flex justify-content-center">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-black">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
-                                <a target="_blank" href="http://www.imtahanlar.az/dashboard" 
+                                <a target="_blank" href="https://www.imtahanlar.az/dashboard" 
                                     class="nav-link p-0 mr-1 text-dark" >
                                     {loggedInUser.name+" "+loggedInUser.surname}
                                 </a>
