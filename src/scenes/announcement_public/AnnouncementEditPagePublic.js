@@ -10,43 +10,33 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.classNo","Sinif"),
-            new InputField("target.price","Qiymət"),
+            new SelectBox("target.categoryId.id","Kateqoriya seçin", '','id','name'),
         ]
     },
     {
         items:[
-            new SelectBox ("target.teacherId.id","Müəllim","/api/teachers","id","name"),
-            new SelectBox ("target.courseId.id","Kurs","/api/courses","id","name"),
-            new SelectBox ("target.userId.id","Müştəri","/api/users","id","name"),
+            new SelectBox ("target.sectorId.id","Sektoru seçin","/api/sectors","id","name"),
         ]
     },
     {
         items:[
-            new SelectBox ("target.lessonId.id","Dərs","/api/lessons","id","name"),
-            new SelectBox ("target.sectorId.id","Sektor","/api/sectors","id","name"),
+            new SelectBox ("target.lessonId.id","Hansı dərsi tədris edirsiniz","/api/lessons","id","name"),
         ]
     },
     {
         items:[
-            new SelectBox ("target.cityId.id","Şəhər","/api/cities","id","name"),
-            new InputField("target.endDate","Elanın bitmə tarixi", InputFieldType.DATE),
+            new SelectBox("target.endDate","Elanın müddəti", '','id','name'),
         ]
     },
     {
         items:[
-            new InputField("target.thumbnail","Şəkil",InputFieldType.IMAGE_BASE64),
+            new InputField("target.thumbnail","Şəkil yükləyin",InputFieldType.IMAGE_BASE64),
             null
         ]
     },
     {
         items:[
-            new InputField("target.description","Ətraflı",InputFieldType.TEXT_AREA),
-        ]
-    },
-    {
-        items:[
-            new InputField("target.enabled","Aktiv",InputFieldType.CHECK_BOX),
+            new InputField("target.description","Elan haqqında ətraflı məlumat daxil edin",InputFieldType.TEXT_AREA),
         ]
     }
 ];

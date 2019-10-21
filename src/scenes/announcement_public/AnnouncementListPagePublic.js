@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InputField, InputFieldType, SelectBox, TableColumn, TableColumnType } from '../../components/datatable/DataTableTypes';
+import { TableColumn, TableColumnType } from '../../components/datatable/DataTableTypes';
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
 
 const columns = [
@@ -20,25 +20,7 @@ const columns = [
     new TableColumn("insertDate","Daxil edilmə tarixi", TableColumnType.DATE_TIME),
     new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];
-
-const rows = [
-    {
-        items:[
-            new InputField("target.name", "Elanın başlığı"),
-            new InputField("target.classNo", "Sinif"),
-            new InputField("target.price", "Qiymət"),
-        ]
-    },
-    {
-        items:[
-            new SelectBox ("target.lessonId.id", "Dərs", "/api/lessons", "id", "name"),
-            new SelectBox ("target.sectorId.id", "Sektor", "/api/sectors", "id", "name"),
-            new SelectBox ("target.insertUserId.id", "Daxil edən şəxs", "/api/users", "id", "name"),
-            new InputField("target.insertDate", "Daxil edilmə tarixi", InputFieldType.DATE_TIME),
-            new InputField("target.lastChangeDate", "Son dəyişilmə tarixi", InputFieldType.DATE_TIME),
-        ]
-    }
-];
+ 
 
 export default class AnnouncementListPagePublic extends Component {
     render() {

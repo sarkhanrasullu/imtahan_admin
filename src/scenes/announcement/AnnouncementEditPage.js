@@ -1,5 +1,5 @@
-import React,{ Component } from 'react'
-import { InputField,SelectBox,InputFieldType } from '../../components/datatable/DataTableTypes';
+import React, { Component } from 'react';
+import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
 const rows = [
