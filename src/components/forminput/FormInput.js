@@ -42,7 +42,9 @@ export default class FormInput extends Component {
       const {component} = this.props;
       if(type === InputFieldType.IMAGE_PICKER || type === InputFieldType.IMAGE_BASE64){
         result.push(
-                <MyImagePicker item={item} key={key} readOnly={readOnly} error={error} component={component} type={type}/>
+                <MyImagePicker 
+                    item={item} key={key} readOnly={readOnly} 
+                    error={error} component={component} type={type}/>
         );
       } else if(type === InputFieldType.SELECT_BOX) {
         result.push(

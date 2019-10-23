@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import { InputField, SelectBox } from '../../components/datatable/DataTableTypes';
+import { InputField } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
 const rows = [
@@ -9,11 +9,11 @@ const rows = [
             new InputField("target.name","Kategoriyanın adı"),
         ]
     },
-    {
-        items:[
-            new SelectBox("target.parentId.id","Üst kategoriyanın adı","/api/lessonCategories?projection=lessonCategoryProjection","id","name"),
-        ]
-    } 
+    // {
+    //     items:[
+    //         new SelectBox("target.parentId.id","Üst kategoriyanın adı","/api/lessonCategories?projection=lessonCategoryProjection","id","name"),
+    //     ]
+    // } 
 ];
 class CategoryEditPage extends Component {
 
