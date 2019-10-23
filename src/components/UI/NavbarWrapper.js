@@ -76,7 +76,7 @@ class NavbarWrapper extends Component {
                 {this.linkItem("/announcements","Elanlar")}
                 {this.linkItem("/ads","Reklamlar")}
                 {this.linkItem("/exams","İmtahanlar")}
-                {this.linkItem("/categories","Kateqoriyalar")}
+                {this.linkItem("/categories/all","Kateqoriyalar")}
               </MDBNavbarNav>
               <MDBNavbarNav right>
                 <MDBNavItem onClick={() => this.service_login.logout()}>

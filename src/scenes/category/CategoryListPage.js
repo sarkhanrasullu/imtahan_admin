@@ -25,7 +25,7 @@ const columns = [
 
 class CategoryListPage extends Component {
     render() {
-        const parentId = this.props.match.params.entityId?this.props.match.params.entityId:"";
+        const parentId = this.props.match.params.entityId!=='all'?this.props.match.params.entityId:"";
         return ( 
                 <EntityListPage
                     noPagination
