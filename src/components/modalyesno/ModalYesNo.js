@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import { MDBBtn } from 'mdbreact';
+import React, { Component } from 'react';
 import ModalWrapper from '../modalwrapper/ModalWrapper';
-import {MDBBtn} from 'mdbreact';
 
 export default class ModalYesNo extends Component {
 
@@ -13,11 +13,11 @@ export default class ModalYesNo extends Component {
 
     renderYesButton = ()=>{
         const {onClickYes} = this.props;
-        return <MDBBtn color="primary" onClick={onClickYes}>Yes</MDBBtn>
+        return <MDBBtn color="primary" onClick={onClickYes}>Bəli</MDBBtn>
     }
 
     renderNoButton = () =>{
-        return <MDBBtn color="secondary" onClick={this.toggle}>No</MDBBtn>
+        return <MDBBtn color="secondary" onClick={this.toggle}>İmtina et</MDBBtn>
     }
 
     render() {
@@ -27,7 +27,7 @@ export default class ModalYesNo extends Component {
             <ModalWrapper 
                 show={state.show} 
                 toggle={this.toggle}
-                header={title?title:"Are you sure?"}
+                header={title?title:"Əminsiniz?"}
                 footer={
                     [
                         this.renderYesButton(),

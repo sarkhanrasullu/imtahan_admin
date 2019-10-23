@@ -10,6 +10,8 @@ import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
 import AnnouncementListPage from "./scenes/announcement/AnnouncementListPage";
 import AnnouncementEditPagePublic from "./scenes/announcement_public/AnnouncementEditPagePublic";
 import AnnouncementListPagePublic from "./scenes/announcement_public/AnnouncementListPagePublic";
+import CategoryEditPage from "./scenes/category/CategoryEditPage";
+import CategoryListPage from "./scenes/category/CategoryListPage";
 import CooperationEditPage from "./scenes/cooperation/CooperationEditPage";
 import CooperationEditPagePublic from "./scenes/cooperation/CooperationEditPagePublic";
 import CooperationListPage from "./scenes/cooperation/CooperationListPage";
@@ -81,6 +83,10 @@ class App extends Component {
                         <Route exact path="/examlist/:examId"                   component={ExamPagePublic}     />
                         <Route exact path="/announcementlist"                   component={AnnouncementListPagePublic}  />
                         <Route exact path="/announcementlist/:entityId"         component={AnnouncementEditPagePublic}  />
+                        <Route exact path="/categories"                         component={CategoryListPage}  />
+                        <Route exact path="/categories/:entityId"               component={CategoryListPage}  />
+                        <Route exact path="/categories/:entityIdParent/:entityId" component={CategoryEditPage}  />
+                        <Route exact path="/categoryedit/:entityId"             component={CategoryEditPage}  />
                         <Route exact path="/login"                              component={UserLoginPublic}     />
                         <Route exact path="/userlabel"                          component={UserLabel}     />
                     </Switch>

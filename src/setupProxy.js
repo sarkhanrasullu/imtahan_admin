@@ -5,7 +5,7 @@ const filter = (pathname, req) => {
   return result;
 };
 //http://examapprest.herokuapp.com
-const myproxy = proxy(filter, { target: "http://examapprest.herokuapp.com", changeOrigin: true });
+const myproxy = proxy(filter, { target: "http://localhost", changeOrigin: true });
 
 module.exports = app => {
   app.use(myproxy);
