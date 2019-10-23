@@ -5,6 +5,7 @@ import { TableColumn, TableColumnType } from '../../components/datatable/DataTab
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
 
 const columns = [
+    new TableColumn("id","id"),
     new TableColumn("name","Kateqoriyanın adı"),
     new TableColumn("parentId.name","Üst kateqoriyanın adı"),
     new TableColumn("", "", TableColumnType.CUSTOM_COMPONENT, <MDBBtn
@@ -13,10 +14,8 @@ const columns = [
                                                                         className="float-right badge p-1 start_btn"
                                                                         onClick={(evt, data)=>{
                                                                           var clickedElement = evt.currentTarget;
-                                                                          var btns = document.getElementsByClassName('start_btn');
-                                                                          var index = [].indexOf.call(btns, clickedElement);
-                                                                          index+=1;
-                                                                          window.location.href="/categories/"+index;
+                                                                          var id = clickedElement.parentNode.parentNode.getElementsByTagName('td')[0].innerHTML;
+                                                                          window.location.href="/categories/"+id;
                                                                         }}
                                                                       >
                                                                         <span>Alt Kateqoriyalara bax</span>
