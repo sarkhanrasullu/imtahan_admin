@@ -11,7 +11,7 @@ const rows = [
     },
     {
         items:[
-            new SelectBox("target.parentId.id","Üst kategoriyanın adı","/api/lessonCategories","id","name"),
+            new SelectBox("target.parentId.id","Üst kategoriyanın adı","/api/lessonCategories?projection=lessonCategoryProjection","id","name"),
         ]
     } 
 ];
@@ -28,8 +28,7 @@ class CategoryEditPage extends Component {
                     }}
                     endpoint_select="/api/lessonCategories/{id}?projection=lessonCategoryProjection"
                     endpoint_add_or_save="/api/lessonCategories"
-                    formFields={rows}
-                />
+                    formFields={rows}/>
         )
     }
 }
