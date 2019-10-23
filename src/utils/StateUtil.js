@@ -4,8 +4,8 @@ import CommonUtil from "./CommonUtil";
 export default class StateUtil {
 
         static get = (state, name) => {
-           // console.log(state);
-            //console.log(name);
+            // console.log(state);
+            // console.log(name);
             if(!state || !name) return "";
             if(name.length===0) return state;
             const p = name;

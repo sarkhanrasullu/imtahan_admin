@@ -13,11 +13,11 @@ export default class ModalYesNo extends Component {
 
     renderYesButton = ()=>{
         const {onClickYes} = this.props;
-        return <MDBBtn color="primary" onClick={onClickYes}>Bəli</MDBBtn>
+        return <MDBBtn color="primary" onClick={onClickYes}>BƏLİ</MDBBtn>
     }
 
     renderNoButton = () =>{
-        return <MDBBtn color="secondary" onClick={this.toggle}>İmtina et</MDBBtn>
+        return <MDBBtn color="secondary" onClick={this.toggle}>İMTİNA ET</MDBBtn>
     }
 
     render() {

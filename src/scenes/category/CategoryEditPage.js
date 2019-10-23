@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 import { InputField, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
@@ -14,10 +15,17 @@ const rows = [
         ]
     } 
 ];
-export default class CategoryEditPage extends Component {
-    render() {
+class CategoryEditPage extends Component {
+
+    render() { 
+        console.log(this.state);
         return (
                 <EntityEditPage
+                    defaultTarget={{
+                        parentId:{
+                            id: this.props.match.params.entityIdParent
+                        }
+                    }}
                     endpoint_select="/api/lessonCategories/{id}?projection=lessonCategoryProjection"
                     endpoint_add_or_save="/api/lessonCategories"
                     formFields={rows}
@@ -25,3 +33,5 @@ export default class CategoryEditPage extends Component {
         )
     }
 }
+
+export default withRouter(CategoryEditPage);

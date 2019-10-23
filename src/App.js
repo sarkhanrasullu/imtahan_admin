@@ -66,29 +66,30 @@ class App extends Component {
                         <Route exact path="/announcements"                      component={AnnouncementListPage}  />
                         <Route exact path="/announcements/:entityId"            component={AnnouncementEditPage}  />
                         <Route exact path="/ads"                                component={AdListPage}            />
-                        <Route exact path="/ads/:entityId"                      component={AdEditPage}            />
-                        <Route exact path="/exams"                              component={ExamListPage}          />
-                        <Route exact path="/exams/:entityId"                    component={ExamEditPage}          />
-                        <Route exact path="/exams/:examId/questions"            component={ExamQuestionListPage}  />
-                        <Route exact path="/exams/:examId/questions/:entityId"  component={ExamQuestionEditPage}  />
-                        <Route exact path="/"                                   component={MainPage}              />
+                        <Route exact path="/ads/:entityId"                        component={AdEditPage}            />
+                        <Route exact path="/exams"                                component={ExamListPage}          />
+                        <Route exact path="/exams/:entityId"                      component={ExamEditPage}          />
+                        <Route exact path="/exams/:examId/questions"              component={ExamQuestionListPage}  />
+                        <Route exact path="/exams/:examId/questions/:entityId"    component={ExamQuestionEditPage}  />
+                        <Route exact path="/"                                     component={MainPage}              />
                         
-                        <Route exact path="/cooperations"                       component={CooperationListPage}     />
-                        <Route exact path="/cooperations/:entityId"             component={CooperationEditPage}     />
-                        <Route exact path="/cooperationlist/create"             component={CooperationEditPagePublic}     />
-                        <Route exact path="/usersregister/:entityId"            component={UserRegisterPage}       />
-                        <Route exact path="/teacherprofile/:entityId"           component={TeacherEditPagePublic}  />
-                        <Route exact path="/courseprofile/:entityId"            component={CourseEditPagePublic}   />
-                        <Route exact path="/examlist"                           component={ExamListPagePublic}     />
-                        <Route exact path="/examlist/:examId"                   component={ExamPagePublic}     />
-                        <Route exact path="/announcementlist"                   component={AnnouncementListPagePublic}  />
-                        <Route exact path="/announcementlist/:entityId"         component={AnnouncementEditPagePublic}  />
-                        <Route exact path="/categories"                         component={CategoryListPage}  />
-                        <Route exact path="/categories/:entityId"               component={CategoryListPage}  />
+                        <Route exact path="/cooperations"                         component={CooperationListPage}     />
+                        <Route exact path="/cooperations/:entityId"               component={CooperationEditPage}     />
+                        <Route exact path="/cooperationlist/create"               component={CooperationEditPagePublic}     />
+                        <Route exact path="/usersregister/:entityId"              component={UserRegisterPage}       />
+                        <Route exact path="/teacherprofile/:entityId"             component={TeacherEditPagePublic}  />
+                        <Route exact path="/courseprofile/:entityId"              component={CourseEditPagePublic}   />
+                        <Route exact path="/examlist"                             component={ExamListPagePublic}     />
+                        <Route exact path="/examlist/:examId"                     component={ExamPagePublic}     />
+                        <Route exact path="/announcementlist"                     component={AnnouncementListPagePublic}  />
+                        <Route exact path="/announcementlist/:entityId"           component={AnnouncementEditPagePublic}  />
+                        <Route exact path="/categories"                           component={CategoryListPage}  />
+                        <Route exact path="/categories/create"                    component={CategoryEditPage}  />
+                        <Route exact path="/categories/:entityId"                 component={CategoryListPage}  />
                         <Route exact path="/categories/:entityIdParent/:entityId" component={CategoryEditPage}  />
-                        <Route exact path="/categoryedit/:entityId"             component={CategoryEditPage}  />
-                        <Route exact path="/login"                              component={UserLoginPublic}     />
-                        <Route exact path="/userlabel"                          component={UserLabel}     />
+                        <Route exact path="/categoryedit/:entityId"               component={CategoryEditPage}  />
+                        <Route exact path="/login"                                component={UserLoginPublic}     />
+                        <Route exact path="/userlabel"                            component={UserLabel}     />
                     </Switch>
                     :
             <Switch>
