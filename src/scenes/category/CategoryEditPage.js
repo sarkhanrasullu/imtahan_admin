@@ -23,7 +23,7 @@ class CategoryEditPage extends Component {
                 <EntityEditPage
                     defaultTarget={{
                         parentId:{
-                            id: this.props.match.params.entityIdParent
+                            id: this.props.match.params.entityIdParent==='all'?null:this.props.match.params.entityIdParent
                         }
                     }}
                     endpoint_select="/api/lessonCategories/{id}?projection=lessonCategoryProjection"
