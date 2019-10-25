@@ -1,4 +1,4 @@
-import { MDBBtn, MDBIcon, MDBNavLink, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBBtn, MDBIcon, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import React, { Component } from 'react';
 import StateUtil from '../../utils/StateUtil';
 import ModalYesNo from '../modalyesno/ModalYesNo';
@@ -48,9 +48,7 @@ export default class DataTableComponent extends Component {
     appendRemove(row, data){
         row.push(
             <td key={"remove"}>
-                <MDBNavLink to={"#"}>
-                    <MDBIcon onClick={()=>{this.toggle(data)}} size="lg" far icon="trash-alt" />
-                </MDBNavLink>
+                    <MDBIcon style={{margin:"10px 10px 10px 15px",cursor:"pointer"}} onClick={()=>{this.toggle(data)}} size="lg" far icon="trash-alt" />
             </td>
         )
     } 
