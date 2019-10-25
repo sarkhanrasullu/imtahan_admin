@@ -1,6 +1,6 @@
 import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from "react-router-dom";
 import LoadingSpinner from '../../../components/spinner/LoadingSpinner';
 import EntityService from '../../../services/EntityService';
 import './exampage.css';
@@ -181,4 +181,4 @@ class ExamPagePublic extends Component {
   }
 }
 
-export default withRouter(ExamPagePublic);
+export default ExamPagePublic;

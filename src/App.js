@@ -1,7 +1,7 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import React, { Component } from 'react';
+import React from 'react';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import AdEditPage from "./scenes/ad/AdEditPage";
@@ -41,9 +41,7 @@ import UserListPage from "./scenes/users/UserListPage";
 import UserLabel from "./scenes/users_public/UserLabel";
 import UserRegisterPage from "./scenes/users_public/UserRegisterPage";
 import LoginService from "./services/LoginService";
-
-class App extends Component {
-
+class App  extends React.Component {
   service_login = new LoginService(this);
 
   render() {

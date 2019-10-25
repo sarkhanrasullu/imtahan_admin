@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from "react-router-dom";
 import { TableColumn } from "../../components/datatable/DataTableTypes";
 import EntityListPage from "../../components/entitylistpage/EntityListPage";
 import NavbarWrapper from "../../components/UI/NavbarWrapper";
@@ -35,4 +35,4 @@ class ExamQuestionListPage extends Component {
   }
 }
 
-export default withRouter(ExamQuestionListPage)
+export default ExamQuestionListPage;

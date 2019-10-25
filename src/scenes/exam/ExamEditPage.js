@@ -1,6 +1,6 @@
 import { MDBBtn } from 'mdbreact';
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from "react-router-dom";
 import { InputField, InputFieldType, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 import NavbarWrapper from '../../components/UI/NavbarWrapper';
@@ -82,4 +82,4 @@ class ExamEditPage extends Component {
     }
 }
 
-export default withRouter(ExamEditPage);
+export default ExamEditPage;

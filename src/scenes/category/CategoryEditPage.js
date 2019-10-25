@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+// import { withRou ter } from "react-router-dom";
 import { InputField, SelectBox } from '../../components/datatable/DataTableTypes';
 import EntityEditPage from '../../components/entityeditpage/EntityEditPage';
 
@@ -33,4 +33,4 @@ class CategoryEditPage extends Component {
     }
 }
 
-export default withRouter(CategoryEditPage);
+export default CategoryEditPage;

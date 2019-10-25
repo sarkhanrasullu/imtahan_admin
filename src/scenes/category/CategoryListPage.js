@@ -1,6 +1,6 @@
 import { MDBBtn } from 'mdbreact';
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+//import { withRouter } from "react-router-dom";
 import { TableColumn, TableColumnType } from '../../components/datatable/DataTableTypes';
 import EntityListPage from '../../components/entitylistpage/EntityListPage';
 
@@ -42,4 +42,4 @@ class CategoryListPage extends Component {
     }
 }
 
-export default withRouter(CategoryListPage);
+export default CategoryListPage;

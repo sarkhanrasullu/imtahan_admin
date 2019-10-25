@@ -1,0 +1,11 @@
+.navbar-link{
+    font-size: 17px;
+    margin-left: 14px;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.navbar-link-wrapper{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

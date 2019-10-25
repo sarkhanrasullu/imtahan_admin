@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import EntityService from '../../services/EntityService';
 import DataTableComponent from '../datatable/DataTableComponent';
 import LoadingSpinner from '../spinner/LoadingSpinner';

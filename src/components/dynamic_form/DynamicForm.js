@@ -1,10 +1,10 @@
+import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { Component } from "react";
-import { MDBBtn, MDBRow, MDBCol, MDBContainer } from "mdbreact";
-import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import FormInput from '../forminput/FormInput';
+import * as actions from "../../store/actions/index";
 import StateUtil from "../../utils/StateUtil";
+import FormInput from '../forminput/FormInput';
 
 class DynamicForm extends Component {
  

@@ -1,9 +1,8 @@
-import { MDBCollapse, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavItem, MDBNavLink } from "mdbreact";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import LoginService from "../../services/LoginService";
-
+import './navbar.css';
 class NavbarWrapper extends Component {
   service_login = new LoginService(this);
   state = {
@@ -29,9 +28,7 @@ class NavbarWrapper extends Component {
 
   linkItem = (link, label) => {
     return (
-      <MDBNavItem>
-        <MDBNavLink to={link}>{label}</MDBNavLink>
-      </MDBNavItem>
+        <a className="navbar-link" href={link}>{label}</a>
     );
   };
 
@@ -57,17 +54,12 @@ class NavbarWrapper extends Component {
     const loggedInUser = this.service_login.getLoggedInUser();
     return (
       <React.Fragment>
-        <MDBNavbar style={{ backgroundColor: "#82b1ff", marginBottom: 30, }} dark expand="md">
-          <MDBNavbarBrand>
-            <MDBNavLink to="/">
-              <strong className="white-text">ADMIN PANEL</strong>
-            </MDBNavLink>
-          </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse} />
+        <div style={{ backgroundColor: "#82b1ff", marginBottom: 30, }} dark expand="md">
           {loggedInUser ? (
-            <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-              <MDBNavbarNav left>
-                {this.linkItem("/users","İstifadəçilər")}
+            <div id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+              <div class="navbar-link-wrapper">
+              {this.linkItem("/","ADMIN PANEL")}
+              {this.linkItem("/users","İstifadəçilər")}
                 {this.linkItem("/teachers","Müəllimlər")}
                 {this.linkItem("/pages","Səhifələr")}
                 {this.linkItem("/menus","Menular")}
@@ -77,15 +69,11 @@ class NavbarWrapper extends Component {
                 {this.linkItem("/ads","Reklamlar")}
                 {this.linkItem("/exams","İmtahanlar")}
                 {this.linkItem("/categories/all","Kateqoriyalar")}
-              </MDBNavbarNav>
-              <MDBNavbarNav right>
-                <MDBNavItem onClick={() => this.service_login.logout()}>
-                  <MDBNavLink to="#">({loggedInUser.email}) LOGOUT</MDBNavLink>
-                </MDBNavItem>
-              </MDBNavbarNav>
-            </MDBCollapse>
+                <a class="navbar-link float-right mr-2" onClick={() => this.service_login.logout()}>({loggedInUser.name}) LOGOUT</a>
+              </div>
+            </div>
           ) : null}
-        </MDBNavbar>
+        </div>
       </React.Fragment>
     );
   }
@@ -99,7 +87,7 @@ const mapDispatchToProps = dispatch => {
   return {};
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(NavbarWrapper));
+)(NavbarWrapper));

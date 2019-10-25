@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { applyMiddleware, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
 import App from './App';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
-
 //redux
-import allReducers from './store/reducers/index'
-
-import {Provider} from 'react-redux'
-import {createStore, applyMiddleware, compose} from 'redux'
-import thunk from 'redux-thunk'
-
+import allReducers from './store/reducers/index';
 require('dotenv/config');
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose;
@@ -22,9 +19,9 @@ const store = createStore(allReducers, composeEnhancers(
 
 ReactDOM.render(
         <Provider store={store}>
-            <BrowserRouter>
+            <Router>
                 <App/>
-            </BrowserRouter>
+            </Router>
         </Provider>, 
         document.getElementById('root')
         );
