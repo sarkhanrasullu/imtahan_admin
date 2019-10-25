@@ -8,6 +8,7 @@ const columns = [
     new TableColumn("id","id"),
     new TableColumn("name","Kateqoriyanın adı"),
     new TableColumn("parentId.name","Üst kateqoriyanın adı"),
+    new TableColumn("sectorId.name","Sektorun adı"),
     new TableColumn("", "", TableColumnType.CUSTOM_COMPONENT, <MDBBtn
                                                                         size="sm"
                                                                         color="danger"

@@ -20,13 +20,25 @@ const rows = [
     {
       items:[
         new InputField("target.duration", "Müddəti"),
-        new InputField("target.price", "Qiymət"),
-        new InputField("target.classes", "Siniflər"),
+      ]
+    },
+    {
+      items:[
+        new InputField("target.price", "Qiymət"), 
+      ]
+    },
+    {
+      items:[
+        new SelectBox('lessonCategoryId.id', 'Kateqoriya', '/api/lessonCategories?projection=idNameProjection','id','name')
       ]
     },
     {
       items:[
         new SelectBox("target.sectorId.id", "Sektor", "/api/sectors","id","name"),
+      ]
+    },
+    {
+      items:[
         new SelectBox("target.examTypeId.id", "Tipi", "/api/examTypes", "id","name"),
       ]
     },
