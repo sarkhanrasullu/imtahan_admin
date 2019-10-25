@@ -5,7 +5,7 @@ const filter = (pathname, req) => {
   return result;
 };
 //
-const myproxy = proxy(filter, { target: "https://examapprest.herokuapp.com/" });
+const myproxy = proxy(filter, { target: "http://examapprest.herokuapp.com/" });
 
 module.exports = app => {
   app.use(myproxy);
