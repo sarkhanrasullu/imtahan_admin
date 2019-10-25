@@ -21,7 +21,7 @@ export default class ItemPicker extends Component {
     }
 
     render() {
-        const {error, component, onValueChange, item} = this.props;
+        const {component, onValueChange, item} = this.props;
 
         let items = this.props.items;
         if(!items) items = this.state.list;

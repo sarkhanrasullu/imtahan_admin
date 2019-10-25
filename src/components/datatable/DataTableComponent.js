@@ -57,9 +57,10 @@ export default class DataTableComponent extends Component {
 
     toggle = (data)=>{
         const {modalState} = this.state;
-        this.state.selectedRowData = data;
+        const state = {...this.state};
+        state.selectedRowData = data;
         modalState.show = !modalState.show;
-        this.setState({});
+        this.setState(state);
     }
  
     renderBody(){

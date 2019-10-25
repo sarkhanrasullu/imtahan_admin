@@ -1,6 +1,5 @@
+import { MDBPageItem, MDBPageNav, MDBPagination } from "mdbreact";
 import React, { Component } from "react";
-import { MDBPagination, MDBPageItem, MDBPageNav } from "mdbreact";
-import { connect } from "react-redux";
 
 class PaginationWrapper extends Component {
  

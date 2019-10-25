@@ -15,7 +15,7 @@ class UserLabel extends Component {
                                     <a class="nav-link p-0 text-dark mr-1" href="/login" target="_blank">
                                         Daxil ol 
                                     </a> / 
-                                    <a class="nav-link p-0 text-dark ml-1" href="http://www.imtahanlar.az/registration" target="_blank">
+                                    <a class="nav-link p-0 text-dark ml-1" href="http://www.imtahanlar.az/registration" target="_blank" rel="noopener noreferrer">
                                         Qeydiyyat
                                     </a>
                                 </span>
@@ -28,7 +28,9 @@ class UserLabel extends Component {
                     <li className="nav-item d-flex justify-content-center">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-black">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
-                                <a target="_blank" href="https://www.imtahanlar.az/dashboard" 
+                                <a  target="_blank" 
+                                    href="https://www.imtahanlar.az/dashboard" 
+                                    rel="noopener noreferrer"
                                     class="nav-link p-0 mr-1 text-dark" >
                                     {loggedInUser.name+" "+loggedInUser.surname}
                                 </a>

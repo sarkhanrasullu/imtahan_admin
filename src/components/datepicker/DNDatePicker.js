@@ -1,19 +1,15 @@
-import React, { Component } from 'react'
-import StateUtil from '../../utils/StateUtil';
+import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import StateUtil from '../../utils/StateUtil';
 import './DNDatePicker.css';
-import CommonUtil from '../../utils/CommonUtil';
 
-const style = { 
-    errorInput: {borderColor:"red", borderWidth:1}
-  };
 export default class DNDatePicker extends Component {
 
     render(){
-        const {item, error, readOnly, component, key } = this.props;
+        const {item, component} = this.props;
             
-        const {label, type, name} = item;
+        const {name} = item;
         let currentValue = StateUtil.get(component.state, name);
         if(typeof currentValue === "string"){
             currentValue = new Date(currentValue);
