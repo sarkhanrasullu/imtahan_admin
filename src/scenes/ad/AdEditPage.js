@@ -17,7 +17,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.leftSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.leftSideLinkIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -28,7 +28,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.leftSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.leftSideLinkIframe2","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -39,7 +39,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.leftSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.leftSideLinkIframe3","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -50,7 +50,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.leftSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.leftSideLinkIframe4","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -61,7 +61,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.rightSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.rightSideLinkIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -72,7 +72,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.rightSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.rightSideLinkIframe2","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -84,7 +84,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.rightSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.rightSideLinkIframe3","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -96,7 +96,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.rightSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.rightSideLinkIframe4","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
 
@@ -109,7 +109,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.upSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.upSideLinkIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -121,7 +121,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.upSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.upSideLinkIframe2","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -132,7 +132,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.upSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.upSideLinkIframe3","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -143,7 +143,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.upSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX,true)
+            new InputField("target.upSideLinkIframe4","Daxili pəncərə", InputFieldType.CHECK_BOX,true)
         ]
     },
     {
@@ -154,7 +154,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.downSideIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.downSideLinkIframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -165,7 +165,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.downSide2Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.downSideLinkIframe2","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -176,7 +176,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.downSide3Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.downSideLinkIframe3","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
@@ -187,7 +187,7 @@ const rows = [
     },
     {
         items:[
-            new InputField("target.downSide4Iframe","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
+            new InputField("target.downSideLinkIframe4","Daxili pəncərə", InputFieldType.CHECK_BOX, true)
         ]
     },
     {
