@@ -12,7 +12,8 @@ const columns = [
   new TableColumn("enabled", "Aktiv"),
   new TableColumn("sectorId.name", "Sector"),
   new TableColumn("examTypeId.name", "Tipi"),
-  new TableColumn("insertUserId.name", "Daxil edən şəxs"),
+  new TableColumn("lessonCategoryId.name", "Kateqoriya"),
+  // new TableColumn("insertUserId.name", "Daxil edən şəxs"),
   new TableColumn("insertDate", "Daxil edilmə tarixi", TableColumnType.DATE_TIME),
   new TableColumn("lastChangeDate", "Son dəyişilmə tarixi", TableColumnType.DATE_TIME),
 ];

@@ -29,7 +29,7 @@ const rows = [
     },
     {
       items:[
-        new SelectBox('lessonCategoryId.id', 'Kateqoriya', '/api/lessonCategories?projection=idNameProjection','id','name')
+        new SelectBox('target.lessonCategoryId.id', 'Kateqoriya', '/api/lessonCategories?projection=idNameProjection','id','name')
       ]
     },
     {
