@@ -61,6 +61,14 @@ export default class FormInput extends Component {
         result.push(<DNDatePicker item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
       } else if(type === InputFieldType.EDITOR){
         result.push(<Editor item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
+      }else if(type === InputFieldType.BREAKLINE){
+        result.push(<br/>);
+        result.push(<br/>);
+        result.push(<br/>);
+        result.push(<br/>);
+        result.push(<br/>);
+        result.push(<br/>);
+        result.push(<br/>);
       }else {
         result.push(<DefaultFormInput item={item} key={key} readOnly={readOnly} error={error} component={component}/>);
       } 

@@ -29,7 +29,13 @@ class EntityEditPage extends Component {
       }
   }
 
-  getRedirectUrl = ()=>{
+  getRedirectUrl = () => {
+    const redirect_url_primary = this.props.redirect_url_primary;
+
+    if(redirect_url_primary){
+      return redirect_url_primary;
+    }
+
     var arr = window.location.href.split('/');
     var lastOne = "/"+arr[arr.length-1];
     var redirect_url = window.location.href.replace(lastOne,"");

@@ -5,7 +5,6 @@ import React from 'react';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import AdEditPage from "./scenes/ad/AdEditPage";
-import AdListPage from "./scenes/ad/AdListPage";
 import AnnouncementEditPage from "./scenes/announcement/AnnouncementEditPage";
 import AnnouncementListPage from "./scenes/announcement/AnnouncementListPage";
 import AnnouncementEditPagePublic from "./scenes/announcement_public/AnnouncementEditPagePublic";
@@ -63,7 +62,6 @@ class App  extends React.Component {
                         <Route exact path="/courses/:entityId"                  component={CourseEditPage}        />
                         <Route exact path="/announcements"                      component={AnnouncementListPage}  />
                         <Route exact path="/announcements/:entityId"            component={AnnouncementEditPage}  />
-                        <Route exact path="/ads"                                component={AdListPage}            />
                         <Route exact path="/ads/:entityId"                        component={AdEditPage}            />
                         <Route exact path="/exams"                                component={ExamListPage}          />
                         <Route exact path="/exams/:entityId"                      component={ExamEditPage}          />

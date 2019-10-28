@@ -11,6 +11,7 @@ export enum InputFieldType {
      IMAGE_URL_MULTIPLE = "IMAGE_URL_MULTIPLE",
      IMAGE_BASE64 = "IMAGE_BASE64",
      CUSTOM = "CUSTOM",
+     BREAKLINE = "BREAKLINE",
 }
 
 class AbstractInputField {

@@ -58,15 +58,15 @@ class NavbarWrapper extends Component {
           {loggedInUser ? (
             <div id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
               <div class="navbar-link-wrapper">
-              {this.linkItem("/","ADMIN PANEL")}
-              {this.linkItem("/users","İstifadəçilər")}
+                {this.linkItem("/","ADMIN PANEL")}
+                {this.linkItem("/users","İstifadəçilər")}
                 {this.linkItem("/teachers","Müəllimlər")}
                 {this.linkItem("/pages","Səhifələr")}
-                {this.linkItem("/menus","Menular")}
+                {/* {this.linkItem("/menus","Menular")} */}
                 {this.linkItem("/lessons","Dərslər")}
                 {this.linkItem("/courses","Təhsil mərkəzləri")}
                 {this.linkItem("/announcements","Elanlar")}
-                {this.linkItem("/ads","Reklamlar")}
+                {this.linkItem("/ads/1","Reklamlar")}
                 {this.linkItem("/exams","İmtahanlar")}
                 {this.linkItem("/categories/all","Kateqoriyalar")}
                 <a class="navbar-link float-right mr-2" onClick={() => this.service_login.logout()}>({loggedInUser.name}) LOGOUT</a>
