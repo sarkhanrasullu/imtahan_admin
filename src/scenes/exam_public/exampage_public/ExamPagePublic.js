@@ -76,7 +76,24 @@ class ExamPagePublic extends Component {
 
   renderBody = ()=>{
     return <React.Fragment>
-      <MDBContainer>
+      <div style={
+                    {
+                      position:'fixed',
+                      width:'100%',
+                      zIndex: 1,
+                      backgroundColor: '#fff',
+                      borderBottom: '1px solid'
+                    }
+    }>
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol>
+              {this.renderInfo()}
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
+      <MDBContainer style={{paddingTop:'103px'}}>
         <MDBRow>
           <MDBCol md={8}>
             {this.renderQuestionBody()}
@@ -100,8 +117,6 @@ class ExamPagePublic extends Component {
           <MDBCol>
             {selectedExam.name}
           </MDBCol>
-        </MDBRow>
-        <MDBRow>
           <MDBCol md={3}>
             Sektor:
           </MDBCol>
@@ -116,13 +131,16 @@ class ExamPagePublic extends Component {
           <MDBCol>
           {selectedExam.price} AZN
           </MDBCol>
-        </MDBRow>
-        <MDBRow>
           <MDBCol md={3}>
             Müddəti:
           </MDBCol>
           <MDBCol>
           {selectedExam.duration}
+          </MDBCol>
+        </MDBRow>
+        <MDBRow>
+          <MDBCol>
+             {selectedExam.description} 
           </MDBCol>
         </MDBRow>
     </div>
@@ -152,8 +170,8 @@ class ExamPagePublic extends Component {
       rightAnswerRadioButtons.push(this.renderRegularAnswer(index,4));
     });
             return <div style={{position: "fixed"}}>
-                      <div style={{marginBottom:'50px'}}>{this.renderInfo()}</div>
-                      <div style={{marginBottom:'50px'}}>{selectedExam.description}</div>
+                      {/* <div style={{marginBottom:'50px'}}>{this.renderInfo()}</div> */}
+                      {/* <div style={{marginBottom:'50px'}}>{selectedExam.description}</div> */}
                       <div>{rightAnswerRadioButtons}</div>
                 </div> 
   }
