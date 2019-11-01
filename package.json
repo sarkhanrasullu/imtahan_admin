@@ -22,6 +22,7 @@
     "mdbreact": "^4.13.0",
     "react": "^16.8.6",
     "react-bootstrap-table-next": "^3.1.4",
+    "react-countdown-now": "^2.1.1",
     "react-datepicker": "^2.8.0",
     "react-dom": "^16.8.6",
     "react-draft-wysiwyg": "^1.13.2",

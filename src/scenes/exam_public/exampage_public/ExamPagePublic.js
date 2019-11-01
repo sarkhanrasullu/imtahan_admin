@@ -1,9 +1,11 @@
-import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
+import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { Component } from "react";
+import Countdown from 'react-countdown-now';
 //import { withRouter } from "react-router-dom";
 import LoadingSpinner from '../../../components/spinner/LoadingSpinner';
 import EntityService from '../../../services/EntityService';
 import './exampage.css';
+
 class ExamPagePublic extends Component {
 
   examService = new EntityService(this);
@@ -93,7 +95,7 @@ class ExamPagePublic extends Component {
           </MDBRow>
         </MDBContainer>
       </div>
-      <MDBContainer style={{paddingTop:'103px'}}>
+      <MDBContainer style={{paddingTop:'120px'}}>
         <MDBRow>
           <MDBCol md={8}>
             {this.renderQuestionBody()}
@@ -109,38 +111,34 @@ class ExamPagePublic extends Component {
 
   renderInfo = ()=>{
     const {selectedExam} = this.state;
-    return <div>
+    return <div style={{width:'80%'}}>
         <MDBRow >
-          <MDBCol md={3}>
+          <MDBCol md={1}>
             Adı:
           </MDBCol>
-          <MDBCol>
+          <MDBCol  md={3}>
             {selectedExam.name}
           </MDBCol>
-          <MDBCol md={3}>
+          <MDBCol md={1}>
             Sektor:
           </MDBCol>
-          <MDBCol>
+          <MDBCol  md={1}>
             {selectedExam.sectorId.name}
           </MDBCol>
-        </MDBRow>
-        <MDBRow>
-          <MDBCol md={3}>
+          <MDBCol md={1}>
             Qiyməti:
           </MDBCol>
-          <MDBCol>
+          <MDBCol  md={2}>
           {selectedExam.price} AZN
           </MDBCol>
-          <MDBCol md={3}>
+          <MDBCol md={1}>
             Müddəti:
           </MDBCol>
-          <MDBCol>
-          {selectedExam.duration}
-          </MDBCol>
-        </MDBRow>
-        <MDBRow>
-          <MDBCol>
-             {selectedExam.description} 
+          <MDBCol  md={2}>
+          {this.counter(selectedExam.duration)}
+          </MDBCol> 
+          <MDBCol >
+              <MDBBtn color="danger">İMTAHANDAN ÇIX</MDBBtn>
           </MDBCol>
         </MDBRow>
     </div>
@@ -161,7 +159,7 @@ class ExamPagePublic extends Component {
   }
 
   renderAnswersBody = ()=>{
-    const {questions,selectedExam} = this.state;
+    const {questions} = this.state;
     const question = questions[0];
     const rightAnswersSplitted = question.rightAnswer.split(',');
     const rightAnswerRadioButtons = [];
@@ -173,6 +171,7 @@ class ExamPagePublic extends Component {
                       {/* <div style={{marginBottom:'50px'}}>{this.renderInfo()}</div> */}
                       {/* <div style={{marginBottom:'50px'}}>{selectedExam.description}</div> */}
                       <div>{rightAnswerRadioButtons}</div>
+                      <MDBBtn color="danger" style={{marginTop:"80px"}}>İMTAHANI BİTİR</MDBBtn>
                 </div> 
   }
 
@@ -197,6 +196,27 @@ class ExamPagePublic extends Component {
                 {answers}
           </div>;
   }
+
+  renderer = ({ hours, minutes, seconds, completed }) => {
+    hours = hours>9?hours:"0"+hours;
+    minutes = minutes>9?minutes:"0"+minutes;
+    seconds = seconds>9?seconds:"0"+seconds;
+    return <span style={{color:"red", fontWeight:"600"}}>{hours}:{minutes}:{seconds}</span>;
+  };
+   
+  counter = (hourMinSecond)=>{//hh:mm:ss
+    const arr    = hourMinSecond.split(":");
+    const hour   = arr[0];
+    const min    = arr.length>1?arr[1]:0;
+    const second = arr.length>2?arr[2]:0;
+    return <Countdown
+      date={Date.now() + (hour*60*60+min*60+second)*1000}
+      renderer={this.renderer}
+    />
+  }
+  
+  
+
 }
 
 export default ExamPagePublic;
