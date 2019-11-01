@@ -37,8 +37,14 @@ class EntityEditPage extends Component {
     }
 
     var arr = window.location.href.split('/');
-    var lastOne = "/"+arr[arr.length-1];
-    var redirect_url = window.location.href.replace(lastOne,"");
+    var redirect_url = "";
+    var lng = arr.length-1;
+    for(var i=0;i<lng;i++){
+      redirect_url+=arr[i];
+      if(i!==lng-1){
+        redirect_url+="/";
+      }
+    }
     return redirect_url;
   }
 
