@@ -50,7 +50,7 @@ export default class ExamQuestionEditPage extends Component {
                         }
                       }
                     }
-                    endpoint_select="/api/examQuestions/{id}"
+                    endpoint_select="/api/examQuestions/{id}?projection=examQuestionProjection"
                     endpoint_add_or_save="/api/examQuestions"
                     formFields={fields}
                 />
