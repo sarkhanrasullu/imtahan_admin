@@ -26,7 +26,7 @@ class UserLabel extends Component {
         }else{
             return (
                 <div className="d-flex d-block">
-                    <li className="nav-item d-flex justify-content-center push-right">
+                    <li className="nav-item d-flex justify-content-center">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-black">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
                                 <a  target="_blank" 
