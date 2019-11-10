@@ -33,7 +33,7 @@ export default class ItemPicker extends Component {
           })
         }
 
-        const selectOption = <option key={-1} value={null}>{"select"}</option>;
+        const selectOption = <option key={-1} value={null}>{"seçin"}</option>;
 
         const pickerItems = [
           selectOption,
@@ -49,6 +49,10 @@ export default class ItemPicker extends Component {
 
                     if(onValueChange){
                       onValueChange(val);
+                    }
+
+                    if(item.onValueChange){
+                      item.onValueChange(val, component);
                     }
                     // this.setState({val: val});
                     StateUtil.handleFieldChange(this, val, item.name, true);

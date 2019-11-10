@@ -21,7 +21,9 @@ export default class FormInput extends Component {
     render() {
         if(!this.props.item) return null;
         const {label, optional} = this.props.item;           
-        const {unwrap, error, key} = this.props;
+        const {unwrap, error, key, component, item} = this.props;
+
+        if(component.state.target[item.name+"_notvisible"]===true) return null;
         const inputComponent = this.getInputComponent();
         
         const result = unwrap?inputComponent:
@@ -34,12 +36,11 @@ export default class FormInput extends Component {
 
     getInputComponent = ()=>{
       
-      const {item, error, readOnly, key, customComponent } = this.props;
+      const {item, error, readOnly, key, customComponent, component } = this.props;
       const type = item.type;         
 
       let result =[];
-
-      const {component} = this.props;
+      
       if(type === InputFieldType.IMAGE_PICKER || type === InputFieldType.IMAGE_BASE64){
         result.push(
                 <MyImagePicker 

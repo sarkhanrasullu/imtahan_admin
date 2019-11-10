@@ -21,7 +21,14 @@ const formFields = [
     },
     {
         items: [
-            new SelectBox("target.genderId.id", "Cinsiniz","/genders","id","name"),
+            new SelectBox("target.genderId.id", "Cinsiniz",null,"id","name",false, [
+                {
+                    id:"1", name:"Kişi"
+                },
+                {
+                    id:"2", name:"Qadın"
+                }
+            ]),
         ]
     },
     {
@@ -31,32 +38,54 @@ const formFields = [
     },
     {
         items: [
-            new InputField("target.phone", "Mobil telefon"),
-        ]
-    },
-    {
-        items: [
-            new SelectBox("target.status", "Status","/usersstatuses","id","name"),
-        ]
-    },
-    {
-        items: [
             new InputField("target.password", "Şifrə", InputFieldType.PASSWORD),
         ]
     },
     {
         items: [
-            new SelectBox("target.cityId.id", "Yaşadığınız yer","/api/cities","id","name"),
+            new InputField("target.phone", "Mobil telefon"),
         ]
     },
     {
         items: [
-            new SelectBox("target.schoolId.id", "Oxuduğunuz məktəb","/api/cities","id","name"),
+            new SelectBox("target.status", "Status", null, "id", "name", false, [
+                {
+                    id:"1", name:"Məktəbli"
+                },
+                {
+                    id:"2", name:"Müəllim"
+                }
+            ],
+            (val, component)=>{
+                if(val==="1"){
+                    component.state.target["target.schoolId.id_notvisible"] = false;
+                }else{
+                    component.state.target["target.schoolId.id_notvisible"] = true;
+                }
+                component.setState({});
+            }),
         ]
-    }
+    },
+    {
+        items: [
+            new SelectBox("target.schoolId.id", "Oxuduğunuz məktəb","/api/cities?projection=idNameProjection","id","name"),
+        ]
+    },
+    
+    {
+        items: [
+            new SelectBox("target.cityId.id", "Yaşadığınız yer","/api/cities?projection=idNameProjection","id","name"),
+        ]
+    },
+    
 ];
 
 class UserRegisterPage extends Component {
+    state = {
+        target:{
+            "target.schoolId.id_notvisible":true
+        }
+    }
     render() {
         return (
                 <EntityEditPage
@@ -64,6 +93,8 @@ class UserRegisterPage extends Component {
                     endpoint_add_or_save="/api/admin/users"
                     endpoint_delete="/api/users"
                     formFields={formFields}
+                    defaultTarget={this.state.target}
+                    btnLabel="Qeydiyyat"
                 />
         )
     }

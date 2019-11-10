@@ -67,10 +67,10 @@ class Login extends Component {
           <MDBCol md="3" />
             <MDBCol md="6">
             <h6 className="text-center w-100 mt-3 forget">
-                <a href="registration" target="_blank">Şifrəni Unutmusan?</a> 
+                <a href="http://www.imtahanlar.az/registration" target="_blank">Şifrəni Unutmusan?</a> 
                 </h6>
             <h6 className="text-center w-100 mt-1 forget">Hesabın yoxdur? 
-            <a href="registration" target="_blank">Qeydiyyat</a> 
+            <a href="http://www.imtahanlar.az/registration" target="_blank">Qeydiyyat</a> 
             </h6>
             </MDBCol>
           </MDBRow>
