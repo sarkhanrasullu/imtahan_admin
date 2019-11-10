@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoginService from '../../services/LoginService';
+import './userlabel.css';
 
 class UserLabel extends Component {
     service = new LoginService(this);
@@ -9,7 +10,7 @@ class UserLabel extends Component {
         if(!loggedInUser){
         return (
             <div className="d-flex d-block">
-                    <li className="nav-item d-flex justify-content-center">
+                    <li className="nav-item d-flex justify-content-center push-right">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-dark">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
                                     <a class="nav-link p-0 text-dark mr-1" href="http://www.imtahanlar.az/signin" target="_blank">
@@ -25,7 +26,7 @@ class UserLabel extends Component {
         }else{
             return (
                 <div className="d-flex d-block">
-                    <li className="nav-item d-flex justify-content-center">
+                    <li className="nav-item d-flex justify-content-center push-right">
                             <span className="d-flex align-items-center mx-2 top-nav-link text-black">
                                 <i className="fas fa-user mb-0 text-dark mr-2"></i>
                                 <a  target="_blank" 
