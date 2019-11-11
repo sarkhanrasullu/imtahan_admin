@@ -69,6 +69,7 @@ class NavbarWrapper extends Component {
                 {this.linkItem("/ads/1","Reklamlar")}
                 {this.linkItem("/exams","İmtahanlar")}
                 {this.linkItem("/categories/all","Kateqoriyalar")}
+                {this.linkItem("/schools","Məktəblər")}
                 <a class="navbar-link float-right mr-2" onClick={() => this.service_login.logout()}>({loggedInUser.name}) LOGOUT</a>
               </div>
             </div>

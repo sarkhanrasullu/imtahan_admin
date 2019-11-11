@@ -32,6 +32,8 @@ import MenuEditPage from "./scenes/menu/MenuEditPage";
 import MenuListPage from "./scenes/menu/MenuListPage";
 import PageEditPage from "./scenes/pages/PageEditPage";
 import PageListPage from "./scenes/pages/PageListPage";
+import SchoolEditPage from "./scenes/schools/SchoolEditPage";
+import SchoolListPage from "./scenes/schools/SchoolListPage";
 import TeacherEditPage from "./scenes/teachers/TeacherEditPage";
 import TeacherListPage from "./scenes/teachers/TeacherListPage";
 import TeacherEditPagePublic from "./scenes/teachers_public/TeacherEditPagePublic";
@@ -58,6 +60,8 @@ class App  extends React.Component {
                         <Route exact path="/menus/:entityId"                    component={MenuEditPage}          />
                         <Route exact path="/lessons"                            component={LessonListPage}        />
                         <Route exact path="/lessons/:entityId"                  component={LessonEditPage}        />
+                        <Route exact path="/schools"                            component={SchoolListPage}        />
+                        <Route exact path="/schools/:entityId"                  component={SchoolEditPage}        />
                         <Route exact path="/courses"                            component={CourseListPage}        />
                         <Route exact path="/courses/:entityId"                  component={CourseEditPage}        />
                         <Route exact path="/announcements"                      component={AnnouncementListPage}  />

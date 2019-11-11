@@ -68,7 +68,7 @@ const formFields = [
     },
     {
         items: [
-            new SelectBox("target.schoolId.id", "Oxuduğunuz məktəb","/api/cities?projection=idNameProjection","id","name"),
+            new SelectBox("target.schoolId.id", "Oxuduğunuz məktəb","/api/schools?projection=idNameProjection","id","name"),
         ]
     },
     
