@@ -50,10 +50,31 @@ const formFields = [
         items: [
             new SelectBox("target.status", "Status", null, "id", "name", false, [
                 {
-                    id:"1", name:"Məktəbli"
+                    id:"1", name:"Şagird"
                 },
                 {
                     id:"2", name:"Müəllim"
+                },
+                {
+                    id:"3", name:"Abituriyent"
+                },
+                {
+                    id:"4", name:"Magistr"
+                },
+                {
+                    id:"5", name:"YÖS"
+                },
+                {
+                    id:"6", name:"Dövlət qulluğu"
+                },
+                {
+                    id:"7", name:"Məntiq, informatika"
+                },
+                {
+                    id:"8", name:"Xarici dillər"
+                },
+                {
+                    id:"9", name:"Digər"
                 }
             ],
             (val, component)=>{
